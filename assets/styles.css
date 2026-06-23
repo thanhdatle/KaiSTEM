@@ -31,6 +31,46 @@
 
 html { -webkit-text-size-adjust: 100%; }
 
+/* Anchored headings shouldn't hide under the sticky course bar */
+:where(h1, h2, h3, [id]) { scroll-margin-top: 4.5rem; }
+
+/* ---- Sticky course bar (Home / you-are-here / prev-next) ---- */
+.coursebar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem 1rem;
+  flex-wrap: wrap;
+  margin: 0 0 2rem;
+  padding: 0.6rem 0.95rem;
+  background: color-mix(in oklch, var(--paper) 86%, transparent);
+  backdrop-filter: saturate(150%) blur(9px);
+  -webkit-backdrop-filter: saturate(150%) blur(9px);
+  border: 1px solid var(--rule);
+  border-top: none;
+  border-radius: 0 0 12px 12px;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.02em;
+}
+.coursebar a { text-decoration: none; color: var(--accent-deep); white-space: nowrap; }
+.coursebar a:hover,
+.coursebar a:focus-visible { color: var(--accent); text-decoration: underline; }
+.coursebar .home { font-weight: 700; }
+.coursebar .here {
+  flex: 1 1 8rem;
+  min-width: 0;
+  color: var(--ink-soft);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.coursebar .nextprev { display: flex; gap: 0.9rem; white-space: nowrap; }
+.coursebar a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 3px; }
+
+
 body {
   margin: 0;
   background: var(--paper);
@@ -311,5 +351,6 @@ details.faq .faq-body > :last-child { margin-bottom: 0; }
   details.faq { break-inside: avoid; }
   details.faq > summary::after { content: ""; }
   details.faq[open] > summary::after { content: ""; }
+  .coursebar { display: none; }
   a { color: var(--ink); }
 }
