@@ -228,12 +228,88 @@ th { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.08em; 
 .footnote { font-size: 0.85rem; color: var(--ink-soft); }
 sup a { text-decoration: none; }
 
+/* ---- Numbered prep / setup steps ---- */
+ol.steps { padding-left: 1.4rem; margin: 1rem 0; }
+ol.steps li { margin: 0.45rem 0; max-width: var(--measure); }
+
+/* ---- Detailed day blocks (robust, no grid) ---- */
+.daydetail {
+  border: 1px solid var(--rule);
+  border-left: 5px solid var(--accent);
+  border-radius: var(--radius);
+  padding: 1rem 1.3rem 1.2rem;
+  margin: 1.3rem 0;
+  background: var(--paper-sunk);
+}
+.daydetail > h3 { margin-top: 0.2rem; }
+.daydetail .tag {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: var(--accent);
+  color: var(--paper);
+  border-radius: 6px;
+  padding: 0.2rem 0.5rem;
+  margin-bottom: 0.5rem;
+}
+.daydetail h4 {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-deep);
+  margin: 1rem 0 0.3rem;
+}
+
+/* ---- "What to observe" flags ---- */
+ul.observe { list-style: none; padding: 0; margin: 1rem 0; }
+ul.observe li { padding: 0.35rem 0 0.35rem 2rem; position: relative; max-width: var(--measure); }
+ul.observe li::before { position: absolute; left: 0; top: 0.25rem; font-size: 1.05rem; }
+ul.observe li.good::before  { content: "✅"; }
+ul.observe li.watch::before { content: "👀"; }
+ul.observe li.relax::before { content: "😌"; }
+
+/* ---- FAQ accordions ---- */
+details.faq {
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  margin: 0.55rem 0;
+  background: var(--paper-sunk);
+  overflow: hidden;
+}
+details.faq > summary {
+  cursor: pointer;
+  padding: 0.8rem 2.4rem 0.8rem 1.1rem;
+  font-weight: 600;
+  list-style: none;
+  position: relative;
+}
+details.faq > summary::-webkit-details-marker { display: none; }
+details.faq > summary::after {
+  content: "+";
+  position: absolute;
+  right: 1.1rem; top: 0.7rem;
+  color: var(--accent);
+  font-size: 1.3rem;
+  line-height: 1;
+}
+details.faq[open] > summary::after { content: "\2013"; }
+details.faq > summary:hover { color: var(--accent-deep); }
+details.faq .faq-body { padding: 0 1.1rem 1rem; }
+details.faq .faq-body > :first-child { margin-top: 0; }
+details.faq .faq-body > :last-child { margin-bottom: 0; }
+
 /* ---- Print ---- */
 @media print {
   :root { --paper: #fff; --paper-sunk: #fafafa; }
   body { padding: 0; font-size: 11pt; max-width: none; }
   h2 { break-after: avoid; }
-  .day, .box, .loop li { break-inside: avoid; }
+  .day, .box, .loop li, .daydetail { break-inside: avoid; }
   .doc-nav, .ask-teacher { break-inside: avoid; }
+  details.faq { break-inside: avoid; }
+  details.faq > summary::after { content: ""; }
+  details.faq[open] > summary::after { content: ""; }
   a { color: var(--ink); }
 }
