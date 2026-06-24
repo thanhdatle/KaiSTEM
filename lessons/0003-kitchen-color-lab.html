@@ -4,254 +4,245 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Project 3 — Kitchen Color Lab — KaiSTEM</title>
-<link rel="stylesheet" href="../assets/styles.css">
+<meta name="description" content="Five days at the kitchen lab bench: Kai learns to predict a change — two colors become a third, a powder and a liquid erupt into fizz.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500;1,6..72,600&family=Space+Mono:wght@400;700&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/lesson.css">
 </head>
 <body>
+<div id="app"></div>
 
-<nav class="coursebar" aria-label="Course navigation">
-  <a class="home" href="../index.html">🏠 All projects</a>
-  <span class="here">Project 3 · Kitchen Color Lab</span>
-  <span class="nextprev">
-    <a href="0002-will-it-grow.html">← Project 2</a>
-    <a href="0004-bug-safari.html">Project 4 →</a>
-  </span>
-</nav>
+<script>
+window.LESSON = {
+  storageKey: "color-v1",
+  childName: "Kai",
+  index: 3, total: 5,
+  defaultMode: "prep",
+  title: "Project 3 — Kitchen Color Lab — KaiSTEM",
 
-<header class="masthead">
-  <p class="kicker">KaiSTEM · Project 03 · 3 days</p>
-  <h1>Kitchen Color Lab</h1>
-  <p class="subtitle">Mixing, magic colors, and the big fizz. New superpower this project:
-  predicting a <em>change</em> — not just "where does it go?" but "what will it <em>turn into</em>?"</p>
-  <div class="meta-row">
-    <span>~30 min × 3 days</span><span>·</span>
-    <span>Interests: 💧 mixing · 🔢 counting · 🎨 color</span><span>·</span>
-    <span>Difficulty: ★★★ → ★★★★</span>
-  </div>
-</header>
+  theme: { "--accent": "oklch(58% 0.19 350)", "--accent-deep": "oklch(48% 0.18 350)" },
 
-<div class="box accent">
-  <p class="box-title">The win this project earns</p>
-  <p>So far Kai has predicted <em>positions</em> (sink/float) and <em>growth</em> (will it grow).
-  Now he predicts <strong>transformations</strong>: two colors become a third, a powder and a
-  liquid erupt into fizz. This is the leap to "I can make something <em>new</em> happen" —
-  and it's pure delight, which is the whole point.</p>
-</div>
+  hero: {
+    kicker: "KaiSTEM · Project 3",
+    titleHTML: '<span class="rc">Kitchen</span> <span class="lc">Color Lab</span>',
+    subHTML: "Five days at the lab bench, where {name} learns to predict a <strong>change</strong> — not “where does it go?” but “what will it turn into?” Two colors become a third; a powder and a liquid erupt into fizz.",
+    tags: [
+      { text: "~30 min × 5 days" },
+      { text: "🎨 color · 💧 mixing · 🔢 counting" },
+      { text: "★★★ → ★★★★", lead: true }
+    ]
+  },
 
-<h2>The method (now with bigger surprises)</h2>
-<p>Same loop. The "Predict" step gets richer: not just yes/no, but "what will it become?"
-Scripts &amp; question bank: <a href="../reference/0001-parent-playbook.html">Parent Playbook</a>.</p>
-<ul class="loop">
-  <li><span class="step-emoji">👀</span><span class="step-name">Notice</span><br>2 colors, a powder</li>
-  <li><span class="step-emoji">💭</span><span class="step-name">Wonder</span><br>"what if they mix?"</li>
-  <li><span class="step-emoji">🤔</span><span class="step-name">Predict</span><br>"it'll turn into…"</li>
-  <li><span class="step-emoji">🧪</span><span class="step-name">Test</span><br>drip &amp; mix!</li>
-  <li><span class="step-emoji">💬</span><span class="step-name">Talk</span><br>"what happened?!"</li>
-</ul>
+  loop: [
+    { emoji: "👀", name: "Notice", tone: "notice" },
+    { emoji: "💭", name: "Wonder", tone: "wonder" },
+    { emoji: "🤔", name: "Predict", tone: "predict" },
+    { emoji: "🧪", name: "Test", tone: "test" },
+    { emoji: "💬", name: "Talk", tone: "talk" }
+  ],
 
-<h2>What you'll prepare</h2>
-<p><strong>Prep time:</strong> ~10 min. <strong>Cost:</strong> a box of baking soda + a bottle of
-vinegar + food coloring — a few dollars, and the leftovers clean your kitchen.
-<strong>Mess level:</strong> high and joyful — set up where spills don't matter.</p>
+  win: {
+    label: "The win this earns",
+    html: "So far {name} has predicted <em>positions</em> (sink/float) and <em>growth</em> (will it grow). Now he predicts <strong>transformations</strong>: two colors become a third, a powder and a liquid erupt into fizz. This is the leap to “I can make something <strong>new</strong> happen” — and it's pure delight, which is the whole point."
+  },
 
-<h3>The gear</h3>
-<ul class="checklist">
-  <li><strong>A muffin tin or ice-cube tray</strong> — the "lab bench" with little wells for colors.</li>
-  <li><strong>Food coloring or liquid watercolors:</strong> red, yellow, blue (the primaries — these make every other color).</li>
-  <li><strong>2–3 eyedroppers or pipettes</strong> (or a turkey baster, or small spoons). Droppers are the star tool — they build serious fine-motor strength and let Kai add liquid drop by drop.<sup><a href="#n1">1</a></sup></li>
-  <li><strong>Baking soda</strong> — a whole box (for Days 2–3).</li>
-  <li><strong>White vinegar</strong> — a bottle.</li>
-  <li><strong>A shallow tray or rimmed baking dish</strong> to contain the fizz.</li>
-  <li><strong>Small cups</strong> for mixing colored vinegar; a smock/old shirt; paper towels.</li>
-  <li><strong>The <a href="#journal">Lab Journal</a></strong> + crayons (so he can color his predictions).</li>
-</ul>
+  prep: {
+    gearKicker: "Gather the night before",
+    gearTitle: "What you'll prepare",
+    gearLead: "~10 minutes. A box of baking soda, a bottle of vinegar, and food coloring — a few dollars, and the leftovers clean your kitchen. Mess level: high and joyful. Tap each as you gather it.",
+    gear: [
+      { id: "tray", strong: "A muffin tin or ice-cube tray", rest: " — the “lab bench,” with little wells for colors." },
+      { id: "colors", strong: "Food coloring or liquid watercolors", rest: ": red, yellow, blue — the primaries make every other color." },
+      { id: "droppers", strong: "2–3 eyedroppers or pipettes", rest: " (or a turkey baster, or small spoons). The star tool — builds fine-motor strength, drop by drop." },
+      { id: "soda", strong: "Baking soda", rest: " — a whole box, for Days 3–5." },
+      { id: "vinegar", strong: "White vinegar", rest: " — a bottle." },
+      { id: "dish", strong: "A shallow rimmed tray or baking dish", rest: " to contain the fizz." },
+      { id: "cups", strong: "Small cups", rest: " for mixing colored vinegar, plus a smock/old shirt and paper towels." },
+      { id: "journal", strong: "The Lab Journal page", rest: " + crayons, so he can color his predictions." }
+    ],
+    deepDive: {
+      kicker: "The important part",
+      eyebrowTone: "test",
+      title: "Predicting a change, not a place",
+      lead: "The new superpower this project is predicting a <em>transformation</em>. Two simple, repeatable reactions carry the whole arc — keep them clean so the change is obvious.",
+      blocks: [
+        { tone: "", label: "🎨 Color mixing", html: "red + yellow = orange · yellow + blue = green · red + blue = purple. Two colors at a time keeps the result crisp." },
+        { tone: "test", label: "💥 The fizz", html: "colored vinegar dripped on baking soda → bubbles. Non-toxic; the only product is carbon dioxide gas, plus water and salt." },
+        { tone: "predict", label: "✦ The fair test", html: "bring back “change just one thing” from Project 2 — more soda? more vinegar? — and compare which fizzes more." }
+      ]
+    },
+    safety: {
+      label: "⚠ Safety check",
+      html: "Everything is non-toxic and kitchen-safe — but <strong>no taste-testing</strong> (vinegar is unpleasant and food coloring stains tongues and clothes), and <strong>never taste a mystery mix.</strong> Keep it away from eyes; if any splashes in, rinse with water. Stay alongside the whole time. Protect surfaces — food coloring stains grout, wood, and fabric. A wipeable tray, silicone mat, the bathtub, or outside removes all the worry."
+    },
+    setup: {
+      kicker: "Setup",
+      title: "Before you start each day",
+      steps: [
+        "Days 1–2 (color): fill wells with water — one tinted red, one yellow, one blue — and leave empty wells for mixing. Lay out droppers.",
+        "Days 3–4 (fizz): spread a layer of baking soda across the tray; mix vinegar with a few drops of color in small cups.",
+        "Day 5 (lab): put everything out as an open “lab” — baking soda, colored vinegars, droppers, spoons, empty cups — and let {name} run it.",
+        "Pick a wipeable spot — kitchen tray, silicone mat, bathtub, or patio — where stains and spills don't matter."
+      ]
+    }
+  },
 
-<div class="box accent">
-  <p class="box-title">Safety check</p>
-  <p>Everything here is non-toxic and kitchen-safe — but <strong>no taste-testing</strong> (vinegar
-  is unpleasant and food coloring stains tongues and clothes). Keep it away from eyes. Stay
-  alongside the whole time. Protect the table; food coloring stains grout, wood, and fabric.</p>
-</div>
+  arc: {
+    kicker: "The five-day arc",
+    title: "From mixing colors to running his own lab",
+    lead: "Tap a day to jump into Run mode."
+  },
 
-<h3>Setup, before you start each day</h3>
-<ol class="steps">
-  <li><strong>Day 1:</strong> fill three wells with water, one tinted red, one yellow, one blue. Leave empty wells for mixing. Lay out droppers.</li>
-  <li><strong>Day 2:</strong> spread a layer of baking soda across the tray. Mix vinegar with a few drops of color in small cups.</li>
-  <li><strong>Day 3:</strong> put everything out as an open "lab" — baking soda, colored vinegars, droppers, spoons, empty cups — and let Kai run it.</li>
-</ol>
+  days: [
+    {
+      n: 1, stars: "★★★", lead: "", title: "Magic color mixing", tag: "predict a new color",
+      goal: "Predict a transformation — a brand-new color appearing — and build dropper control.",
+      setup: "Show the three primary colors in their wells. Name them together. Empty wells and droppers ready.",
+      doText: "Before mixing, get a guess: red + yellow = ? Let him dropper them into an empty well. Reveal — orange! Repeat for yellow+blue (green) and red+blue (purple). Count the drops aloud as he squeezes.",
+      ask: [
+        "What do you think red and yellow will make? Let's guess, then mix!",
+        "Whoa — what color is that? Did you guess it?",
+        "What should we mix next? What will THAT make?"
+      ],
+      watch: [
+        { icon: "✅", text: "He predicts a color before mixing — even a wild guess." },
+        { icon: "✅", text: "Genuine wonder when the new color appears." },
+        { icon: "✅", text: "Improving dropper control — squeezing, aiming, counting drops." },
+        { icon: "😌", text: "Mixing everything into one muddy brown is a classic, fun discovery — not a mistake." }
+      ],
+      done: "he's made at least one new color from a prediction. Save the rainbow to admire."
+    },
+    {
+      n: 2, stars: "★★★", lead: "", title: "Color hunt & count", tag: "classify + math",
+      goal: "Cement the color rules and fold in counting — mix on purpose to hit a target color, and count drops as math.",
+      setup: "Same tray, fresh wells of red, yellow, blue. Have a couple of crayons or colored objects nearby as “targets.”",
+      doText: "Name a target color — “let's make green!” — and have him predict which two to mix, then do it. Count the drops of each as he adds them; try “more red” vs “more yellow” and notice the shade shift. Match his mixes to objects of the same color around the room.",
+      ask: [
+        "We want orange — which two colors should we mix?",
+        "Let's count the drops! One… two… three… How many reds?",
+        "What in the room is the same color as this one?"
+      ],
+      watch: [
+        { icon: "✅", text: "He recalls a rule from Day 1 — “yellow and blue makes green!”" },
+        { icon: "✅", text: "He counts along as he drips, even if numbers jumble." },
+        { icon: "😌", text: "Miscounting (“one, two, five!”) is normal — model the right count cheerfully." }
+      ],
+      done: "he's hit at least one target color on purpose and counted the drops."
+    },
+    {
+      n: 3, stars: "★★★★", lead: "", title: "The big fizz", tag: "a real reaction",
+      goal: "Predict a dramatic reaction — his first real chemistry.",
+      setup: "Spread baking soda in the tray. Mix vinegar with a few drops of color in small cups. Build suspense before the first drip.",
+      doText: "Hold up a cup of colored vinegar and let him dropper it on — FIZZ! Repeat with each color, making colorful fizzing puddles. Let him go big; this is the wow day.",
+      ask: [
+        "What do you think happens when this drips on the powder? Let's guess first!",
+        "Look at the bubbles! That's gas — like a fizzy drink!",
+        "What does it sound like? What happens if we add MORE?"
+      ],
+      watch: [
+        { icon: "✅", text: "He predicts “something will happen” and is thrilled when it does." },
+        { icon: "✅", text: "He notices the bubbles, the sound, the fizz dying down." },
+        { icon: "✅", text: "He wants to do it again — repetition cements the cause→effect link." },
+        { icon: "😌", text: "He won't understand acid + base; “it makes gas/bubbles” is plenty." }
+      ],
+      done: "he's made the fizz happen several times and described what he saw."
+    },
+    {
+      n: 4, stars: "★★★★", lead: "", title: "Bigger or smaller?", tag: "first fair test",
+      goal: "Bring back “change just one thing” from Project 2 — compare two fizzes and find which is bigger.",
+      setup: "Two equal piles of baking soda side by side. Same colored vinegar ready. Empty cups for measuring.",
+      doText: "Set up two matching piles. Wonder aloud: “what if one gets more vinegar?” Change ONE thing — more vinegar on pile B — and drip both. Watch together; name which fizzed more. Try another variable: thicker powder, or warm vinegar.",
+      ask: [
+        "I wonder if more vinegar makes a bigger fizz… what's your guess?",
+        "Let's change just ONE thing — what should we change?",
+        "Which one fizzed more? What was different?"
+      ],
+      watch: [
+        { icon: "✅", text: "He predicts which pile will fizz more before you drip." },
+        { icon: "✅", text: "He notices the difference and connects it to what changed." },
+        { icon: "👀", text: "If he just wants to fizz both at once, allow it, then try one fair comparison." }
+      ],
+      done: "he's compared two fizzes and named which was bigger at least once."
+    },
+    {
+      n: 5, stars: "★★★★", lead: " · he leads", title: "Kai's potion lab", tag: "Kai leads",
+      goal: "Open-ended invention — ownership of predicting, testing, and the fair test, all in one.",
+      setup: "Everything's out; no script. {name} is the chief scientist. Have the journal ready to scribe.",
+      doText: "He invents “potions,” predicting each before he mixes. Then set the challenge: how do we make the BIGGEST fizz? Change just one thing and compare. You only ask and scribe — you do not drive.",
+      ask: [
+        "You're in charge — what's your potion? What do you think it'll do?",
+        "How could we make a bigger fizz? Let's change just ONE thing.",
+        "Which one fizzed more? What did we change?"
+      ],
+      watch: [
+        { icon: "✅", text: "He predicts before each mix without being told." },
+        { icon: "✅", text: "He reuses “change one thing” in a brand-new setting — the deep win." },
+        { icon: "✅", text: "He invents his own variations and questions." },
+        { icon: "😌", text: "Total chaos-potion-making is fine — he's experimenting. Steer toward one fair test only if he's up for it." }
+      ],
+      done: "he's run his own potions and tried at least one “biggest fizz” comparison. Celebrate the chief scientist!"
+    }
+  ],
 
-<h2>The arc at a glance</h2>
-<div class="days">
-  <div class="day"><div class="badge">Day&nbsp;1</div><h3>Magic color mixing</h3><div class="day-body"><p class="level">★★★ · predict a new color</p><p>Red+yellow=? Drip, mix, discover.</p></div></div>
-  <div class="day"><div class="badge">Day&nbsp;2</div><h3>The big fizz</h3><div class="day-body"><p class="level">★★★★ · a real reaction</p><p>Colored vinegar on baking soda → fizz!</p></div></div>
-  <div class="day"><div class="badge">Day&nbsp;3</div><h3>Kai's potion lab</h3><div class="day-body"><p class="level">★★★★ · Kai leads</p><p>Invent potions; a "biggest fizz" fair test.</p></div></div>
-</div>
+  journal: {
+    kicker: "The keepsake",
+    title: "Lab Journal",
+    intro: "Record what {name} mixed, what he guessed, and what really happened. Color the swatches, or just jot the words. <span data-print=\"hide\">Print it, or keep it on the phone.</span>",
+    headerTitle: "My Color Lab log",
+    type: "log",
+    rows: 5,
+    columns: [
+      { key: "mix", placeholder: "colors mixed" },
+      { key: "guess", placeholder: "my guess" },
+      { key: "got", placeholder: "what we got" }
+    ],
+    said: "{name} said: “________________________________”"
+  },
 
-<h2>Day by day, in detail</h2>
+  qbank: {
+    kicker: "Magic words",
+    title: "Question bank",
+    intro: "Pick one or two — never interrogate. Ask, then <strong>wait five seconds</strong> before rescuing the silence.",
+    items: [
+      { moment: "Before mixing colors", say: "What do you think these two will make?" },
+      { moment: "At a new color", say: "What color is that? Did you guess it?" },
+      { moment: "Counting drops", say: "How many drops did you add? Let's count!" },
+      { moment: "Before the fizz", say: "What will happen when they touch?" },
+      { moment: "During the fizz", say: "What do you see? Hear? Where do the bubbles go?" },
+      { moment: "Wondering (you)", say: "I wonder if more powder makes a bigger fizz…" },
+      { moment: "Setting a fair test", say: "Let's change just ONE thing — what should we change?" },
+      { moment: "Comparing", say: "Which fizzed more? What was different?" }
+    ]
+  },
 
-<div class="daydetail">
-  <span class="tag">Day 1 · ★★★</span>
-  <h3>Magic color mixing</h3>
-  <p><strong>Goal:</strong> predict a <em>transformation</em> — a brand-new color appearing — and build dropper control.</p>
-  <h4>Do</h4>
-  <ol class="steps">
-    <li>Show the three primary colors in their wells. Name them together.</li>
-    <li>Before mixing, get a guess: red + yellow = ? Let him dropper them into an empty well.</li>
-    <li>Reveal: orange! Repeat for yellow+blue (green) and red+blue (purple).</li>
-    <li>Count the drops aloud as he squeezes ("one… two… three drops of red!").</li>
-  </ol>
-  <h4>Ask</h4>
-  <p class="say">What do you think red and yellow will make? Let's guess, then mix!</p>
-  <p class="say">Whoa — what color is that? Did you guess it?</p>
-  <p class="say">What should we mix next? What will THAT make?</p>
-  <h4>Watch for</h4>
-  <ul class="observe">
-    <li class="good">He predicts a color before mixing (even a wild guess).</li>
-    <li class="good">Genuine wonder when the new color appears.</li>
-    <li class="good">Improving dropper control — squeezing, aiming, counting drops.</li>
-    <li class="relax">Mixing everything into one muddy brown is a classic, fun discovery — not a mistake.</li>
-  </ul>
-  <h4>Done when</h4><p>He's made at least one new color from a prediction. Save the rainbow to admire.</p>
-</div>
+  faq: {
+    kicker: "If it wobbles",
+    title: "Troubleshooting",
+    items: [
+      { q: "He just dumps everything together instead of predicting.", a: "Expected — the materials are irresistible. Get one predicted mix in first (“just guess this ONE, then you can play”), then let him free-mix. The prediction habit and the free play can take turns; you don't need every drop to be an experiment." },
+      { q: "All the colors turned brown.", a: "That's the universal toddler discovery, and it's genuinely science: too many colors mix to brown. Name it cheerfully (“we made mud!”), then reset with fresh wells and try just <em>two</em> colors at a time so the new color stays clear." },
+      { q: "The fizz isn't impressive.", a: "Boost it: use <em>fresh</em> baking soda (old loses fizz), pile the powder thicker, and use straight vinegar (not too watered down). Warm vinegar fizzes a bit more. A squirt of dish soap makes foamier, longer-lasting bubbles — a fun Day 5 variable." },
+      { q: "Is baking soda and vinegar really safe for a 3.5-year-old?", a: "Yes — it's a non-toxic, kitchen-safe acid-base reaction; the only product is carbon dioxide gas (the fizz), plus water and salt. Just no eating, keep it out of eyes, and supervise. The smell of vinegar is the most likely complaint." },
+      { q: "He wants to taste it / put the dropper in his mouth.", a: "Head it off up front: “This is for testing, not tasting — scientists never taste their experiments.” Vinegar tastes bad enough that one accidental sip usually ends the urge, but stay close. If mouthing persists, switch him to spoons and you handle the droppers." },
+      { q: "How do I protect my kitchen from stains?", a: "Food coloring stains grout, wood, and fabric. Work on a wipeable tray or a silicone mat, dress him in old clothes, and wipe spills fast. Doing it outside or in the bathtub removes all the worry. Liquid watercolors stain less than gel food coloring." },
+      { q: "He's scared of the fizz.", a: "Start tiny — a single drop on a pinch of baking soda, at a distance, with you doing it first. Let him watch until curiosity beats caution. Never push. Some kids warm up by the next day or want to control it themselves with the dropper." },
+      { q: "He won't do the “fair test” — he just wants to play.", a: "Fine. The fair test is a bonus, not a requirement. If the open play is rich and he's predicting, you've already won. Slip in one comparison if a natural moment appears (“ooh, which one fizzed more?”), but don't turn play into a lesson he resists." },
+      { q: "Can we make it bigger — a “volcano”?", a: "Absolutely, as a finale: pack baking soda in a small cup or bottle, add a squirt of dish soap and colored vinegar for an erupting foam “volcano.” Do it in the tray or outside. Predict first: “How high will it go?” Ask me for a full volcano variant if he's hooked." }
+    ]
+  },
 
-<div class="daydetail">
-  <span class="tag">Day 2 · ★★★★</span>
-  <h3>The big fizz</h3>
-  <p><strong>Goal:</strong> predict a dramatic <em>reaction</em> — his first real chemistry.</p>
-  <h4>Do</h4>
-  <p>Spread baking soda in the tray. Hold up a cup of colored vinegar and build suspense before the first drip. Then let him dropper it on — FIZZ! Repeat with each color, making colorful fizzing puddles. Let him go big; this is the wow day.</p>
-  <h4>Ask</h4>
-  <p class="say">What do you think happens when this drips on the powder? Let's guess first!</p>
-  <p class="say">Look at the bubbles! That's gas — like a fizzy drink!<sup><a href="#n2">2</a></sup></p>
-  <p class="say">What does it sound like? What happens if we add MORE?</p>
-  <h4>Watch for</h4>
-  <ul class="observe">
-    <li class="good">He predicts "something will happen" and is thrilled when it does.</li>
-    <li class="good">He notices the bubbles, the sound, the fizz dying down.</li>
-    <li class="good">He wants to do it again — repetition cements the cause→effect link.</li>
-    <li class="relax">He won't understand acid + base; "it makes gas/bubbles" is plenty.</li>
-  </ul>
-  <h4>Done when</h4><p>He's made the fizz happen several times and described what he saw.</p>
-</div>
-
-<div class="daydetail">
-  <span class="tag">Day 3 · ★★★★ · Kai leads</span>
-  <h3>Kai's potion lab</h3>
-  <p><strong>Goal:</strong> open-ended invention + reusing the "change one thing" fair test from Project 2.</p>
-  <h4>Do</h4>
-  <p>Everything's out; Kai is the chief scientist. He invents "potions," predicting each before he mixes. Then set the challenge: how do we make the BIGGEST fizz? Change <em>just one thing</em> — more baking soda? more vinegar? — and compare. You only ask and scribe.</p>
-  <h4>Ask</h4>
-  <p class="say">You're in charge — what's your potion? What do you think it'll do?</p>
-  <p class="say">How could we make a bigger fizz? Let's change just ONE thing and see.</p>
-  <p class="say">Which one fizzed more? What did we change?</p>
-  <h4>Watch for</h4>
-  <ul class="observe">
-    <li class="good">He predicts before each mix without being told.</li>
-    <li class="good">He grasps "change one thing" from Project 2 in a brand-new setting (this is the deep win).</li>
-    <li class="good">He invents his own variations and questions.</li>
-    <li class="relax">Total chaos-potion-making is fine — he's experimenting. Steer toward one fair test if he's up for it, but don't force it.</li>
-  </ul>
-  <h4>Done when</h4><p>He's run his own potions and tried at least one "biggest fizz" comparison. Celebrate the chief scientist!</p>
-</div>
-
-<div class="box wonder">
-  <p class="box-title">Interleaving — why the Day 3 callback matters</p>
-  <p>Bringing back the "fair test" from Project 2 inside a totally different activity is
-  deliberate. Mixing old skills into new contexts (interleaving) is one of the most
-  reliable ways to make learning <em>stick</em> long-term, not just feel easy in the moment.</p>
-</div>
-
-<h2>The full question bank (for this project)</h2>
-<table>
-  <thead><tr><th>Moment</th><th>Say this</th></tr></thead>
-  <tbody>
-    <tr><td>Before mixing colors</td><td>"What do you think these two will make?"</td></tr>
-    <tr><td>At a new color</td><td>"What color is that? Did you guess it?"</td></tr>
-    <tr><td>Counting drops</td><td>"How many drops did you add? Let's count!"</td></tr>
-    <tr><td>Before the fizz</td><td>"What will happen when they touch?"</td></tr>
-    <tr><td>During the fizz</td><td>"What do you see? Hear? Where do the bubbles go?"</td></tr>
-    <tr><td>Wondering (you)</td><td>"I wonder if more powder makes a bigger fizz…"</td></tr>
-    <tr><td>Setting a fair test</td><td>"Let's change just ONE thing — what should we change?"</td></tr>
-    <tr><td>Comparing</td><td>"Which fizzed more? What was different?"</td></tr>
-  </tbody>
-</table>
-
-<h2>What to observe (is it working?)</h2>
-<ul class="observe">
-  <li class="good"><strong>Green flags:</strong> he predicts before mixing/dripping; he's delighted by the transformations; he wants to repeat and vary things; he reuses "change one thing"; he uses words like mix, color names, fizz, bubbles, gas.</li>
-  <li class="watch"><strong>Gently steer:</strong> if he rushes straight to dumping everything, slow down for one predicted mix, then let him free-play; if the fizz overwhelms him, do smaller amounts.</li>
-  <li class="relax"><strong>Don't worry about:</strong> muddy colors, not understanding the chemistry, wild "potions," or skipping the fair test if he's not in the mood. Joy and prediction are the goals.</li>
-</ul>
-
-<h2 id="journal">The Lab Journal page</h2>
-<p>Kai colors in his prediction, then colors what actually happened. You scribe his words.
-See <a href="../reference/0001-parent-playbook.html#how-the-science-journal-works">how the journal works</a>.</p>
-<div class="box test">
-  <p class="box-title">My Color Lab Journal &nbsp;·&nbsp; Date: ____________</p>
-  <table>
-    <thead><tr><th>I mixed…</th><th>My guess (color it in)</th><th>What really happened (color it in)</th></tr></thead>
-    <tbody>
-      <tr><td>red + yellow</td><td style="height:2rem;"></td><td></td></tr>
-      <tr><td>yellow + blue</td><td style="height:2rem;"></td><td></td></tr>
-      <tr><td>red + blue</td><td style="height:2rem;"></td><td></td></tr>
-      <tr><td>vinegar + baking soda</td><td>😮 will it fizz? ___</td><td>did it fizz? ___</td></tr>
-    </tbody>
-  </table>
-  <p style="margin-top:0.6rem;">🔢 Biggest-fizz test: I changed ____________. It fizzed ____________ (more / less).</p>
-  <p class="say" style="margin-top:0.4rem;">Kai said: "________________________________"</p>
-</div>
-
-<h2>FAQ &amp; troubleshooting</h2>
-
-<details class="faq"><summary>He just dumps everything together instead of predicting.</summary>
-<div class="faq-body"><p>Expected — the materials are irresistible. Get one predicted mix in first ("just guess this ONE, then you can play"), then let him free-mix. The prediction habit and the free play can take turns; you don't need every drop to be an experiment.</p></div></details>
-
-<details class="faq"><summary>All the colors turned brown.</summary>
-<div class="faq-body"><p>That's the universal toddler discovery, and it's genuinely science: too many colors mix to brown. Name it cheerfully ("we made mud!"), then reset with fresh wells and try just <em>two</em> colors at a time so the new color stays clear.</p></div></details>
-
-<details class="faq"><summary>The fizz isn't impressive.</summary>
-<div class="faq-body"><p>Boost it: use <em>fresh</em> baking soda (old loses fizz), pile the powder thicker, and use straight vinegar (not too watered down). Warm vinegar fizzes a bit more. A squirt of dish soap makes foamier, longer-lasting bubbles — a fun Day 3 variable.</p></div></details>
-
-<details class="faq"><summary>Is baking soda and vinegar really safe for a 3.5-year-old?</summary>
-<div class="faq-body"><p>Yes — it's a non-toxic, kitchen-safe acid-base reaction; the only product is carbon dioxide gas (the fizz), plus water and salt.<sup><a href="#n2">2</a></sup> Just no eating, keep it out of eyes, and supervise. The smell of vinegar is the most likely complaint.</p></div></details>
-
-<details class="faq"><summary>He wants to taste it / put the dropper in his mouth.</summary>
-<div class="faq-body"><p>Head it off up front: "This is for testing, not tasting — scientists never taste their experiments." Vinegar tastes bad enough that one accidental sip usually ends the urge, but stay close. If mouthing persists, switch him to spoons and you handle the droppers.</p></div></details>
-
-<details class="faq"><summary>How do I protect my kitchen from stains?</summary>
-<div class="faq-body"><p>Food coloring stains grout, wood, and fabric. Work on a wipeable tray or a silicone mat, dress him in old clothes, and wipe spills fast. Doing it outside or in the bathtub removes all the worry. Liquid watercolors stain less than gel food coloring.</p></div></details>
-
-<details class="faq"><summary>He's scared of the fizz.</summary>
-<div class="faq-body"><p>Start tiny — a single drop on a pinch of baking soda, at a distance, with you doing it first. Let him watch until curiosity beats caution. Never push. Some kids warm up by Day 2 or want to control it themselves with the dropper.</p></div></details>
-
-<details class="faq"><summary>He won't do the "fair test" on Day 3 — just wants to play.</summary>
-<div class="faq-body"><p>Fine. The fair test is a bonus, not a requirement. If the open play is rich and he's predicting, you've already won. Slip in one comparison if a natural moment appears ("ooh, which one fizzed more?"), but don't turn play into a lesson he resists.</p></div></details>
-
-<details class="faq"><summary>Can we make it bigger — a "volcano"?</summary>
-<div class="faq-body"><p>Absolutely, as a finale: pack baking soda in a small cup or bottle, add a squirt of dish soap and colored vinegar for an erupting foam "volcano." Do it in the tray or outside. Predict first: "How high will it go?" Ask me for a full volcano variant if he's hooked.</p></div></details>
-
-<h2>Read this first (primary source)</h2>
-<div class="box accent">
-  <p>A simple, photo-rich setup for the color + fizz lab, plus the science in plain words:</p>
-  <p><strong>→ Buggy and Buddy: <a href="https://buggyandbuddy.com/exploring-colors-with-baking-soda-and-vinegar/">Exploring Colors with Baking Soda &amp; Vinegar</a></strong>
-  &nbsp;·&nbsp; the why: <a href="https://www.littlepassports.com/blog/science/vinegar-and-baking-soda-reaction/">Reaction Explained</a></p>
-</div>
-
-<div class="ask-teacher">
-  <strong>I'm your teacher — ask me anything.</strong> Want a less-messy version? A bath-time edition?
-  A full volcano finale? Tell me how these three projects landed and I'll plan Project 4 around
-  whatever lit him up most — and we can pick a parent community to swap notes with.
-</div>
-
-<hr style="border:none;border-top:1px solid var(--rule);margin:2.5rem 0 1rem;">
-<p class="footnote" id="n1"><strong>1.</strong> Busy Toddler, <a href="https://busytoddler.com/baking-soda-science/">Baking Soda Science Bin</a> — eyedroppers build fine-motor control and precise liquid handling.</p>
-<p class="footnote" id="n2"><strong>2.</strong> Little Passports, <a href="https://www.littlepassports.com/blog/science/vinegar-and-baking-soda-reaction/">Vinegar &amp; Baking Soda Reaction Explained</a> — acid + base → carbon dioxide gas (the fizz).</p>
-
-<nav class="doc-nav">
-  <a href="../index.html">🏠 Home</a>
-  <a href="0002-will-it-grow.html">← Project 2</a>
-  <a href="../reference/0001-parent-playbook.html">📖 Parent Playbook</a>
-  <a href="0004-bug-safari.html">Project 4 → Bug Safari</a>
-</nav>
-
+  footer: {
+    homeHref: "../index.html",
+    teacherHTML: "<strong>I'm your teacher — tell me how it went.</strong> Want a less-messy version, a bath-time edition, or a full volcano finale? Tell me what lit {name} up most and I'll tune Project 4 to fit.",
+    links: [
+      { href: "../index.html", label: "🏠 Home" },
+      { href: "../reference/0001-parent-playbook.html", label: "📖 Playbook" },
+      { href: "0004-bug-safari.html", label: "Project 4 →" }
+    ]
+  }
+};
+</script>
+<script src="../assets/lesson.js"></script>
 </body>
 </html>

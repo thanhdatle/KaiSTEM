@@ -4,322 +4,239 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Project 5 — Shadow Play — KaiSTEM</title>
-<link rel="stylesheet" href="../assets/styles.css">
+<meta name="description" content="Five days of light and shadow: Kai catches a shadow, changes it, measures it, and discovers it moves all by itself.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500;1,6..72,600&family=Space+Mono:wght@400;700&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/lesson.css">
 </head>
 <body>
+<div id="app"></div>
 
-<nav class="coursebar" aria-label="Course navigation">
-  <a class="home" href="../index.html">🏠 All projects</a>
-  <span class="here">Project 5 · Shadow Play</span>
-  <span class="nextprev">
-    <a href="0004-bug-safari.html">← Project 4</a>
-  </span>
-</nav>
+<script>
+window.LESSON = {
+  storageKey: "shadow-v1",
+  childName: "Kai",
+  index: 5, total: 5,
+  defaultMode: "prep",
+  title: "Project 5 — Shadow Play — KaiSTEM",
 
-<header class="masthead">
-  <p class="kicker">KaiSTEM · Project 05 · ~1 week</p>
-  <h1>Shadow Play</h1>
-  <p class="subtitle">Catch a shadow, change it, measure it, and discover it moves all by itself.
-  New superpower this project: <em>measuring &amp; comparing</em>, and spotting a pattern over a day.</p>
-  <div class="meta-row">
-    <span>~30 min / day × 5 days</span><span>·</span>
-    <span>Interests: ☀️ outdoors · 🔢 measuring · ✨ wonder</span><span>·</span>
-    <span>Difficulty: ★★★ → ★★★★</span>
-  </div>
-</header>
+  theme: { "--accent": "oklch(54% 0.14 280)", "--accent-deep": "oklch(45% 0.15 280)" },
 
-<div class="box accent">
-  <p class="box-title">The win this project earns</p>
-  <p>Kai has counted and sorted; now he <strong>measures and compares</strong> — longer, shorter,
-  bigger, smaller — and uncovers a real pattern: shadows change through the day because the sun
-  moves. It's his first taste of physics, and it's genuinely magical.<sup><a href="#n1">1</a></sup></p>
-</div>
+  hero: {
+    kicker: "KaiSTEM · Project Five",
+    titleHTML: '<span class="lc">Shadow</span> <span class="rc">Play</span>',
+    subHTML: "Five days of light and shadow, where {name} catches a shadow, changes it, measures it — and discovers it <strong>moves all by itself.</strong>",
+    tags: [
+      { text: "~30 min × 5 days" },
+      { text: "☀️ outdoors · 🔢 measuring · ✨ wonder" },
+      { text: "★★★ → ★★★★ measure & compare", lead: true }
+    ]
+  },
 
-<h2>The method (same every project)</h2>
-<p>Same five moves — predictions now include size and shape. Scripts &amp; question bank:
-<a href="../reference/0001-parent-playbook.html">Parent Playbook</a>.</p>
-<ul class="loop">
-  <li><span class="step-emoji">👀</span><span class="step-name">Notice</span><br>find shadows</li>
-  <li><span class="step-emoji">💭</span><span class="step-name">Wonder</span><br>"what makes it?"</li>
-  <li><span class="step-emoji">🤔</span><span class="step-name">Predict</span><br>"big or small?"</li>
-  <li><span class="step-emoji">🧪</span><span class="step-name">Test</span><br>shine / trace / measure</li>
-  <li><span class="step-emoji">💬</span><span class="step-name">Talk</span><br>"what changed?"</li>
-</ul>
+  loop: [
+    { emoji: "👀", name: "Notice", tone: "notice" },
+    { emoji: "💭", name: "Wonder", tone: "wonder" },
+    { emoji: "🤔", name: "Predict", tone: "predict" },
+    { emoji: "🧪", name: "Test", tone: "test" },
+    { emoji: "💬", name: "Talk", tone: "talk" }
+  ],
 
-<div class="box wonder">
-  <p class="box-title">The big idea: a shadow needs a light + something to block it</p>
-  <p>A shadow appears when an object <strong>blocks a light source</strong>. Three-year-olds can
-  absolutely grasp "the sun (or torch) makes it, and my body blocks it."<sup><a href="#n1">1</a></sup>
-  Move the light or the object, and the shadow changes — that's the lever Kai gets to pull.</p>
-</div>
+  win: {
+    label: "The win this earns",
+    html: "{name} has counted and sorted; now he <strong>measures and compares</strong> — longer, shorter, bigger, smaller — and uncovers a real pattern: shadows change through the day because the sun moves. It's his first taste of <em>physics</em>, and it's genuinely magical."
+  },
 
-<h2>What you'll prepare</h2>
-<p><strong>Prep time:</strong> ~5 min. <strong>Cost:</strong> a flashlight + sidewalk chalk —
-a couple of dollars. <strong>Two settings:</strong> indoor torch play (any time, any weather)
-and outdoor sun-shadow tracing (needs a sunny day). Plan the outdoor days around sunshine.</p>
+  prep: {
+    gearKicker: "Gather the night before",
+    gearTitle: "What you'll prepare",
+    gearLead: "~5 minutes. A flashlight + sidewalk chalk — a couple of dollars. Two settings: indoor torch play (any weather) and outdoor sun-shadow tracing (needs a sunny day). Tap each as you gather it.",
+    gear: [
+      { id: "torch", strong: "A flashlight / torch", rest: " — or a phone torch, or a bright lamp. Your indoor “sun.”" },
+      { id: "screen", strong: "A blank wall or hung white sheet", rest: " — the shadow screen." },
+      { id: "objects", strong: "A handful of objects", rest: " with interesting outlines: a toy figure, a fork, a cup, a leaf, a toy dinosaur, a clear plastic lid (the “does light go through?” surprise)." },
+      { id: "chalk", strong: "Sidewalk chalk", rest: " — for tracing shadows outside." },
+      { id: "paper", strong: "Paper + crayons", rest: " — for tracing small shadows indoors." },
+      { id: "ruler", strong: "A “ruler”", rest: " — a tape measure, OR footsteps / hand-spans / a stack of blocks to measure shadow length." },
+      { id: "journal", strong: "The Shadow Journal", rest: " — plus a sticky note to mark “stand here.”" }
+    ],
+    deepDive: {
+      kicker: "The important part",
+      eyebrowTone: "test",
+      title: "The big idea: a light + something to block it",
+      lead: "A shadow appears when an object <strong>blocks a light source.</strong> Three-year-olds can absolutely grasp “the sun (or torch) makes it, and my body blocks it.” Move the light or the object, and the shadow changes — that's the lever {name} gets to pull.",
+      blocks: [
+        { tone: "", label: "☀️ The light", html: "the sun outdoors, or a torch / lamp indoors. Move it close → big shadow; far → small." },
+        { tone: "test", label: "🧍 The blocker", html: "his body, a toy, a fork, a cup. Rotate it and the shadow's shape changes." },
+        { tone: "predict", label: "✦ The surprise", html: "a clear plastic lid lets light through — barely any shadow. Light passes through!" }
+      ]
+    },
+    safety: {
+      label: "⚠ Safety check",
+      html: "<strong>Never look directly at the sun</strong> — look at the shadows on the ground instead. Don't shine the torch in anyone's eyes; mind hot lamps and bulbs, and keep cords out of the way. Use sun protection outdoors and pick a flat, traffic-free spot (driveway, patio, yard) for chalk tracing."
+    },
+    setup: {
+      kicker: "Setup",
+      title: "Before you start",
+      steps: [
+        "Indoor days: pick a room you can darken; clear a wall; set out the torch + objects.",
+        "Outdoor days: check the forecast for sun; pick a flat chalk-friendly spot; grab chalk + the journal.",
+        "Decide your “measuring stick” — footsteps and blocks are most fun for him.",
+        "Print the Shadow Journal — or rule a quick grid on paper."
+      ]
+    }
+  },
 
-<h3>The gear</h3>
-<ul class="checklist">
-  <li><strong>A flashlight / torch</strong> (or a phone torch, or a bright lamp) — your indoor "sun."</li>
-  <li><strong>A blank wall or a hung white sheet</strong> — the shadow screen.</li>
-  <li><strong>A handful of objects</strong> with interesting outlines: a toy figure, a fork, a cup, a leaf, a toy dinosaur, a clear plastic lid (the "does light go through?" surprise).</li>
-  <li><strong>Sidewalk chalk</strong> — for tracing shadows outside.</li>
-  <li><strong>Paper + crayons/pencil</strong> — for tracing small shadows indoors.</li>
-  <li><strong>A "ruler":</strong> a tape measure, OR footsteps / hand-spans / a stack of blocks to measure shadow length.</li>
-  <li><strong>The <a href="#journal">Shadow Journal</a></strong>.</li>
-  <li><em>Optional:</em> a sunny window, white paper for shadow-tracing toys, a sticky note to mark "stand here."</li>
-</ul>
+  arc: {
+    kicker: "The five-day arc",
+    title: "Same loop, one notch harder",
+    lead: "Each day is built in three layers — warm-up (~5) → main, several rounds (~15) → extend (~10). Tap a day to jump into Run mode."
+  },
 
-<div class="box accent">
-  <p class="box-title">Safety check</p>
-  <p><strong>Never look directly at the sun</strong> — look at the shadows on the ground instead.
-  Don't shine the torch in anyone's eyes. Use sun protection outdoors. Choose a safe, flat,
-  traffic-free spot (driveway, patio, yard) for chalk tracing.</p>
-</div>
+  days: [
+    {
+      n: 1, stars: "★★★", lead: "", title: "Make a shadow", tag: "indoor torch",
+      goal: "Discover that a shadow needs a light + something to block it — and that moving the light changes the size.",
+      setup: "Darken the room. Set out the torch + objects against a clear wall. Warm up with hand shadows — a bird, a dog.",
+      doText: "Shine the torch on object after object; each is a round. Predict the shadow first, then reveal. Then the lever: move the torch <em>close</em> then <em>far</em> — bigger or smaller? Let {name} hold the torch and control it. Extend with a puppet show, a “guess the object from its shadow” game, or the clear lid (light passes through!).",
+      ask: [
+        "What do we need to make a shadow? (a light AND something to block it)",
+        "Will the shadow get bigger or smaller if I bring the light closer? Let's guess, then try!",
+        "Can you make this same toy's shadow tiny, then giant?"
+      ],
+      watch: [
+        { icon: "✅", text: "He says a light + an object make a shadow." },
+        { icon: "✅", text: "He predicts bigger/smaller and tests by moving the torch." },
+        { icon: "😌", text: "He won't explain <em>why</em> closer = bigger — discovering the effect is enough." }
+      ],
+      done: "he's made shadows change size on purpose."
+    },
+    {
+      n: 2, stars: "★★★", lead: "", title: "Shape detective", tag: "predict the shape",
+      goal: "Predict a shadow's shape, and notice that rotating an object changes it.",
+      setup: "Same torch + wall. Warm up: hide an object behind your back — “Guess which toy from its shadow!” Reveal and cheer.",
+      doText: "For each object: predict the shadow shape, then cast it. Then <strong>rotate</strong> the object — the shadow changes! (A cup from the side vs the top; a fork turned flat.) Many quick rounds keep it lively. Extend by tracing small shadows on paper with the torch held still — {name} draws around the outline, building a little gallery.",
+      ask: [
+        "What shape will this shadow be? Round? Pointy?",
+        "Watch — I'm turning it. What happened to the shadow?",
+        "Can you make a shadow that looks like a totally different thing?"
+      ],
+      watch: [
+        { icon: "✅", text: "He predicts shapes and is delighted by rotation surprises." },
+        { icon: "✅", text: "He matches objects to shadows correctly." },
+        { icon: "👀", text: "If he'd rather just trace, let him — outlining IS noticing shape." }
+      ],
+      done: "he's predicted/matched several shapes and traced a few."
+    },
+    {
+      n: 3, stars: "★★★★", lead: " · outdoors", title: "Chalk shadow trace", tag: "outdoor + measure",
+      goal: "Measuring — capture a real sun-shadow and put a number on it.",
+      setup: "Go out in the morning sun. Warm up with shadow tag — “Can you find your shadow? Make it wave? Step on mine?”",
+      doText: "{name} stands on a marked spot; trace his shadow with chalk. Then measure it — “How many footsteps long?” Count together, touching each step. Trace and measure a few things (a chair, a toy, a pole) as rounds. Extend by decorating the traced shadow into a drawing (give it a face!), record the length in the journal, and mark his “stand here” spot clearly — you'll need it again.",
+      ask: [
+        "Which way does your shadow point? Is it longer or shorter than you?",
+        "How many footsteps long is it? Let's measure!",
+        "What if we measure in blocks instead — bigger or smaller number?"
+      ],
+      watch: [
+        { icon: "✅", text: "He measures by counting steps/blocks (one-to-one)." },
+        { icon: "✅", text: "He compares — “longer than me!”" },
+        { icon: "😌", text: "Measuring won't be precise; the comparing language is the goal." }
+      ],
+      done: "his shadow is traced, measured, and the spot is marked."
+    },
+    {
+      n: 4, stars: "★★★★", lead: " · outdoors", title: "The sun moved!", tag: "pattern over time",
+      goal: "The pattern-over-time payoff — same spot, different shadow.",
+      setup: "Return to the marked spot a few hours later (or midday vs late afternoon). Predict first: same as this morning, or different?",
+      doText: "{name} stands on the SAME spot; trace again in a new chalk colour over the old outline. The reveal: it points a different way and is a different length! Measure the new one and compare to the morning's number. Re-trace a couple of objects too. Extend by naming the secret — the <strong>sun moved across the sky</strong>, so the shadow moved. Record both lengths in the journal side by side.",
+      ask: [
+        "Whoa — it's different! What changed? Where's the sun now vs this morning?",
+        "Is this shadow longer or shorter than the morning one? By how much?",
+        "Should we make a “shadow clock” with a third trace at sunset?"
+      ],
+      watch: [
+        { icon: "✅", text: "He notices the shadow moved and connects it to the sun." },
+        { icon: "✅", text: "He compares the two measurements (longer/shorter)." },
+        { icon: "😌", text: "“The sun moves” is the takeaway; orbital mechanics can wait ~10 years." }
+      ],
+      done: "he's seen and measured the change, and linked it to the sun moving."
+    },
+    {
+      n: 5, stars: "★★★★", lead: " · he leads", title: "Kai's shadow show", tag: "Kai leads",
+      goal: "Ownership + creativity — {name} directs the shadows.",
+      setup: "Torch + wall (or take it outside). “You're the shadow boss today! What should we make?”",
+      doText: "{name} runs a shadow puppet show against the wall/sheet (hands, toys, paper cut-outs on sticks), inventing a little story. He controls the torch to make characters grow and shrink. Extend with a “shadow challenge” he sets: find/make the biggest shadow, the smallest, the funniest — then measure the biggest. You ask and admire; you do not drive.",
+      ask: [
+        "How did you make it so big? What's your story about?",
+        "Which shadow is the biggest? How can we tell?",
+        "What should we try next, shadow boss?"
+      ],
+      watch: [
+        { icon: "✅", text: "He controls size/shape on purpose and narrates." },
+        { icon: "✅", text: "He reuses “closer = bigger” and measuring without prompting." },
+        { icon: "😌", text: "Pure imaginative play is a win — wonder is the mission." }
+      ],
+      done: "he's directed his own shadow show. Take a bow!"
+    }
+  ],
 
-<h3>Setup, before you start</h3>
-<ol class="steps">
-  <li><strong>Indoor days:</strong> pick a room you can darken; clear a wall; set out the torch + objects.</li>
-  <li><strong>Outdoor days:</strong> check the forecast for sun; pick a flat chalk-friendly spot; grab chalk + the journal.</li>
-  <li>Decide your "measuring stick" (footsteps and blocks are most fun for him).</li>
-  <li>Print the Shadow Journal.</li>
-</ol>
+  journal: {
+    kicker: "The keepsake",
+    title: "Shadow journal",
+    intro: "Jot the object, the shadow's shape, and how long it was. Watch the same shadow grow or shrink as the day moves. <span data-print=\"hide\">Print it, or keep it on the phone.</span>",
+    headerTitle: "My shadow log",
+    type: "log",
+    rows: 5,
+    columns: [
+      { key: "object", placeholder: "object" },
+      { key: "shadow", placeholder: "shadow shape" },
+      { key: "size", placeholder: "long / short" }
+    ],
+    said: "{name} said: “________________________________”"
+  },
 
-<h2>The arc at a glance</h2>
-<div class="days">
-  <div class="day"><div class="badge">Day&nbsp;1</div><h3>Make a shadow</h3><div class="day-body"><p class="level">★★★ · indoor torch</p><p>What makes a shadow? Closer = bigger.</p></div></div>
-  <div class="day"><div class="badge">Day&nbsp;2</div><h3>Shape detective</h3><div class="day-body"><p class="level">★★★ · predict the shape</p><p>Guess &amp; match shadows; trace them.</p></div></div>
-  <div class="day"><div class="badge">Day&nbsp;3</div><h3>Chalk shadow trace</h3><div class="day-body"><p class="level">★★★★ · outdoor + measure</p><p>Trace &amp; measure shadows in the morning.</p></div></div>
-  <div class="day"><div class="badge">Day&nbsp;4</div><h3>The sun moved!</h3><div class="day-body"><p class="level">★★★★ · pattern over time</p><p>Re-trace later; compare; big reveal.</p></div></div>
-  <div class="day"><div class="badge">Day&nbsp;5</div><h3>Kai's shadow show</h3><div class="day-body"><p class="level">★★★★ · Kai leads</p><p>Puppets, stories, biggest/smallest.</p></div></div>
-</div>
+  qbank: {
+    kicker: "Magic words",
+    title: "Question bank",
+    intro: "Pick one or two — never interrogate. Ask, then <strong>wait five seconds</strong> before rescuing the silence.",
+    items: [
+      { moment: "Finding shadows", say: "Can you find a shadow? What's making it?" },
+      { moment: "Predicting size", say: "Bigger or smaller if I move the light? Let's guess." },
+      { moment: "Predicting shape", say: "What shape will this shadow be?" },
+      { moment: "Measuring", say: "How many footsteps long? Let's count." },
+      { moment: "Comparing", say: "Longer or shorter than before? Than you?" },
+      { moment: "The pattern", say: "It changed! Where's the sun now?" },
+      { moment: "Wondering (you)", say: "I wonder where your shadow goes when a cloud comes…" },
+      { moment: "Handing over", say: "You're the shadow boss — what should we try?" }
+    ]
+  },
 
-<div class="box predict">
-  <p class="box-title">How each day fills ~30 minutes</p>
-  <p>Each day is built in three layers — <strong>warm-up (~5) → main, several rounds (~15) →
-  extend/stretch (~10)</strong> — plus <em>Stretch it further</em> options for a fast finisher.
-  Run more rounds before adding tasks; repetition cements it. (See the
-  <a href="../reference/0001-parent-playbook.html">Playbook</a>.)</p>
-</div>
+  faq: {
+    kicker: "If it wobbles",
+    title: "Troubleshooting",
+    items: [
+      { q: "It's cloudy — no sun for the outdoor days.", a: "Run the indoor torch days (1, 2, 5) any time, and save the chalk-tracing days (3, 4) for sunshine. A bright lamp or a strong window beam can stand in for a sun shadow on paper. The “it changed over time” idea also works indoors by moving the lamp to a new spot between traces." },
+      { q: "He's afraid of the dark for the torch play.", a: "You don't need pitch black — just dim. Leave a soft light on, sit close, and let him hold the torch (control reduces fear). Or do it all outdoors in daylight with sun shadows instead, skipping the dark room entirely." },
+      { q: "His “measuring” is all over the place.", a: "Perfect for 3.5 — precision isn't the point. Use big, fun units (his own footsteps, jumps, or blocks) and count together, touching each step. If numbers are a struggle, just use “longer / shorter / about the same.” The comparison is the skill." },
+      { q: "He doesn't get why the shadow moved.", a: "He doesn't need to — seeing it move is the whole lesson. Keep it concrete: “This morning the sun was over there; now it's over here, so the shadow swung around.” Point at the sun's <em>position</em> (never look at it directly). The aha is “shadows change through the day,” not astronomy." },
+      { q: "The chalk traces washed away / we can't reuse the spot.", a: "Mark the standing spot with something permanent-ish (a rock, a taped X, a scratch in the dirt) so you can return precisely. If rain's coming, do both traces the same day (morning and afternoon). On paper indoors, tape the sheet down so the object/lamp positions stay fixed." },
+      { q: "He wants to do shadow puppets the whole time.", a: "Let him — it's joyful and still science (he's controlling a light source and an object). Weave in one prediction or measurement (“how big can you make the dragon?”) and call it a win. Save the structured tracing for a fresh day." },
+      { q: "He finished in 10 minutes again.", a: "Add rounds (more objects, more traces), pull a stretch option, or hand him the torch/chalk to lead. A “shadow clock” — trace at three times of day — naturally stretches the project across a whole day in short bursts." }
+    ]
+  },
 
-<h2>Day by day, in detail</h2>
-
-<div class="daydetail">
-  <span class="tag">Day 1 · ★★★ · ≈30 min</span>
-  <h3>Make a shadow</h3>
-  <p><strong>Goal:</strong> discover that a shadow needs a light + something to block it — and that moving the light changes the size.</p>
-  <h4>Warm-up (~5 min)</h4>
-  <p>Darken the room. Make hand shadows on the wall with the torch — a bird, a dog. <span class="say">Where do shadows come from? What's making them?</span></p>
-  <h4>Main — several rounds (~15 min)</h4>
-  <p>Shine the torch on object after object; each is a round. Predict the shadow first, then reveal. Then the lever: move the torch <em>close</em> then <em>far</em> — <span class="say">Will the shadow get bigger or smaller?</span> Test it. Let Kai hold the torch and control it.</p>
-  <h4>Extend / stretch (~10 min)</h4>
-  <p>Shadow puppet show, or a "guess the object from its shadow" game. Try the clear plastic lid — does it make a shadow? (Light passes through!)</p>
-  <h4>Ask</h4>
-  <p class="say">What happens to the shadow when I bring the light closer? Let's guess, then try!</p>
-  <p class="say">What do we need to make a shadow? (a light AND something to block it)</p>
-  <h4>Watch for</h4>
-  <ul class="observe">
-    <li class="good">He says a light + an object make a shadow.</li>
-    <li class="good">He predicts bigger/smaller and tests by moving the torch.</li>
-    <li class="relax">He won't explain <em>why</em> closer = bigger — discovering the effect is enough.</li>
-  </ul>
-  <h4>Stretch it further</h4>
-  <ul class="observe">
-    <li class="relax">Sort objects: which made a shadow, which let light through?</li>
-    <li class="relax">Make the SAME object's shadow tiny, then giant.</li>
-  </ul>
-  <h4>Done when</h4><p>He's made shadows change size on purpose.</p>
-</div>
-
-<div class="daydetail">
-  <span class="tag">Day 2 · ★★★ · ≈30 min</span>
-  <h3>Shape detective</h3>
-  <p><strong>Goal:</strong> predict a shadow's <em>shape</em>, and notice rotating an object changes it.</p>
-  <h4>Warm-up (~5 min)</h4>
-  <p>Hold an object behind your back: <span class="say">Guess which toy this is just from its shadow!</span> Reveal and cheer.</p>
-  <h4>Main — several rounds (~15 min)</h4>
-  <p>For each object: predict the shadow shape, then cast it. Then <strong>rotate</strong> the object — the shadow changes! (A cup from the side vs the top; a fork turned flat.) Many quick rounds keep it lively.</p>
-  <h4>Extend / stretch (~10 min)</h4>
-  <p>Trace small shadows on paper with the torch held still — Kai draws around the outline. Make a little gallery of traced shadows.</p>
-  <h4>Ask</h4>
-  <p class="say">What shape will this shadow be? Round? Pointy?</p>
-  <p class="say">Watch — I'm turning it. What happened to the shadow?</p>
-  <h4>Watch for</h4>
-  <ul class="observe">
-    <li class="good">He predicts shapes and is delighted by rotation surprises.</li>
-    <li class="good">He matches objects to shadows correctly.</li>
-  </ul>
-  <h4>Stretch it further</h4>
-  <ul class="observe">
-    <li class="relax">Make a shadow that looks like a totally different thing by rotating it.</li>
-    <li class="relax">Sort traced shadows biggest → smallest.</li>
-  </ul>
-  <h4>Done when</h4><p>He's predicted/matched several shapes and traced a few.</p>
-</div>
-
-<div class="daydetail">
-  <span class="tag">Day 3 · ★★★★ · outdoors · ≈30 min</span>
-  <h3>Chalk shadow trace</h3>
-  <p><strong>Goal:</strong> measuring — capture a real sun-shadow and put a number on it.</p>
-  <h4>Warm-up (~5 min)</h4>
-  <p>Go out in the morning sun. <span class="say">Can you find your shadow? Can you make it wave? Can you step on mine?</span> Shadow tag is a perfect hook.</p>
-  <h4>Main — several rounds (~15 min)</h4>
-  <p>Kai stands on a marked spot; trace his shadow with chalk. Then measure it — <span class="say">How many footsteps long is your shadow?</span> Count together. Trace and measure a few things (a chair, a toy, a pole) as rounds.</p>
-  <h4>Extend / stretch (~10 min)</h4>
-  <p>Decorate the traced shadow into a drawing (give it a face!). Record the length in the journal. Mark his "stand here" spot clearly — you'll need it tomorrow / later today.</p>
-  <h4>Ask</h4>
-  <p class="say">Which way does your shadow point? Is it longer or shorter than you?</p>
-  <p class="say">How many footsteps long is it? Let's measure!</p>
-  <h4>Watch for</h4>
-  <ul class="observe">
-    <li class="good">He measures by counting steps/blocks (one-to-one).</li>
-    <li class="good">He compares — "longer than me!"</li>
-    <li class="relax">Measuring won't be precise; the comparing language is the goal.</li>
-  </ul>
-  <h4>Stretch it further</h4>
-  <ul class="observe">
-    <li class="relax">Measure with different units — footsteps AND blocks. Which gives a bigger number?</li>
-    <li class="relax">Trace a friend/sibling too and compare lengths.</li>
-  </ul>
-  <h4>Done when</h4><p>His shadow is traced, measured, and the spot is marked.</p>
-</div>
-
-<div class="daydetail">
-  <span class="tag">Day 4 · ★★★★ · outdoors · ≈30 min</span>
-  <h3>The sun moved!</h3>
-  <p><strong>Goal:</strong> the pattern-over-time payoff — same spot, different shadow.</p>
-  <h4>Warm-up (~5 min)</h4>
-  <p>Return to the marked spot a few hours later (or midday vs late afternoon). <span class="say">Do you think your shadow will be the same as this morning, or different?</span> Predict first.</p>
-  <h4>Main — several rounds (~15 min)</h4>
-  <p>Kai stands on the SAME spot; trace again in a new chalk color over the old outline. The reveal: it points a different way and is a different length! Measure the new one and compare to the morning's number. Re-trace a couple of objects too.</p>
-  <h4>Extend / stretch (~10 min)</h4>
-  <p>Talk about the secret: the <strong>sun moved across the sky</strong>, so the shadow moved. (Don't over-explain — the visual does the work.) Record both lengths in the journal side by side.</p>
-  <h4>Ask</h4>
-  <p class="say">Whoa — it's different! What changed? Where's the sun now vs this morning?</p>
-  <p class="say">Is this shadow longer or shorter than the morning one? By how much?</p>
-  <h4>Watch for</h4>
-  <ul class="observe">
-    <li class="good">He notices the shadow moved and connects it to the sun.</li>
-    <li class="good">He compares the two measurements (longer/shorter).</li>
-    <li class="relax">"The sun moves" is the takeaway; orbital mechanics can wait ~10 years.</li>
-  </ul>
-  <h4>Stretch it further</h4>
-  <ul class="observe">
-    <li class="relax">A third trace near sunset — make a "shadow clock" of three colored outlines.</li>
-    <li class="relax">Predict tomorrow morning's shadow before you check.</li>
-  </ul>
-  <h4>Done when</h4><p>He's seen and measured the change, and linked it to the sun moving.</p>
-</div>
-
-<div class="daydetail">
-  <span class="tag">Day 5 · ★★★★ · Kai leads · ≈30 min</span>
-  <h3>Kai's shadow show</h3>
-  <p><strong>Goal:</strong> ownership + creativity — Kai directs the shadows.</p>
-  <h4>Warm-up (~5 min)</h4>
-  <p><span class="say">You're the shadow boss today! What should we make?</span></p>
-  <h4>Main — several rounds (~15 min)</h4>
-  <p>Kai runs a shadow puppet show against the wall/sheet (hands, toys, paper cut-outs on sticks), inventing a little story. He controls the torch to make characters grow and shrink.</p>
-  <h4>Extend / stretch (~10 min)</h4>
-  <p>A "shadow challenge" he sets: find/make the biggest shadow, the smallest, the funniest; measure the biggest. Or take it outside for a sun-shadow show. Draw a scene in the journal.</p>
-  <h4>Ask (only)</h4>
-  <p class="say">How did you make it so big? What's your story about?</p>
-  <p class="say">Which shadow is the biggest? How can we tell?</p>
-  <h4>Watch for</h4>
-  <ul class="observe">
-    <li class="good">He controls size/shape on purpose and narrates.</li>
-    <li class="good">He reuses "closer = bigger" and measuring without prompting.</li>
-    <li class="relax">Pure imaginative play is a win — wonder is the mission.</li>
-  </ul>
-  <h4>Done when</h4><p>He's directed his own shadow show. Take a bow!</p>
-</div>
-
-<h2>The full question bank (for this project)</h2>
-<table>
-  <thead><tr><th>Moment</th><th>Say this</th></tr></thead>
-  <tbody>
-    <tr><td>Finding shadows</td><td>"Can you find a shadow? What's making it?"</td></tr>
-    <tr><td>Predicting size</td><td>"Bigger or smaller if I move the light? Let's guess."</td></tr>
-    <tr><td>Predicting shape</td><td>"What shape will this shadow be?"</td></tr>
-    <tr><td>Measuring</td><td>"How many footsteps long? Let's count."</td></tr>
-    <tr><td>Comparing</td><td>"Longer or shorter than before? Than you?"</td></tr>
-    <tr><td>The pattern</td><td>"It changed! Where's the sun now?"</td></tr>
-    <tr><td>Wondering (you)</td><td>"I wonder where your shadow goes when a cloud comes…"</td></tr>
-    <tr><td>Handing over</td><td>"You're the shadow boss — what should we try?"</td></tr>
-  </tbody>
-</table>
-
-<h2>What to observe (is it working?)</h2>
-<ul class="observe">
-  <li class="good"><strong>Green flags:</strong> he says a light + object make a shadow; predicts bigger/smaller; measures by counting; uses longer/shorter/bigger/smaller; notices the shadow moved with the sun; controls shadows on purpose.</li>
-  <li class="watch"><strong>Gently steer:</strong> if measuring frustrates him, drop to simple "longer/shorter" comparisons; if indoor torch play overwhelms, do it in dimmer (not pitch-black) light.</li>
-  <li class="relax"><strong>Don't worry about:</strong> imprecise measuring, not understanding why the sun moves, or veering into pure puppet play. Comparing language and wonder are the wins.</li>
-</ul>
-
-<h2 id="journal">The Shadow Journal page</h2>
-<p>Kai draws shadows and records measurements; you scribe his words.
-See <a href="../reference/0001-parent-playbook.html#how-the-science-journal-works">how the journal works</a>.</p>
-<div class="box test">
-  <p class="box-title">My Shadow Journal &nbsp;·&nbsp; Date: ____________</p>
-  <table>
-    <thead><tr><th>Shadow (draw it)</th><th>My guess: big / small</th><th>How long? (footsteps)</th></tr></thead>
-    <tbody>
-      <tr><td style="height:2.4rem;">1.</td><td>big &nbsp; / &nbsp; small</td><td>______</td></tr>
-      <tr><td style="height:2.4rem;">2.</td><td>big &nbsp; / &nbsp; small</td><td>______</td></tr>
-    </tbody>
-  </table>
-  <p style="margin-top:0.6rem;">☀️ Morning shadow: ____ footsteps &nbsp;→&nbsp; 🌇 Later shadow: ____ footsteps. It got ____ (longer / shorter)!</p>
-  <p class="say" style="margin-top:0.4rem;">Kai said: "________________________________"</p>
-</div>
-
-<h2>FAQ &amp; troubleshooting</h2>
-
-<details class="faq"><summary>It's cloudy — no sun for the outdoor days.</summary>
-<div class="faq-body"><p>Run the indoor torch days (1, 2, 5) any time, and save the chalk-tracing days (3, 4) for sunshine. A bright lamp or even a strong window beam can stand in for a sun shadow on paper if you're stuck. The "it changed over time" idea also works indoors by moving the lamp to a new spot between traces.</p></div></details>
-
-<details class="faq"><summary>He's afraid of the dark for the torch play.</summary>
-<div class="faq-body"><p>You don't need pitch black — just dim. Leave a soft light on, sit close, and let him hold the torch (control reduces fear). Or do it all outdoors in daylight with sun shadows instead, skipping the dark room entirely.</p></div></details>
-
-<details class="faq"><summary>His "measuring" is all over the place.</summary>
-<div class="faq-body"><p>Perfect for 3.5 — precision isn't the point. Use big, fun units (his own footsteps, jumps, or blocks) and count together, touching each step. If numbers are a struggle, just use "longer / shorter / about the same." The comparison is the skill.</p></div></details>
-
-<details class="faq"><summary>He doesn't get why the shadow moved.</summary>
-<div class="faq-body"><p>He doesn't need to — seeing it move is the whole lesson. Keep it concrete: "This morning the sun was over there; now it's over here, so the shadow swung around." Point at the sun's <em>position</em> (never look at it directly). The "aha" is "shadows change through the day," not astronomy.</p></div></details>
-
-<details class="faq"><summary>The chalk traces washed away / we can't reuse the spot.</summary>
-<div class="faq-body"><p>Mark the standing spot with something permanent-ish (a rock, a taped X, a scratch in the dirt) so you can return precisely. If rain's coming, do both traces the same day (morning and afternoon). On paper indoors, just tape the sheet down so the object/lamp positions stay fixed.</p></div></details>
-
-<details class="faq"><summary>He wants to do shadow puppets the whole time.</summary>
-<div class="faq-body"><p>Let him — it's joyful and still science (he's controlling a light source and an object). Weave in one prediction or measurement ("how big can you make the dragon?") and call it a win. Save the structured tracing for a fresh day.</p></div></details>
-
-<details class="faq"><summary>He finished in 10 minutes again.</summary>
-<div class="faq-body"><p>Add rounds (more objects, more traces), pull a <em>Stretch it further</em> option, or hand him the torch/chalk to lead. A "shadow clock" (trace at three times of day) naturally stretches the project across a whole day in short bursts.</p></div></details>
-
-<details class="faq"><summary>Is staring toward the sun to find shadows dangerous?</summary>
-<div class="faq-body"><p>Looking <em>at</em> the sun is — never do that. But looking <em>at the shadows on the ground</em> is completely safe and where all the action is anyway. Keep eyes down on the shadows, hats on, and you're good.</p></div></details>
-
-<h2>Read this first (primary source)</h2>
-<div class="box accent">
-  <p>What preschoolers can really grasp about shadows, with simple investigation prompts:</p>
-  <p><strong>→ NAEYC: <a href="https://www.naeyc.org/resources/blog/whats-shadow">What's in a Shadow?</a></strong>
-  &nbsp;·&nbsp; tracing over the day: <a href="https://inventorsoftomorrow.com/light-and-shadow-experiments-for-kids/">Light &amp; Shadow Experiments</a></p>
-</div>
-
-<div class="ask-teacher">
-  <strong>I'm your teacher — ask me anything.</strong> Want a rainy-week all-indoor version? A
-  "shadow clock" build? Ideas to combine this with his bug or color projects? Tell me how it
-  landed (and the timing) and I'll plan Project 6.
-</div>
-
-<hr style="border:none;border-top:1px solid var(--rule);margin:2.5rem 0 1rem;">
-<p class="footnote" id="n1"><strong>1.</strong> NAEYC, <a href="https://www.naeyc.org/resources/blog/whats-shadow">What's in a Shadow?</a> — 3-year-olds can grasp that a light source plus an object makes a shadow.</p>
-<p class="footnote" id="n2"><strong>2.</strong> Inventors of Tomorrow, <a href="https://inventorsoftomorrow.com/light-and-shadow-experiments-for-kids/">Light and Shadow Experiments for Kids</a> — trace/measure shadows as the sun moves through the day.</p>
-
-<nav class="doc-nav">
-  <a href="../index.html">🏠 Home</a>
-  <a href="0004-bug-safari.html">← Project 4</a>
-  <a href="../reference/0001-parent-playbook.html">📖 Parent Playbook</a>
-  <span style="color:var(--ink-soft)">Next: Project 6 (after we debrief)</span>
-</nav>
-
+  footer: {
+    homeHref: "../index.html",
+    teacherHTML: "<strong>That's the whole course — {name} did it!</strong> Five projects: guessing, growing, mixing, hunting, and now measuring the sun's own shadow. Tell me how this one landed and how the series felt overall — I'll plan what comes next for him.",
+    links: [
+      { href: "../index.html", label: "🏠 Home" },
+      { href: "../reference/0001-parent-playbook.html", label: "📖 Playbook" },
+      { href: "0004-bug-safari.html", label: "← Project 4" }
+    ]
+  }
+};
+</script>
+<script src="../assets/lesson.js"></script>
 </body>
 </html>

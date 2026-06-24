@@ -4,310 +4,233 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Project 1 — Sink or Float? — KaiSTEM</title>
-<link rel="stylesheet" href="../assets/styles.css">
+<meta name="description" content="Five days at the water tub: Kai learns the one move at the heart of all science — guess first, then find out.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500;1,6..72,600&family=Space+Mono:wght@400;700&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/lesson.css">
 </head>
 <body>
+<div id="app"></div>
 
-<nav class="coursebar" aria-label="Course navigation">
-  <a class="home" href="../index.html">🏠 All projects</a>
-  <span class="here">Project 1 · Sink or Float?</span>
-  <span class="nextprev">
-    <a href="0002-will-it-grow.html">Next: Project 2 →</a>
-  </span>
-</nav>
+<script>
+window.LESSON = {
+  storageKey: "sof-v2",
+  childName: "Kai",
+  index: 1, total: 5,
+  defaultMode: "prep",
+  title: "Project 1 — Sink or Float? — KaiSTEM",
 
-<header class="masthead">
-  <p class="kicker">KaiSTEM · Project 01 · Week 1</p>
-  <h1>Sink or Float?</h1>
-  <p class="subtitle">Five days at the water tub. Kai learns the one move at the heart of
-  all science: <em>guess first, then find out.</em> Your job is to ask, wait, and splash along.</p>
-  <div class="meta-row">
-    <span>~30 min / day × 5 days</span><span>·</span>
-    <span>Interests: 💧 water · 🐛 nature · 🔢 counting</span><span>·</span>
-    <span>Difficulty: ★☆☆ (start here)</span>
-  </div>
-</header>
+  hero: {
+    kicker: "KaiSTEM · Week One",
+    titleHTML: '<span class="lc">Sink</span> <span class="joiner">or</span> <span class="rc">Float?</span>',
+    subHTML: "Five days at the water tub, where {name} learns the one move at the heart of all science: <strong>guess first, then find out.</strong>",
+    tags: [
+      { text: "~30 min × 5 days" },
+      { text: "💧 water · 🐛 nature · 🔢 counting" },
+      { text: "★☆☆ start here", lead: true }
+    ]
+  },
 
-<div class="box accent">
-  <p class="box-title">The win this project earns</p>
-  <p>By Friday, Kai will <strong>spontaneously guess before trying things</strong> — at the tub,
-  at bath time, at dinner. That habit ("predict, then test") is the seed of every science to come.
-  Facts about <em>why</em> things float are a bonus; the <strong>habit</strong> is the goal.</p>
-</div>
+  loop: [
+    { emoji: "👀", name: "Notice", tone: "notice" },
+    { emoji: "💭", name: "Wonder", tone: "wonder" },
+    { emoji: "🤔", name: "Predict", tone: "predict" },
+    { emoji: "🧪", name: "Test", tone: "test" },
+    { emoji: "💬", name: "Talk", tone: "talk" }
+  ],
 
-<h2>The method (same every project)</h2>
-<p>Run this loop on each object. Don't lecture — narrate and ask. Full scripts and the
-question bank are in the <a href="../reference/0001-parent-playbook.html">Parent Playbook</a>.</p>
-<ul class="loop">
-  <li><span class="step-emoji">👀</span><span class="step-name">Notice</span><br>hold it, feel it</li>
-  <li><span class="step-emoji">💭</span><span class="step-name">Wonder</span><br>"I wonder…"</li>
-  <li><span class="step-emoji">🤔</span><span class="step-name">Predict</span><br>"will it stay up?"</li>
-  <li><span class="step-emoji">🧪</span><span class="step-name">Test</span><br>plop!</li>
-  <li><span class="step-emoji">💬</span><span class="step-name">Talk</span><br>"what happened?"</li>
-</ul>
+  win: {
+    label: "The win this earns",
+    html: "By Friday, {name} will <strong>guess before trying things</strong> — at the tub, at bath time, at dinner. That habit is the seed of every science to come. The <em>why</em> behind floating is a bonus; the <strong>habit</strong> is the goal."
+  },
 
-<h2>What you'll prepare</h2>
-<p><strong>Prep time:</strong> ~10 minutes the night before. <strong>Cost:</strong> basically
-free — it's all stuff around the house. One tub + one tray of objects covers all five days; you
-only add foil (Day 3) and a nature basket (Day 4).</p>
+  prep: {
+    gearKicker: "Gather the night before",
+    gearTitle: "What you'll prepare",
+    gearLead: "~10 minutes. Basically free — it's all stuff around the house. Tap each as you gather it.",
+    gear: [
+      { id: "tub", strong: "A water container", rest: " — tub, deep bowl, dishpan, or the bathtub. Deeper is better." },
+      { id: "towels", strong: "2 towels", rest: " — one under the tub, one for drying hands." },
+      { id: "smock", strong: "An old shirt or smock", rest: ", sleeves rolled. He'll get wet to the elbows." },
+      { id: "bowls", strong: "2 sorting bowls", rest: " + a ⬆ FLOAT and ⬇ SINK card, for Day 2." },
+      { id: "foil", strong: "1 sheet of foil", rest: " + a few coins or playdough, for Day 3." },
+      { id: "journal", strong: "The journal page", rest: " + crayons or dot stickers." },
+      { id: "net", strong: "A slotted spoon or net", rest: " — optional, lovely for fishing things out." }
+    ],
+    deepDive: {
+      kicker: "The important part",
+      eyebrowTone: "test",
+      title: "Choosing the objects",
+      lead: "Pick 8–10 small, safe objects that <em>split</em> the results — and seed 2–3 genuine surprises. Surprises are where the learning lives.",
+      blocks: [
+        { tone: "", label: "⬆ Usually floats", html: "cork · sponge · plastic lid · crayon · ping-pong ball · wooden block" },
+        { tone: "test", label: "⬇ Usually sinks", html: "coin · metal spoon · key · rock · marble · LEGO brick · full bottle" },
+        { tone: "predict", label: "✦ Surprises — seed 2–3", html: "a grape (sinks!) · whole orange floats, peeled sinks · an apple floats · a closed jar vs an open one" }
+      ]
+    },
+    safety: {
+      label: "⚠ Safety check",
+      html: "Stay within arm's reach of the water the whole time — drowning is fast and quiet in even a few inches. Skip choking-size pieces, anything sharp, and things water ruins (electronics, paper books)."
+    },
+    setup: {
+      kicker: "Setup",
+      title: "The night before",
+      steps: [
+        "Gather the 8–10 objects into a tray. Quietly predict each one yourself so you're not caught out mid-activity.",
+        "Make the ⬆ FLOAT and ⬇ SINK cards and two sorting bowls; set them aside for Day 2.",
+        "Print one journal page per day — or just rule a quick grid on paper.",
+        "Pick a spot where splashes don't matter — kitchen floor, bathroom, or patio."
+      ]
+    }
+  },
 
-<h3>The gear</h3>
-<ul class="checklist">
-  <li><strong>A water container:</strong> a big plastic tub, a deep mixing bowl, a dishpan, or just the bathtub. Deeper is better — things need room to actually sink.</li>
-  <li><strong>2 towels</strong> — one under the tub for spills, one for drying hands.</li>
-  <li><strong>An old shirt or smock,</strong> sleeves rolled. Assume he gets wet to the elbows.</li>
-  <li><strong>2 small bowls or trays</strong> for sorting on Day 2, with a hand-drawn ⬆ <strong>FLOAT</strong> card and ⬇ <strong>SINK</strong> card.</li>
-  <li><strong>1 sheet of aluminum foil</strong> + a few coins or a small ball of playdough (Day 3).</li>
-  <li><strong>The printed <a href="#journal">journal page</a></strong> + crayons or dot stickers.</li>
-  <li><em>Optional but lovely:</em> a slotted spoon, ladle, or small net for fishing things out (great fine-motor practice).</li>
-</ul>
+  arc: {
+    kicker: "The five-day arc",
+    title: "Same loop, one notch harder",
+    lead: "Tap a day to jump into Run mode."
+  },
 
-<h3>Choosing the test objects (this is the important part)</h3>
-<p>Pick <strong>8–10 small, safe objects</strong> that will <em>split</em> your results — some that
-clearly float, some that clearly sink, and 2–3 genuine surprises. Surprises are where the learning
-lives, so seed a few on purpose.</p>
-<table>
-  <thead><tr><th>Usually floats</th><th>Usually sinks</th><th>Surprises (seed 2–3)</th></tr></thead>
-  <tbody>
-    <tr><td>cork, sponge, plastic lid</td><td>coin, metal spoon, key</td><td>a grape (sinks!)</td></tr>
-    <tr><td>crayon, ping-pong ball</td><td>rock, marble, LEGO brick</td><td>a whole orange — floats; peeled — sinks</td></tr>
-    <tr><td>wooden block, plastic toy</td><td>full water bottle, screw</td><td>an apple (floats), a candle, a closed jar vs open jar</td></tr>
-  </tbody>
-</table>
-<div class="box accent">
-  <p class="box-title">Safety check before you start</p>
-  <p>Stay within arm's reach of the water the entire time — drowning happens fast and quietly in
-  even a few inches. Skip anything small enough to choke on if it went in his mouth, and anything
-  sharp or that ruins in water (electronics, paper books).</p>
-</div>
+  days: [
+    {
+      n: 1, stars: "★☆☆", lead: "", title: "Guess & splash", tag: "just the loop",
+      goal: "Install one reflex — guess before acting. Nothing more. Keep it light and fast.",
+      setup: "Fill the tub, lay a towel, roll his sleeves, tray of objects beside it. Don't explain the science — just call it a guessing game.",
+      doText: "Hand him one object at a time. Get a guess before it touches the water, then let him drop it. Big, genuine reactions to surprises. Do 5–6, then stop.",
+      ask: [
+        "Hold it — will this stay on top, or go down? What's your guess?",
+        "Why do you think so? Any answer is great.",
+        "Ready? You drop it!"
+      ],
+      watch: [
+        { icon: "✅", text: "He pauses to guess before dropping — even once. That's the whole win." },
+        { icon: "✅", text: "Surprise on his face when a guess is “wrong” — curiosity igniting." },
+        { icon: "👀", text: "If he dumps everything in at once, allow it a minute, then return to one-at-a-time." }
+      ],
+      done: "he's guessed before a couple of drops, or after ~10–15 min. End on a high note."
+    },
+    {
+      n: 2, stars: "★★☆", lead: "", title: "Sort & count", tag: "classify + math",
+      goal: "Add classifying (group by one rule) and counting — early math that predicts later school success.",
+      setup: "Same tub. Add two bowls with ⬆ FLOAT and ⬇ SINK cards.",
+      doText: "Test each object again (predict first!). Fish it out into the matching bowl. At the end, count both piles, touching each item as you go.",
+      ask: [
+        "This one floated — which bowl does it go in?",
+        "Let's count the floaters! One… two… three… How many?",
+        "Which bowl has more? How can we tell?"
+      ],
+      watch: [
+        { icon: "✅", text: "He sorts based on what he saw — evidence to category." },
+        { icon: "✅", text: "He counts along, even if numbers jumble. Point-and-count is the skill." },
+        { icon: "😌", text: "Miscounting (“one, two, five!”) is normal — just model the right count cheerfully." }
+      ],
+      done: "both bowls are sorted and you've counted each at least once."
+    },
+    {
+      n: 3, stars: "★★☆", lead: "", title: "Make it change", tag: "first engineering",
+      goal: "The first taste of engineering — “I can change what happens.”",
+      setup: "Foil sheet + a few coins (or a playdough ball) ready. Confirm the coins sink first.",
+      doText: "Pose the challenge, build a foil boat together, load the coins — it floats! Then let him crush it into a ball and watch it sink. Repeat; repetition is where it sticks.",
+      ask: [
+        "The coins sank. Could we make them float? What if we built a boat?",
+        "What happened when you squished it? Why did it sink that time?"
+      ],
+      watch: [
+        { icon: "✅", text: "Delight that the same coins float or sink depending on the boat." },
+        { icon: "✅", text: "He starts changing things himself — “what if I add more coins?”" },
+        { icon: "😌", text: "He won't grasp the why (displacement). The takeaway is “I changed the result.”" }
+      ],
+      done: "he's floated the boat and sunk the crushed ball at least once."
+    },
+    {
+      n: 4, stars: "★★★", lead: "", title: "Nature hunt", tag: "real-world transfer",
+      goal: "Transfer the idea to messy, real materials — and hook his nature interest.",
+      setup: "Go outside first. Collect a basket together: rocks, leaves, sticks, an acorn, bark, a pinecone. Let him choose.",
+      doText: "Predict each natural object before testing. Expect surprises — a fat stick floats, a small dense rock sinks. Sort and count again if he's into it.",
+      ask: [
+        "Where did you find this? Does it feel heavy or light?",
+        "Why do you think the leaf floats but the rock sinks?",
+        "I wonder if all sticks float, or just this one?"
+      ],
+      watch: [
+        { icon: "✅", text: "He carries the “guess first” habit over without prompting." },
+        { icon: "✅", text: "He notices patterns — “the wood ones float!”" },
+        { icon: "👀", text: "If outside becomes the whole adventure, that's fine — nature observation IS the science." }
+      ],
+      done: "he's tested a handful of finds and made at least one comparison."
+    },
+    {
+      n: 5, stars: "★★★", lead: " · he leads", title: "Kai's experiment", tag: "Kai leads",
+      goal: "Ownership — the leap from “doing an activity” to “having an idea and testing it.”",
+      setup: "Empty tub, ready. No tray this time.",
+      doText: "Send him on a hunt: “You're the scientist — go find 5 things to test!” You veto only for safety. He predicts, tests, sorts, counts. You ask and scribe — you do not drive.",
+      ask: [
+        "What should we test first? What's your guess?",
+        "Ooh, that surprised you! What happened?",
+        "What do you want to try next?"
+      ],
+      watch: [
+        { icon: "✅", text: "He chooses things because he's curious how they'll behave." },
+        { icon: "✅", text: "He guesses unprompted — the habit has landed." },
+        { icon: "😌", text: "If his “experiment” is mostly joyful splashing, that's a win too." }
+      ],
+      done: "he's run his own 5 tests. Celebrate: “You did real science today!”"
+    }
+  ],
 
-<h3>Setup, the night before</h3>
-<ol class="steps">
-  <li>Gather the 8–10 objects into the tray. Quietly predict each one yourself so you're not surprised mid-activity.</li>
-  <li>Make the ⬆ FLOAT and ⬇ SINK cards and the two sorting bowls; set them aside for Day 2.</li>
-  <li>Print one journal page per day (or rule a quick grid on paper).</li>
-  <li>Pick your spot — somewhere splashes don't matter (kitchen floor, bathroom, patio).</li>
-</ol>
+  journal: {
+    kicker: "The keepsake",
+    title: "Science journal",
+    intro: "Tap {name}'s guess first, then what really happened. Type what you tested. <span data-print=\"hide\">Print it, or keep it on the phone.</span>",
+    headerTitle: "My sink-or-float log",
+    type: "binary",
+    rows: 5,
+    itemPlaceholder: "what we tested",
+    poles: {
+      a: { key: "float", icon: "⬆", label: "float" },
+      b: { key: "sink", icon: "⬇", label: "sink" }
+    },
+    countLabel: "🔢 floaters {a} · sinkers {b}",
+    said: "{name} said: “________________________________”"
+  },
 
-<h2>The arc at a glance</h2>
-<p>Same loop every day, one notch harder. Stop any day while it's still fun — you can stretch a
-day across two if attention runs short.</p>
-<div class="days">
-  <div class="day"><div class="badge">Day&nbsp;1</div><h3>Guess &amp; splash</h3><div class="day-body"><p class="level">★☆☆ · just the loop</p><p>Predict then drop, 5–6 objects.</p></div></div>
-  <div class="day"><div class="badge">Day&nbsp;2</div><h3>Sort &amp; count</h3><div class="day-body"><p class="level">★★☆ · classify + math</p><p>Test, then sort into two bowls and count each.</p></div></div>
-  <div class="day"><div class="badge">Day&nbsp;3</div><h3>Make it change</h3><div class="day-body"><p class="level">★★☆ · first engineering</p><p>Make a sinker float with a foil boat.</p></div></div>
-  <div class="day"><div class="badge">Day&nbsp;4</div><h3>Nature hunt</h3><div class="day-body"><p class="level">★★★ · real-world transfer</p><p>Collect &amp; test rocks, leaves, sticks.</p></div></div>
-  <div class="day"><div class="badge">Day&nbsp;5</div><h3>Kai's experiment</h3><div class="day-body"><p class="level">★★★ · Kai leads</p><p>He chooses what to test and runs it.</p></div></div>
-</div>
+  qbank: {
+    kicker: "Magic words",
+    title: "Question bank",
+    intro: "Pick one or two — never interrogate. Ask, then <strong>wait five seconds</strong> before rescuing the silence.",
+    items: [
+      { moment: "Before a drop", say: "Will it stay up or go down? What's your guess?" },
+      { moment: "To stretch a guess", say: "Why do you think so?" },
+      { moment: "At a surprise", say: "Whoa! Did you think that would happen?" },
+      { moment: "To compare", say: "How is this one different from that one?" },
+      { moment: "To find a pattern", say: "Do all the heavy ones sink? Let's check!" },
+      { moment: "To hand over control", say: "What should we try next? You decide." },
+      { moment: "To close", say: "What was the most surprising thing today?" }
+    ]
+  },
 
-<h2>Day by day, in detail</h2>
+  faq: {
+    kicker: "If it wobbles",
+    title: "Troubleshooting",
+    items: [
+      { q: "He won't guess — he just wants to drop things.", a: "Normal. Don't force it. <em>You</em> guess out loud first (“I think… SINK!”), then ask what he thinks. Or use a two-choice gesture — thumbs up for float, down for sink. The guessing usually shows up by Day 2 or 3 once the pattern feels safe." },
+      { q: "He gives \"wrong\" answers. Do I correct him?", a: "Never correct a prediction — <strong>test it.</strong> “Let's find out!” is the magic phrase. Being wrong and seeing it is the most valuable moment in the whole project. Correcting teaches him to fear guessing; testing teaches that guesses are just the start." },
+      { q: "He loses interest after 5 minutes.", a: "Five focused minutes at 3.5 is a success. “30 minutes” includes setup and mess. Stop the moment interest dips, while it's still fun, so he's eager to come back. Split one day across two short sessions if you like." },
+      { q: "Should I explain WHY things float?", a: "No. Buoyancy is abstract and won't land at 3.5 — it eats the working memory he needs for the fun part. If he asks “why?”, try “What a good question — I wonder too! What do YOU think?” Keep it about noticing and guessing, not mechanisms." }
+    ]
+  },
 
-<div class="daydetail">
-  <span class="tag">Day 1 · ★☆☆</span>
-  <h3>Guess &amp; splash</h3>
-  <p><strong>Goal:</strong> install the reflex to <em>guess before acting</em>. Nothing more. Keep it light and fast.</p>
-  <h4>Set up (2 min)</h4>
-  <p>Fill the tub, lay the towel, roll his sleeves. Put the tray of objects beside it. Don't explain the science — just say <span class="say">Let's play a guessing game with water!</span></p>
-  <h4>Do</h4>
-  <p>Hand him <strong>one object at a time</strong>. Before it touches the water, get a guess. Then let <em>him</em> drop it. Big, genuine reactions to surprises. Do 5–6 objects, then stop.</p>
-  <h4>Ask</h4>
-  <p class="say">Hold it — do you think this will stay on top, or go down? What's your guess?</p>
-  <p class="say">Why do you think so? (Any answer is great — "because it's heavy," "because I like it.")</p>
-  <p class="say">Ready? You drop it!</p>
-  <h4>Watch for</h4>
-  <ul class="observe">
-    <li class="good">He pauses to guess before dropping (even once) — that's the whole win.</li>
-    <li class="good">Surprise on his face when a guess is "wrong" — that's curiosity igniting.</li>
-    <li class="watch">If he just wants to dump everything in at once, let him for a minute, then bring back one-at-a-time with "let's guess this one."</li>
-  </ul>
-  <h4>Done when</h4>
-  <p>He's guessed before at least a couple of drops, or after ~10–15 min. End on a high note.</p>
-</div>
-
-<div class="daydetail">
-  <span class="tag">Day 2 · ★★☆</span>
-  <h3>Sort &amp; count</h3>
-  <p><strong>Goal:</strong> add <em>classifying</em> (group by one rule) and <em>counting</em> — early math that strongly predicts later school success.</p>
-  <h4>Set up (3 min)</h4>
-  <p>Same tub. Add the two bowls with ⬆ FLOAT and ⬇ SINK cards.</p>
-  <h4>Do</h4>
-  <p>Test each object again (still predict first!). After each, fish it out and put it in the matching bowl. At the end, count both piles together, touching each item as you count.</p>
-  <h4>Ask</h4>
-  <p class="say">This one floated — which bowl does it go in?</p>
-  <p class="say">Let's count the floaters! One… two… three… How many?</p>
-  <p class="say">Which bowl has more? How can we tell?</p>
-  <h4>Watch for</h4>
-  <ul class="observe">
-    <li class="good">He sorts correctly based on what he saw (evidence → category).</li>
-    <li class="good">He counts along, even if numbers get jumbled — point-and-count is the skill.</li>
-    <li class="relax">Miscounting ("one, two, five!") is totally normal at 3.5 — just model the right count cheerfully.</li>
-  </ul>
-  <h4>Done when</h4>
-  <p>Both bowls are sorted and you've counted each at least once.</p>
-</div>
-
-<div class="daydetail">
-  <span class="tag">Day 3 · ★★☆</span>
-  <h3>Make it change</h3>
-  <p><strong>Goal:</strong> the first taste of engineering — <em>"I can change what happens."</em></p>
-  <h4>Set up (2 min)</h4>
-  <p>Have the foil sheet and a few coins (or a playdough ball) ready. Confirm first that the coins sink: drop one in together.</p>
-  <h4>Do</h4>
-  <p>Pose the challenge, then build a foil boat together and load the coins. It floats! Then let him crush the boat into a tight ball and watch it sink again. Repeat — kids love the repetition, and repetition is where it sticks.</p>
-  <h4>Ask</h4>
-  <p class="say">The coins sank. I wonder… could we make them float? What if we built a boat?</p>
-  <p class="say">What happened to the boat when you squished it? Why do you think it sank that time?</p>
-  <h4>Watch for</h4>
-  <ul class="observe">
-    <li class="good">Delight/surprise that the <em>same</em> coins can float or sink depending on the boat.</li>
-    <li class="good">He starts changing things himself ("what if I add more coins?").</li>
-    <li class="relax">He won't grasp <em>why</em> (surface area / displacement) — that's fine. The takeaway is "I changed the result," not the physics.</li>
-  </ul>
-  <h4>Done when</h4>
-  <p>He's made the boat float and seen the crushed ball sink at least once.</p>
-</div>
-
-<div class="daydetail">
-  <span class="tag">Day 4 · ★★★</span>
-  <h3>Nature hunt</h3>
-  <p><strong>Goal:</strong> transfer the idea to messy, real materials — and hook his nature interest.</p>
-  <h4>Set up (10 min, outdoors)</h4>
-  <p>Go outside <em>first</em>. Collect a basket together: rocks, leaves, sticks, an acorn, a flower, bark, a pinecone. Let him choose. Bring it all to the tub.</p>
-  <h4>Do</h4>
-  <p>Predict each natural object before testing. Expect surprises (a fat stick floats; a small dense rock sinks instantly). Sort and count again if he's into it.</p>
-  <h4>Ask</h4>
-  <p class="say">Where did you find this? What does it feel like — heavy or light?</p>
-  <p class="say">Why do you think the leaf floats but the rock sinks?</p>
-  <p class="say">I wonder if all sticks float, or just this one?</p>
-  <h4>Watch for</h4>
-  <ul class="observe">
-    <li class="good">He carries over the "guess first" habit without you prompting.</li>
-    <li class="good">He notices patterns ("the wood ones float!").</li>
-    <li class="watch">If outside becomes the whole adventure and the tub gets forgotten — that's fine, nature observation IS the science. Test indoors later.</li>
-  </ul>
-  <h4>Done when</h4>
-  <p>He's tested a handful of natural finds and made at least one comparison.</p>
-</div>
-
-<div class="daydetail">
-  <span class="tag">Day 5 · ★★★ · Kai leads</span>
-  <h3>Kai's experiment</h3>
-  <p><strong>Goal:</strong> ownership — the leap from "doing an activity" to "having an idea and testing it."</p>
-  <h4>Set up (5 min)</h4>
-  <p>Empty tub, ready. No tray this time.</p>
-  <h4>Do</h4>
-  <p>Send him on a hunt: <span class="say">You're the scientist today — go find 5 things you want to test!</span> You only veto for safety. He predicts, tests, sorts, and counts. You ask questions and scribe — you do <em>not</em> drive.</p>
-  <h4>Ask (only)</h4>
-  <p class="say">What should we test first? What's your guess for this one?</p>
-  <p class="say">Ooh, that surprised you! What happened?</p>
-  <p class="say">What do you want to try next?</p>
-  <h4>Watch for</h4>
-  <ul class="observe">
-    <li class="good">He chooses things <em>because</em> he's curious how they'll behave.</li>
-    <li class="good">He guesses unprompted — the habit has landed.</li>
-    <li class="relax">If his "experiment" is mostly joyful splashing, that's a win too. He's associating science with fun.</li>
-  </ul>
-  <h4>Done when</h4>
-  <p>He's run his own 5 tests. Celebrate: <span class="say">You did real science today!</span></p>
-</div>
-
-<h2>The full question bank (for this project)</h2>
-<p>Pick one or two — never interrogate. Ask, then <strong>wait five seconds</strong> before
-rescuing the silence. (General scripts live in the <a href="../reference/0001-parent-playbook.html">Playbook</a>.)</p>
-<table>
-  <thead><tr><th>Moment</th><th>Say this</th></tr></thead>
-  <tbody>
-    <tr><td>Before a drop</td><td>"Will it stay up or go down? What's your guess?"</td></tr>
-    <tr><td>To stretch a guess</td><td>"Why do you think so?"</td></tr>
-    <tr><td>At a surprise</td><td>"Whoa! Did you think that would happen?"</td></tr>
-    <tr><td>To compare</td><td>"How is this one different from that one?"</td></tr>
-    <tr><td>To find a pattern</td><td>"Do all the heavy ones sink? Let's check!"</td></tr>
-    <tr><td>To hand over control</td><td>"What should we try next? You decide."</td></tr>
-    <tr><td>To wonder aloud (you)</td><td>"I wonder why the big orange floats but the tiny grape sinks…"</td></tr>
-    <tr><td>To close</td><td>"What was the most surprising thing today?"</td></tr>
-  </tbody>
-</table>
-
-<h2>What to observe (is it working?)</h2>
-<p>You're not grading Kai. You're watching for signs the <em>curiosity habit</em> is forming.
-Process beats product every time at this age.</p>
-<ul class="observe">
-  <li class="good"><strong>Green flags:</strong> he pauses to guess; he reacts to surprises; he wants to test "just one more"; he starts asking his own "what if?"; he uses words like float, sink, guess.</li>
-  <li class="watch"><strong>Gently redirect:</strong> if he only dumps everything in, slow the pace to one object; if he loses interest, shorten the session, don't push.</li>
-  <li class="relax"><strong>Don't worry about:</strong> wrong guesses (the point!), miscounting, not knowing <em>why</em> things float, going off-script, or wanting to repeat the same thing ten times (repetition = consolidation).</li>
-</ul>
-
-<h2 id="journal">The Science Journal page</h2>
-<p>Print one per day. Kai marks his <strong>guess</strong> first, then what <strong>really
-happened</strong>. You write his exact words at the bottom.
-See <a href="../reference/0001-parent-playbook.html#how-the-science-journal-works">how the journal works</a>.</p>
-<div class="box test">
-  <p class="box-title">My Sink-or-Float Journal &nbsp;·&nbsp; Date: ____________</p>
-  <table>
-    <thead><tr><th>What we tested</th><th>My guess ✍️</th><th>What happened ✍️</th></tr></thead>
-    <tbody>
-      <tr><td>1. ______________</td><td>⬆ float &nbsp; ⬇ sink</td><td>⬆ float &nbsp; ⬇ sink</td></tr>
-      <tr><td>2. ______________</td><td>⬆ float &nbsp; ⬇ sink</td><td>⬆ float &nbsp; ⬇ sink</td></tr>
-      <tr><td>3. ______________</td><td>⬆ float &nbsp; ⬇ sink</td><td>⬆ float &nbsp; ⬇ sink</td></tr>
-      <tr><td>4. ______________</td><td>⬆ float &nbsp; ⬇ sink</td><td>⬆ float &nbsp; ⬇ sink</td></tr>
-      <tr><td>5. ______________</td><td>⬆ float &nbsp; ⬇ sink</td><td>⬆ float &nbsp; ⬇ sink</td></tr>
-    </tbody>
-  </table>
-  <p style="margin-top:0.6rem;">🔢 Floaters: ____ &nbsp;&nbsp; Sinkers: ____</p>
-  <p class="say" style="margin-top:0.4rem;">Kai said: "________________________________"</p>
-</div>
-
-<h2>FAQ &amp; troubleshooting</h2>
-
-<details class="faq"><summary>He won't make a guess — he just wants to drop things.</summary>
-<div class="faq-body"><p>Totally normal. Don't force it. Make the guess a tiny game instead: <em>you</em> guess out loud first ("I think… SINK!"), then ask "what do YOU think?" Or give a two-choice gesture — thumbs up for float, down for sink. If he still won't, just let him explore; the guessing often shows up on Day 2 or 3 once the pattern feels safe.</p></div></details>
-
-<details class="faq"><summary>He gives "wrong" answers. Do I correct him?</summary>
-<div class="faq-body"><p>Never correct a prediction — <strong>test it.</strong> "Let's find out!" is the magic phrase. Being wrong and seeing it is the single most valuable moment in the whole project. Correcting him teaches him to fear guessing; testing teaches him that guesses are just the start of finding out.</p></div></details>
-
-<details class="faq"><summary>He loses interest after 5 minutes.</summary>
-<div class="faq-body"><p>Five focused minutes at 3.5 is a success, not a failure. "30 minutes" includes setup and mess — real focused attention is often 10–15 min. Stop the moment interest dips, while it's still fun, so he's eager to come back. You can split one "day" across two short sessions.</p></div></details>
-
-<details class="faq"><summary>He just wants to splash and make a mess.</summary>
-<div class="faq-body"><p>Let him — for a bit. Splashing is sensory play and it's bonding. Then re-enter gently: "Hey, I found something tricky — do you think THIS floats?" Ride the energy instead of fighting it. A joyful, messy session still builds his "science is fun" identity, which is the real mission.</p></div></details>
-
-<details class="faq"><summary>The "surprise" objects didn't surprise him.</summary>
-<div class="faq-body"><p>No problem — he may not have strong expectations yet. The surprises matter more later. You can manufacture a tiny one: "Watch this!" then float something heavy-looking (a big plastic toy) or sink something small (a coin). Your own delight is contagious.</p></div></details>
-
-<details class="faq"><summary>Should I explain WHY things float?</summary>
-<div class="faq-body"><p>No. Buoyancy/density is abstract and won't land at 3.5 — it just eats the working memory he needs for the fun part. If he asks "why?", a great answer is "What a good question — I wonder too! What do YOU think?" Keep it about noticing and guessing, not mechanisms. (The word "buoyancy" lives in the <a href="../reference/0001-parent-playbook.html">glossary</a> for you, not him.)</p></div></details>
-
-<details class="faq"><summary>How do I keep the mess manageable?</summary>
-<div class="faq-body"><p>Do it in the bathtub, on a tiled floor, or outside. Towel under the tub, old clothes, half-fill the tub (less to splash out). Make cleanup part of the ritual: "Scientists tidy their lab — can you dry the floaters?" Drying objects is itself fine-motor practice.</p></div></details>
-
-<details class="faq"><summary>A sibling wants to join.</summary>
-<div class="faq-body"><p>Great — science is social. Give each child their own job (one drops, one sorts, one counts) and take turns guessing. For mixed ages, let the older one predict <em>and</em> explain their reasoning while the younger just drops and reacts.</p></div></details>
-
-<details class="faq"><summary>Is 3.5 too young for this?</summary>
-<div class="faq-body"><p>Not at all. Preschoolers already reason about cause and effect and make predictions — this project just gives that instinct a structure. If a step feels too hard, drop to the previous day's level. If he breezes through, jump ahead to <a href="0002-will-it-grow.html">Project 2</a>.</p></div></details>
-
-<details class="faq"><summary>Can we do this without screens, or should I show a video first?</summary>
-<div class="faq-body"><p>This is best fully hands-on — no screen needed. If you like, watch the primary-source video below <em>yourself</em> beforehand to calibrate your pacing. Kai learns this one by doing, not watching.</p></div></details>
-
-<h2>Watch this first (10 min, primary source)</h2>
-<div class="box accent">
-  <p>Before Day 1, watch real educators run inquiry with kids exactly Kai's age — it shows
-  you the <em>pace</em> and the questioning better than any text:</p>
-  <p><strong>→ HeadStart: <a href="https://headstart.gov/school-readiness/teacher-time-series/exploring-science-preschoolers">Exploring Science with Preschoolers</a></strong> (video series)</p>
-</div>
-
-<div class="ask-teacher">
-  <strong>I'm your teacher — ask me anything.</strong> Want this project re-themed around animals?
-  Kai bored by Day 3, or breezing through it? Need different objects, or a harder twist?
-  Tell me how it went and I'll tune Project 2 to fit.
-</div>
-
-<nav class="doc-nav">
-  <a href="../index.html">🏠 Home</a>
-  <a href="../reference/0001-parent-playbook.html">📖 Parent Playbook</a>
-  <a href="../MISSION.md">↑ Mission</a>
-  <a href="0002-will-it-grow.html">Project 2 → Will It Grow?</a>
-</nav>
-
+  footer: {
+    homeHref: "../index.html",
+    teacherHTML: "<strong>I'm your teacher — tell me how it went.</strong> How long did {name} stay engaged? What lit him up most? I'll tune Project 2 to fit.",
+    links: [
+      { href: "../index.html", label: "🏠 Home" },
+      { href: "../reference/0001-parent-playbook.html", label: "📖 Playbook" },
+      { href: "0002-will-it-grow.html", label: "Project 2 →" }
+    ]
+  }
+};
+</script>
+<script src="../assets/lesson.js"></script>
 </body>
 </html>
