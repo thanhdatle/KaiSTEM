@@ -4,308 +4,242 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Project 2 — Will It Grow? — KaiSTEM</title>
-<link rel="stylesheet" href="../assets/styles.css">
+<meta name="description" content="Two weeks at the windowsill: Kai plants seeds, watches them wake up, and learns the next move in science — a fair test, where you change just one thing.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500;1,6..72,600&family=Space+Mono:wght@400;700&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/lesson.css">
 </head>
 <body>
+<div id="app"></div>
 
-<nav class="coursebar" aria-label="Course navigation">
-  <a class="home" href="../index.html">🏠 All projects</a>
-  <span class="here">Project 2 · Will It Grow?</span>
-  <span class="nextprev">
-    <a href="0001-sink-or-float.html">← Project 1</a>
-    <a href="0003-kitchen-color-lab.html">Project 3 →</a>
-  </span>
-</nav>
+<script>
+window.LESSON = {
+  storageKey: "grow-v1",
+  childName: "Kai",
+  index: 2, total: 5,
+  defaultMode: "prep",
+  title: "Project 2 — Will It Grow? — KaiSTEM",
 
-<header class="masthead">
-  <p class="kicker">KaiSTEM · Project 02 · ~2 weeks</p>
-  <h1>Will It Grow?</h1>
-  <p class="subtitle">Kai plants seeds and watches them wake up. New superpower this project:
-  <em>a fair test</em> — change just one thing, and watch what happens over many days.</p>
-  <div class="meta-row">
-    <span>Day 1: ~30 min · then ~10 min/day</span><span>·</span>
-    <span>Interests: 🐛 nature · 💧 water · 🔢 counting</span><span>·</span>
-    <span>Difficulty: ★★☆</span>
-  </div>
-</header>
+  theme: {
+    "--accent": "oklch(56% 0.13 150)",
+    "--accent-deep": "oklch(46% 0.14 150)"
+  },
 
-<div class="box accent">
-  <p class="box-title">The win this project earns</p>
-  <p>In Project 1, Kai learned <em>guess then test</em> in one splash. Here he learns that some
-  answers take <strong>time and watching</strong> — and that scientists find things out by
-  <strong>changing just one thing</strong> (a "fair test"). By the end he'll point at the dark
-  cup vs the sunny cup and tell you <em>why</em> they're different.</p>
-</div>
+  hero: {
+    kicker: "KaiSTEM · Project Two",
+    titleHTML: '<span class="rc">Will It</span> <span class="lc">Grow?</span>',
+    subHTML: "Two weeks at the windowsill, where {name} plants seeds and learns the next move in science: <strong>a fair test — change just one thing, then watch.</strong>",
+    tags: [
+      { text: "Day 1 ~30 min · then ~10 min/day" },
+      { text: "🐛 nature · 💧 water · 🔢 counting" },
+      { text: "★★☆ a little longer", lead: true }
+    ]
+  },
 
-<h2>The method (same loop, slower)</h2>
-<p>Same five moves as always — but "Test" now stretches across two weeks of daily noticing.
-Scripts &amp; question bank: <a href="../reference/0001-parent-playbook.html">Parent Playbook</a>.</p>
-<ul class="loop">
-  <li><span class="step-emoji">👀</span><span class="step-name">Notice</span><br>look every day</li>
-  <li><span class="step-emoji">💭</span><span class="step-name">Wonder</span><br>"what do seeds need?"</li>
-  <li><span class="step-emoji">🤔</span><span class="step-name">Predict</span><br>"which one grows?"</li>
-  <li><span class="step-emoji">🧪</span><span class="step-name">Test</span><br>plant &amp; wait</li>
-  <li><span class="step-emoji">💬</span><span class="step-name">Talk</span><br>"what changed today?"</li>
-</ul>
+  loop: [
+    { emoji: "👀", name: "Notice", tone: "notice" },
+    { emoji: "💭", name: "Wonder", tone: "wonder" },
+    { emoji: "🤔", name: "Predict", tone: "predict" },
+    { emoji: "🧪", name: "Test", tone: "test" },
+    { emoji: "💬", name: "Talk", tone: "talk" }
+  ],
 
-<div class="box wonder">
-  <p class="box-title">The big idea: a fair test</p>
-  <p>We make the two cups <strong>exactly the same</strong> — same seeds, same water, same paper
-  towel — and change <strong>only one thing: light.</strong> One cup by the window, one in a dark
-  cupboard. That's the secret: if you change one thing only, you <em>know</em> what made the
-  difference.<sup><a href="#n1">1</a></sup> (We don't say "variable" — we say "let's change just one thing.")</p>
-</div>
+  win: {
+    label: "The win this earns",
+    html: "In Project 1, {name} learned <strong>guess then test</strong> in one splash. Here he learns that some answers take <strong>time and watching</strong> — and that scientists find things out by <strong>changing just one thing</strong> (a “fair test”). By the end he’ll point at the dark cup vs the sunny cup and tell you <em>why</em> they’re different."
+  },
 
-<h2>What you'll prepare</h2>
-<p><strong>Prep time:</strong> ~15 min to gather; ~20 min hands-on with Kai on Day 1.
-<strong>Cost:</strong> a bag of dried beans is pennies; everything else is household.
-<strong>Heads-up:</strong> start this when you'll be home for two weeks of daily check-ins.</p>
+  prep: {
+    gearKicker: "Gather the night before",
+    gearTitle: "What you’ll prepare",
+    gearLead: "~15 min to gather; ~20 min hands-on with {name} on Day 1. A bag of dried beans is pennies — everything else is household. Tap each as you gather it.",
+    gear: [
+      { id: "cups", strong: "2 clear cups or jars, identical", rest: " — clear so {name} can watch roots grow against the glass." },
+      { id: "beans", strong: "4 dried beans", rest: " (lima, kidney, or pinto), 2 per cup. Big beans sprout fast and are easy for little hands. Soak overnight." },
+      { id: "towels", strong: "2 paper towels", rest: " — crumpled to line each cup, so beans press against the glass and stay visible." },
+      { id: "spray", strong: "A spray bottle + a jug of water", rest: " — the daily watering tool, and brilliant fine-motor practice." },
+      { id: "labels", strong: "2 labels", rest: " — a ☀️ SUNNY card and a 🌑 DARK card." },
+      { id: "ruler", strong: "A “ruler”", rest: " — a small ruler, or a stack of identical LEGO/blocks to measure sprout height in “blocks.”" },
+      { id: "journal", strong: "The Grow Journal", rest: " + crayons." },
+      { id: "pot", strong: "A small pot + potting soil", rest: " — for the finale, so {name}’s favorite sprout can keep growing." }
+    ],
+    deepDive: {
+      kicker: "The important part",
+      eyebrowTone: "predict",
+      title: "The big idea — a fair test",
+      lead: "Make the two cups <em>exactly the same</em> — same seeds, same water, same paper towel — and change <strong>only one thing: light.</strong> If you change one thing only, you <em>know</em> what made the difference.",
+      blocks: [
+        { tone: "", label: "☀️ Cup one — sunny", html: "2 soaked beans · damp towel · on a bright windowsill" },
+        { tone: "grow", label: "🌑 Cup two — dark", html: "2 soaked beans · damp towel · in a dark cupboard or drawer" },
+        { tone: "predict", label: "✦ The one change", html: "everything identical except light — we don’t say “variable,” we say “let’s change just one thing”" }
+      ]
+    },
+    safety: {
+      label: "⚠ Safety check",
+      html: "Dried beans are a choke hazard — keep them adult-handled, no mouths, and count them back in afterward. Wash hands after handling seeds and soil. Skip this project’s bean-eating jokes."
+    },
+    setup: {
+      kicker: "Setup",
+      title: "The night before Day 1",
+      steps: [
+        "Soak 4–6 beans in a bowl of water overnight — soaked beans sprout days faster.",
+        "Make the ☀️ SUNNY and 🌑 DARK labels.",
+        "Scout your two spots: a bright windowsill, and a fully dark cupboard or drawer.",
+        "Print the Grow Journal; set out crayons and the block “ruler.”",
+        "Start this when you’ll be home for two weeks of daily check-ins."
+      ]
+    }
+  },
 
-<h3>The gear</h3>
-<ul class="checklist">
-  <li><strong>2 clear cups or jars, identical</strong> — clear so Kai can watch roots grow against the glass. Glass jars or clear plastic cups both work.</li>
-  <li><strong>4 dried beans</strong> (lima, kidney, or pinto) — 2 per cup. Big beans sprout fast and are easy for little hands to place. Soak them in water overnight first to speed germination.</li>
-  <li><strong>2 paper towels</strong> — crumpled to line each cup, so beans press against the glass and stay visible.</li>
-  <li><strong>A spray bottle + a small jug of water</strong> — the spray bottle is the daily watering tool (and brilliant fine-motor practice).</li>
-  <li><strong>2 labels:</strong> a ☀️ <strong>SUNNY</strong> card and a 🌑 <strong>DARK</strong> card.</li>
-  <li><strong>A "ruler":</strong> a small ruler, or a stack of identical LEGO/blocks to measure sprout height in "blocks."</li>
-  <li><strong>The <a href="#journal">Grow Journal</a></strong> + crayons.</li>
-  <li><em>For the finale:</em> a small plant pot + potting soil so Kai's favorite sprout can keep growing.</li>
-  <li><em>Optional:</em> extra beans/lentils for the "seed sort" companion day; a magnifier for the garden walk.</li>
-</ul>
+  arc: {
+    kicker: "The arc (nature sets the pace)",
+    title: "One big setup, then daily noticing",
+    lead: "Day 1 is the hands-on setup. After that, a short daily check-in plus a couple of “while we wait” companion days. Tap a day to jump into Run mode."
+  },
 
-<div class="box accent">
-  <p class="box-title">Safety check</p>
-  <p>Dried beans are a choke hazard — keep them adult-handled, no mouths, and count them back in
-  afterward. Wash hands after handling seeds and soil. Skip this project's bean-eating jokes.</p>
-</div>
+  days: [
+    {
+      n: 1, stars: "★★☆", lead: "", title: "Plant the fair test", tag: "set up two twins",
+      goal: "Set up two identical cups and plant the idea of changing one thing on purpose.",
+      setup: "Soaked beans, 2 clear cups, paper towels, spray bottle, the two labels, and the journal all ready.",
+      doText: "Line each cup with a damp crumpled towel. Tuck 2 beans into each, pressed against the glass. Spray both the same — stress the sameness: “These two are TWINS.” Label them, place one on the windowsill, one in the dark. Get his Day-1 prediction and mark it.",
+      ask: [
+        "These two cups are exactly the same — except one gets sun and one stays dark. Which grows more?",
+        "What do you think a seed needs to wake up and grow?",
+        "Ready to guess? Let’s write it down."
+      ],
+      watch: [
+        { icon: "✅", text: "He notices the cups are “the same except…” — the seed of fair-test thinking." },
+        { icon: "✅", text: "He makes a confident prediction. Either answer is great." },
+        { icon: "😌", text: "He may think the dark one grows, or that nothing will. Don’t correct — the wait will show him." }
+      ],
+      done: "both cups are planted, labeled, placed, and his guess is recorded."
+    },
+    {
+      n: 2, stars: "★★☆", lead: "", title: "The check-in ritual", tag: "daily · ~10 min",
+      goal: "Build the patience to notice slow change, plus daily counting.",
+      setup: "Same time each day (after breakfast works well). Spray bottle and journal beside the cups.",
+      doText: "Bring the dark cup to the light just to look, spray both equally, then return the dark one. {name} draws what he sees in each cup; you write the date. Two minutes is plenty.",
+      ask: [
+        "What’s different from yesterday? A crack, a root, a sprout?",
+        "How many days has it been now? Let’s count on the calendar.",
+        "What do you think we’ll see tomorrow?"
+      ],
+      watch: [
+        { icon: "✅", text: "He spots small changes — a swelling bean, a tiny root. Close observation." },
+        { icon: "✅", text: "He’s eager to check. Anticipation is curiosity." },
+        { icon: "👀", text: "If the daily wait frustrates him, keep it to 2 min and lean on the companion days for hands-on energy." }
+      ],
+      done: "both cups are sprayed and at least one observation is drawn and dated."
+    },
+    {
+      n: 3, stars: "★★☆", lead: "", title: "Seed sort & count", tag: "while we wait · optional",
+      goal: "Reuse Project 1’s sorting + counting; reinforce “a seed holds a whole plant.”",
+      setup: "A mix of dried beans, lentils, peas, sunflower seeds in a bowl.",
+      doText: "Pour out the mix. {name} sorts by type into piles and counts each. Talk about how each tiny seed has a plant “sleeping” inside.",
+      ask: [
+        "Can you put all the same ones together? How many big beans?",
+        "All of these are sleeping seeds. What do you think is inside?"
+      ],
+      watch: [
+        { icon: "✅", text: "Accurate sorting by one feature — size, color, or shape." },
+        { icon: "😌", text: "Counting hiccups are fine — just model the correct count cheerfully." }
+      ],
+      done: "the seeds are sorted into piles and counted at least once."
+    },
+    {
+      n: 4, stars: "★★★", lead: "", title: "Garden walk", tag: "while we wait · optional",
+      goal: "Connect the cup experiment to real, living plants.",
+      setup: "Go outside, or visit houseplants. Bring a magnifier if you have one.",
+      doText: "Hunt for roots, stems, leaves, flowers. Touch, smell, compare. Tie it back: “Our beans are growing a root and a stem too!”",
+      ask: [
+        "Where do you think this plant drinks its water?",
+        "Can you find a plant’s leaves? Its stem? What about roots?",
+        "I wonder if all plants have the same parts?"
+      ],
+      watch: [
+        { icon: "✅", text: "He names plant parts and links them back to the cups." },
+        { icon: "✅", text: "He notices plants are everywhere once he’s looking." },
+        { icon: "👀", text: "If outside becomes the whole adventure, that’s fine — nature observation IS the science." }
+      ],
+      done: "he’s found roots, a stem, and leaves on a real plant and tied it to the beans."
+    },
+    {
+      n: 5, stars: "★★★", lead: " · he leads", title: "Reveal & Kai’s seed", tag: "the payoff",
+      goal: "Read the result of a fair test and measure — then hand him ownership of a living keepsake.",
+      setup: "When sprouts appear (usually day 5–10), have the block “ruler” and the soil pot ready.",
+      doText: "Line both cups side by side. The sunny one is usually greener and sturdier; the dark one pale, leggy, stretched. Measure each in “blocks” and compare to his Day-1 guess. Then {name} picks his favorite sprout to “adopt,” pots it in soil, and decides where it lives — he waters it from now on.",
+      ask: [
+        "Look — they’re different! What do you notice about each one?",
+        "Why does the sunny one look like that? Was that your guess?",
+        "You’re the gardener now — what does your plant need to stay happy?"
+      ],
+      watch: [
+        { icon: "✅", text: "He describes the difference in his own words — “that one’s yellow and floppy!”" },
+        { icon: "✅", text: "He connects the result to the one thing that changed — light." },
+        { icon: "😌", text: "If both grew similarly (beans are tough), that’s still a real result — talk about what you’d change next time." }
+      ],
+      done: "both sprouts are compared and measured, and his keeper is potted with a watering plan."
+    }
+  ],
 
-<h3>Setup, the night before Day 1</h3>
-<ol class="steps">
-  <li>Soak 4–6 beans in a bowl of water overnight (soaked beans sprout days faster).</li>
-  <li>Make the ☀️ SUNNY and 🌑 DARK labels.</li>
-  <li>Scout your two spots: a bright windowsill, and a fully dark cupboard or drawer.</li>
-  <li>Print the Grow Journal; set out crayons and the block "ruler."</li>
-</ol>
+  journal: {
+    kicker: "The keepsake",
+    title: "Grow Journal",
+    intro: "One row per check-in. Type which cup and what changed that day — {name} can draw alongside. <span data-print=\"hide\">Print it, or keep it on the phone.</span>",
+    headerTitle: "My Grow Journal",
+    type: "log",
+    rows: 5,
+    columns: [
+      { key: "cup", placeholder: "which cup" },
+      { key: "saw", placeholder: "what changed today" }
+    ],
+    said: "{name} said: “________________________________”"
+  },
 
-<h2>The arc (nature sets the pace)</h2>
-<p>Day 1 is the big hands-on setup. After that, a short daily <strong>check-in ritual</strong>,
-plus a few 30-minute "while we wait" companion days so the project stays hands-on.</p>
-<div class="days">
-  <div class="day"><div class="badge">Day&nbsp;1</div><h3>Plant the fair test</h3><div class="day-body"><p class="level">★★☆ · ~30 min</p><p>Build two identical cups; change only light.</p></div></div>
-  <div class="day"><div class="badge">Daily</div><h3>Check-in ritual</h3><div class="day-body"><p class="level">★★☆ · ~10 min</p><p>Spray, look, draw, count the days.</p></div></div>
-  <div class="day"><div class="badge">Wait</div><h3>Seed sort &amp; count</h3><div class="day-body"><p class="level">★★☆ · optional 30 min</p><p>Sort &amp; count a mix of dried seeds.</p></div></div>
-  <div class="day"><div class="badge">Wait</div><h3>Garden walk</h3><div class="day-body"><p class="level">★★★ · optional 30 min</p><p>Find roots, stems, leaves on real plants.</p></div></div>
-  <div class="day"><div class="badge">Sprout!</div><h3>Big reveal</h3><div class="day-body"><p class="level">★★★ · the payoff</p><p>Compare &amp; measure the two cups.</p></div></div>
-  <div class="day"><div class="badge">Finale</div><h3>Kai's own seed</h3><div class="day-body"><p class="level">★★★ · Kai leads</p><p>Plant a keeper in soil; care for it.</p></div></div>
-</div>
+  qbank: {
+    kicker: "Magic words",
+    title: "Question bank",
+    intro: "Pick one or two — never interrogate. Ask, then <strong>wait five seconds</strong> before rescuing the silence.",
+    items: [
+      { moment: "Setting up the fair test", say: "What’s the same about these two? What’s different?" },
+      { moment: "Predicting", say: "Which will grow more — sunny or dark? Why?" },
+      { moment: "Daily check-in", say: "What changed since yesterday?" },
+      { moment: "Counting time", say: "How many days has it been growing?" },
+      { moment: "Wondering (you)", say: "I wonder what’s happening down at the roots…" },
+      { moment: "At the reveal", say: "Why do you think they look so different?" },
+      { moment: "Measuring", say: "How tall is it now? Taller than yesterday?" },
+      { moment: "Connecting", say: "What do living plants need that our bean needed too?" }
+    ]
+  },
 
-<h2>Day by day, in detail</h2>
+  faq: {
+    kicker: "If it wobbles",
+    title: "Troubleshooting",
+    items: [
+      { q: "Nothing is sprouting — did we fail?", a: "Give it time: soaked beans usually show a root in 3–5 days, a sprout in 5–10. If after ~10 days there’s nothing, the beans may be old or too dry. Keep the towel damp (not soaked, not bone dry), keep it warm (room temp, not a cold windowsill), and try fresh beans. A “failure” is a great science moment: “Hmm, what could we change to help them grow?”" },
+      { q: "The wait is too long — he loses interest between check-ins.", a: "This is the hardest part, and learning to wait <strong>is</strong> a skill. Keep daily check-ins to 2 minutes, make them a fixed routine (right after breakfast), and fill the in-between days with the hands-on companion days (seed sort, garden walk). Beans are among the fastest sprouters, which is why we chose them." },
+      { q: "Both cups grew about the same. Isn’t the experiment ruined?", a: "Not at all — that’s a real result, and beans are hardy enough to sprout even in low light at first. Talk about it honestly: “They look similar! I wonder what would happen if we waited longer, or if one had no water at all?” An unexpected result is a perfect launchpad for the next experiment, not a failure." },
+      { q: "Can we change a different “one thing”?", a: "Yes — the fair-test idea is the point, not the specific change. Easy swaps: <strong>water vs no water</strong> (both in light), <strong>warm spot vs fridge</strong>, or <strong>lots of water vs a drop</strong>. Just keep everything else identical and change only one thing. Ask me and I’ll write you a variant." },
+      { q: "He wants to dig the beans up every day.", a: "Common! The clear-cup method helps — he can see the roots without digging. If he keeps disturbing them, plant a “sacrifice” bean he’s allowed to pull up and inspect, while the experiment cups stay untouched. Curiosity about the underground is a good instinct to honor." },
+      { q: "Do I need soil, or is paper towel really okay?", a: "Paper towel in a clear cup is actually <em>better</em> for this age — {name} can watch the roots and sprout appear, which soil hides. Save the soil for the finale, when he pots his keeper to grow on long-term." },
+      { q: "What if mold grows?", a: "A little can happen if it’s too wet. Keep the towel damp, not soggy, and give some airflow (don’t seal the cup). If you see fuzzy mold, start fresh with a clean cup and less water. You can even make it a mini-lesson: “Too much water wasn’t good — what should we change?”" },
+      { q: "He’s bored — can we speed this up?", a: "Add a second, faster experiment in parallel: cress or grass seed on a damp sponge sprouts in 2–3 days for quick gratification, while the beans run the “real” fair test. Two timelines keep the momentum." }
+    ]
+  },
 
-<div class="daydetail">
-  <span class="tag">Day 1 · ★★☆</span>
-  <h3>Plant the fair test</h3>
-  <p><strong>Goal:</strong> set up two identical cups and plant the idea of <em>changing one thing on purpose.</em></p>
-  <h4>Do</h4>
-  <ol class="steps">
-    <li>Together, line each cup with a damp crumpled paper towel.</li>
-    <li>Tuck 2 soaked beans into each cup, pressed against the glass so they show.</li>
-    <li>Spray both the same amount. Stress the sameness: "These two are TWINS."</li>
-    <li>Label them, then place one on the windowsill, one in the dark cupboard.</li>
-    <li>Get his Day-1 prediction and mark it in the journal.</li>
-  </ol>
-  <h4>Ask</h4>
-  <p class="say">These two cups are exactly the same — except one gets sunshine and one stays dark. Which do you think will grow more? Let's guess!</p>
-  <p class="say">What do you think a seed needs to wake up and grow?</p>
-  <h4>Watch for</h4>
-  <ul class="observe">
-    <li class="good">He notices the cups are "the same except…" — the seed of fair-test thinking.</li>
-    <li class="good">He makes a confident prediction (either answer is great).</li>
-    <li class="relax">He may think the dark one grows (or that nothing will). Don't correct — the wait will show him.</li>
-  </ul>
-  <h4>Done when</h4><p>Both cups are planted, labeled, placed, and his guess is recorded.</p>
-</div>
-
-<div class="daydetail">
-  <span class="tag">Every day · ~10 min</span>
-  <h3>The check-in ritual</h3>
-  <p><strong>Goal:</strong> build the patience to notice <em>slow</em> change, plus daily counting.</p>
-  <h4>Do</h4>
-  <p>Same time each day (after breakfast works well). Bring the dark cup to the light just to look, spray both equally, then return the dark one. Kai draws what he sees in each cup and you write the date.</p>
-  <h4>Ask</h4>
-  <p class="say">What's different from yesterday? Anything new — a crack, a root, a sprout?</p>
-  <p class="say">How many days has it been now? Let's count on the calendar.</p>
-  <p class="say">What do you think we'll see tomorrow?</p>
-  <h4>Watch for</h4>
-  <ul class="observe">
-    <li class="good">He spots small changes (a swelling bean, a tiny root) — close observation.</li>
-    <li class="good">He's eager to check — anticipation is curiosity.</li>
-    <li class="watch">If the daily wait frustrates him, keep it to 2 minutes and lean on the companion activities for hands-on energy.</li>
-  </ul>
-  <h4>Done when</h4><p>Both cups are sprayed and at least one observation is drawn/dated.</p>
-</div>
-
-<div class="daydetail">
-  <span class="tag">While we wait · optional 30 min</span>
-  <h3>Companion: Seed sort &amp; count</h3>
-  <p><strong>Goal:</strong> reuse Project 1's sorting + counting; reinforce "a seed holds a whole plant."</p>
-  <h4>Do</h4>
-  <p>Pour out a mix of dried beans, lentils, peas, sunflower seeds. Kai sorts by type into piles and counts each. Talk about how each tiny seed has a plant "sleeping" inside.</p>
-  <h4>Ask</h4>
-  <p class="say">Can you put all the same ones together? How many big beans?</p>
-  <p class="say">All of these are sleeping seeds. What do you think is inside?</p>
-  <h4>Watch for</h4>
-  <ul class="observe">
-    <li class="good">Accurate sorting by one feature (size/color/shape).</li>
-    <li class="relax">Counting hiccups are fine — model the correct count.</li>
-  </ul>
-</div>
-
-<div class="daydetail">
-  <span class="tag">While we wait · optional 30 min</span>
-  <h3>Companion: Plant-parts garden walk</h3>
-  <p><strong>Goal:</strong> connect the cup experiment to real, living plants.</p>
-  <h4>Do</h4>
-  <p>Walk outside (or visit houseplants) hunting for <strong>roots, stems, leaves, flowers</strong>. Use a magnifier. Touch, smell, compare. Tie it back: "Our beans are growing a root and a stem too!"</p>
-  <h4>Ask</h4>
-  <p class="say">Where do you think this plant drinks its water?</p>
-  <p class="say">Can you find a plant's leaves? Its stem? What about roots?</p>
-  <h4>Watch for</h4>
-  <ul class="observe">
-    <li class="good">He names plant parts and links them to the cups.</li>
-    <li class="good">He notices plants are everywhere once he's looking.</li>
-  </ul>
-</div>
-
-<div class="daydetail">
-  <span class="tag">Sprout day · ★★★</span>
-  <h3>The big reveal &amp; compare</h3>
-  <p><strong>Goal:</strong> read the result of a fair test, and measure.</p>
-  <h4>Do</h4>
-  <p>When sprouts appear (usually day 5–10), line both cups side by side. The sunny one is typically greener and sturdier; the dark one is often pale, leggy, and stretched. Measure each sprout in "blocks" and compare to his Day-1 guess.</p>
-  <h4>Ask</h4>
-  <p class="say">Look — they're different! What do you notice about each one?</p>
-  <p class="say">Why do you think the sunny one looks like that? Was that your guess?</p>
-  <p class="say">How many blocks tall is the tallest sprout?</p>
-  <h4>Watch for</h4>
-  <ul class="observe">
-    <li class="good">He describes the difference in his own words ("that one's yellow and floppy!").</li>
-    <li class="good">He connects the result to the one thing that changed (light).</li>
-    <li class="relax">If both grew similarly (it happens — beans are tough), that's still a real result; talk about what you'd change next time.</li>
-  </ul>
-  <h4>Done when</h4><p>Both sprouts are compared and measured; result marked against his guess.</p>
-</div>
-
-<div class="daydetail">
-  <span class="tag">Finale · ★★★ · Kai leads</span>
-  <h3>Kai's own seed</h3>
-  <p><strong>Goal:</strong> ownership, responsibility, and a living keepsake.</p>
-  <h4>Do</h4>
-  <p>Kai picks his favorite sprout to "adopt," plants it in the soil pot, and decides where it lives. He's in charge of watering it from now on — a gentle first responsibility.</p>
-  <h4>Ask</h4>
-  <p class="say">You're the gardener now — what does your plant need to stay happy?</p>
-  <p class="say">Where should it live? How often will you give it a drink?</p>
-  <h4>Watch for</h4>
-  <ul class="observe">
-    <li class="good">He recalls "plants need light and water" from the experiment.</li>
-    <li class="good">Pride and care for "his" plant.</li>
-  </ul>
-  <h4>Done when</h4><p>The sprout is potted and Kai has a watering plan. Keep it going past the project!</p>
-</div>
-
-<h2>The full question bank (for this project)</h2>
-<table>
-  <thead><tr><th>Moment</th><th>Say this</th></tr></thead>
-  <tbody>
-    <tr><td>Setting up the fair test</td><td>"What's the same about these two? What's different?"</td></tr>
-    <tr><td>Predicting</td><td>"Which will grow more — sunny or dark? Why?"</td></tr>
-    <tr><td>Daily check-in</td><td>"What changed since yesterday?"</td></tr>
-    <tr><td>Counting time</td><td>"How many days has it been growing?"</td></tr>
-    <tr><td>Wondering (you)</td><td>"I wonder what's happening down at the roots…"</td></tr>
-    <tr><td>At the reveal</td><td>"Why do you think they look so different?"</td></tr>
-    <tr><td>Measuring</td><td>"How tall is it now? Taller than yesterday?"</td></tr>
-    <tr><td>Connecting</td><td>"What do living plants need that our bean needed too?"</td></tr>
-  </tbody>
-</table>
-
-<h2>What to observe (is it working?)</h2>
-<ul class="observe">
-  <li class="good"><strong>Green flags:</strong> he checks the cups eagerly; he notices tiny daily changes; he remembers "we changed the light"; he uses words like seed, root, sprout, grow; he predicts what comes next.</li>
-  <li class="watch"><strong>Gently adjust:</strong> if the two-week wait drags, lean harder on companion days; if he forgets the cups, make the check-in part of an existing routine (after breakfast).</li>
-  <li class="relax"><strong>Don't worry about:</strong> a guess that was "wrong," a cup that grows oddly, not understanding photosynthesis, or losing interest some days. Patience itself is the skill being built.</li>
-</ul>
-
-<h2 id="journal">The Grow Journal page</h2>
-<p>One row per check-in. Kai draws what he sees; you add the date and his words.
-See <a href="../reference/0001-parent-playbook.html#how-the-science-journal-works">how the journal works</a>.</p>
-<div class="box grow">
-  <p class="box-title">My Grow Journal &nbsp;·&nbsp; My guess on Day 1: ☀️ sunny will grow more &nbsp; / &nbsp; 🌑 dark will grow more</p>
-  <table>
-    <thead><tr><th>Day #</th><th>Date</th><th>☀️ Sunny cup — what I see (draw)</th><th>🌑 Dark cup — what I see (draw)</th></tr></thead>
-    <tbody>
-      <tr><td>____</td><td>________</td><td style="height:2.2rem;"></td><td></td></tr>
-      <tr><td>____</td><td>________</td><td style="height:2.2rem;"></td><td></td></tr>
-      <tr><td>____</td><td>________</td><td style="height:2.2rem;"></td><td></td></tr>
-      <tr><td>____</td><td>________</td><td style="height:2.2rem;"></td><td></td></tr>
-      <tr><td>____</td><td>________</td><td style="height:2.2rem;"></td><td></td></tr>
-    </tbody>
-  </table>
-  <p style="margin-top:0.6rem;">📏 Tallest sprout was ____ blocks tall. &nbsp; It took ____ days to sprout.</p>
-  <p class="say" style="margin-top:0.4rem;">Kai said: "________________________________"</p>
-</div>
-
-<h2>FAQ &amp; troubleshooting</h2>
-
-<details class="faq"><summary>Nothing is sprouting — did we fail?</summary>
-<div class="faq-body"><p>Give it time: soaked beans usually show a root in 3–5 days, a sprout in 5–10. If after ~10 days there's nothing, the beans may be old or too dry. Check the paper towel is still damp (not soaked, not bone dry), keep it warm (room temp, not a cold windowsill), and try fresh beans. A "failure" is a great science moment: "Hmm, what could we change to help them grow?"</p></div></details>
-
-<details class="faq"><summary>The wait is too long — he loses interest between check-ins.</summary>
-<div class="faq-body"><p>This is the hardest part of the project, and learning to wait IS a skill. Keep daily check-ins to 2 minutes, make them a fixed routine (right after breakfast), and fill the in-between days with the hands-on companion activities (seed sort, garden walk). Beans are among the fastest sprouters, which is why we chose them.</p></div></details>
-
-<details class="faq"><summary>Both cups grew about the same. Isn't the experiment ruined?</summary>
-<div class="faq-body"><p>Not at all — that's a real result, and beans are hardy enough to sprout even in low light at first. Talk about it honestly: "They look similar! I wonder what would happen if we waited longer, or if one had no water at all?" An unexpected result is a perfect launchpad for the next experiment, not a failure.</p></div></details>
-
-<details class="faq"><summary>Can we use a different "one thing" to change?</summary>
-<div class="faq-body"><p>Yes — the fair-test idea is the point, not the specific variable. Easy swaps: <strong>water vs no water</strong> (both in light), <strong>warm spot vs fridge</strong>, or <strong>lots of water vs a drop</strong>. Just keep everything else identical and change only one thing. Ask me and I'll write you a variant.</p></div></details>
-
-<details class="faq"><summary>He wants to dig the beans up every day.</summary>
-<div class="faq-body"><p>Common! The clear-cup method helps — he can see the roots without digging. If he keeps disturbing them, plant a "sacrifice" bean he's allowed to pull up and inspect, while the experiment cups stay untouched. Curiosity about the underground is a good instinct to honor.</p></div></details>
-
-<details class="faq"><summary>Do I need soil, or is the paper-towel method really okay?</summary>
-<div class="faq-body"><p>Paper towel in a clear cup is actually <em>better</em> for this age — Kai can watch the roots and sprout appear, which soil hides. Save the soil for the finale, when he pots his keeper to grow on long-term.</p></div></details>
-
-<details class="faq"><summary>What if mold grows?</summary>
-<div class="faq-body"><p>A little can happen if it's too wet. Keep the towel damp, not soggy, and give some airflow (don't seal the cup). If you see fuzzy mold, start fresh with a clean cup and less water. You can even make it a mini-lesson: "Too much water wasn't good — what should we change?"</p></div></details>
-
-<details class="faq"><summary>He keeps eating-mimicking the beans / putting them near his mouth.</summary>
-<div class="faq-body"><p>Stay close and keep beans counted. Dried beans are a choke hazard and raw beans aren't for eating. If mouthing is a strong urge, you handle the beans and let him do the spraying, labeling, and drawing instead.</p></div></details>
-
-<details class="faq"><summary>He's bored — can we speed this up?</summary>
-<div class="faq-body"><p>Add a second, faster experiment in parallel: cress or grass seed on a damp sponge sprouts in 2–3 days for quick gratification, while the beans run the "real" fair test. Two timelines keep momentum.</p></div></details>
-
-<h2>Read this first (primary source)</h2>
-<div class="box accent">
-  <p>A clear, kid-tested walkthrough of the jar method (so you can see roots) and the fair-test idea:</p>
-  <p><strong>→ Project Learning Tree: <a href="https://www.plt.org/educator-tips/easy-plant-science-experiments-for-the-classroom/">Easy Plant Science Experiments</a></strong>
-  &nbsp;·&nbsp; setup help: <a href="https://littlebinsforlittlehands.com/seed-jar-science-experiment-kids/">Seed Jar Experiment</a></p>
-</div>
-
-<div class="ask-teacher">
-  <strong>I'm your teacher — ask me anything.</strong> Seeds not sprouting? Want a water-vs-no-water
-  version instead of light-vs-dark? Kai losing patience with the wait? Tell me and I'll adjust
-  the pace or the companion activities.
-</div>
-
-<hr style="border:none;border-top:1px solid var(--rule);margin:2.5rem 0 1rem;">
-<p class="footnote" id="n1"><strong>1.</strong> Project Learning Tree, <a href="https://www.plt.org/educator-tips/easy-plant-science-experiments-for-the-classroom/">Easy Plant Science Experiments</a> — "change only one thing" fair-test design.</p>
-<p class="footnote" id="n2"><strong>2.</strong> Little Bins for Little Hands, <a href="https://littlebinsforlittlehands.com/seed-jar-science-experiment-kids/">Seed Jar Science Experiment</a> — beans germinate in ~3–7 days; jar method shows roots.</p>
-
-<nav class="doc-nav">
-  <a href="../index.html">🏠 Home</a>
-  <a href="0001-sink-or-float.html">← Project 1</a>
-  <a href="../reference/0001-parent-playbook.html">📖 Parent Playbook</a>
-  <a href="0003-kitchen-color-lab.html">Project 3 → Kitchen Color Lab</a>
-</nav>
-
+  footer: {
+    homeHref: "../index.html",
+    teacherHTML: "<strong>I’m your teacher — tell me how it went.</strong> Seeds not sprouting? Want a water-vs-no-water version instead of light-vs-dark? Is {name} losing patience with the wait? Tell me and I’ll tune the pace or the companion days.",
+    links: [
+      { href: "../index.html", label: "🏠 Home" },
+      { href: "../reference/0001-parent-playbook.html", label: "📖 Playbook" },
+      { href: "0003-kitchen-color-lab.html", label: "Project 3 →" }
+    ]
+  }
+};
+</script>
+<script src="../assets/lesson.js"></script>
 </body>
 </html>

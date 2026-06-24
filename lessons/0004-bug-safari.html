@@ -4,333 +4,243 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Project 4 — Backyard Bug Safari — KaiSTEM</title>
-<link rel="stylesheet" href="../assets/styles.css">
+<meta name="description" content="Five days as a tiny-creature detective: Kai learns to look closely and classify living things — the move that makes sense of a messy world.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500;1,6..72,600&family=Space+Mono:wght@400;700&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/lesson.css">
 </head>
 <body>
+<div id="app"></div>
 
-<nav class="coursebar" aria-label="Course navigation">
-  <a class="home" href="../index.html">🏠 All projects</a>
-  <span class="here">Project 4 · Backyard Bug Safari</span>
-  <span class="nextprev">
-    <a href="0003-kitchen-color-lab.html">← Project 3</a>
-    <a href="0005-shadow-play.html">Project 5 →</a>
-  </span>
-</nav>
+<script>
+window.LESSON = {
+  storageKey: "bugs-v1",
+  childName: "Kai",
+  index: 4, total: 5,
+  defaultMode: "prep",
+  title: "Project 4 — Backyard Bug Safari — KaiSTEM",
 
-<header class="masthead">
-  <p class="kicker">KaiSTEM · Project 04 · ~1 week</p>
-  <h1>Backyard Bug Safari</h1>
-  <p class="subtitle">Kai becomes a tiny-creature detective. New superpower this project:
-  <em>classifying</em> — looking closely and grouping living things by what's the same and what's different.</p>
-  <div class="meta-row">
-    <span>~30 min / day × 5 days</span><span>·</span>
-    <span>Interests: 🐛 animals · 👀 close looking · 🔢 counting</span><span>·</span>
-    <span>Difficulty: ★★★</span>
-  </div>
-</header>
+  theme: { "--accent": "oklch(60% 0.15 70)", "--accent-deep": "oklch(48% 0.13 70)" },
 
-<div class="box accent">
-  <p class="box-title">The win this project earns</p>
-  <p>Kai already predicts and tests. Now he learns to <strong>look closely and sort living
-  things into groups</strong> — by legs, wings, color, where they live. Classifying is how
-  scientists make sense of a messy world, and it's deep early-math thinking dressed up as a
-  bug hunt.<sup><a href="#n1">1</a></sup> Bonus win: gentleness and respect for small creatures.</p>
-</div>
+  hero: {
+    kicker: "KaiSTEM · Project Four",
+    titleHTML: '<span class="rc">Bug</span> <span class="lc">Safari</span>',
+    subHTML: "Five days as a tiny-creature detective, where {name} learns the move that makes sense of a messy world: <strong>look closely, then sort living things into groups.</strong>",
+    tags: [
+      { text: "~30 min × 5 days" },
+      { text: "🐛 animals · 👀 close looking · 🔢 counting" },
+      { text: "★★★ classifying", lead: true }
+    ]
+  },
 
-<h2>The method (same every project)</h2>
-<p>Same five moves — now the "Notice" step gets a magnifier. Scripts &amp; question bank:
-<a href="../reference/0001-parent-playbook.html">Parent Playbook</a>.</p>
-<ul class="loop">
-  <li><span class="step-emoji">👀</span><span class="step-name">Notice</span><br>look REALLY close</li>
-  <li><span class="step-emoji">💭</span><span class="step-name">Wonder</span><br>"who lives here?"</li>
-  <li><span class="step-emoji">🤔</span><span class="step-name">Predict</span><br>"where will we find bugs?"</li>
-  <li><span class="step-emoji">🧪</span><span class="step-name">Test</span><br>hunt &amp; observe</li>
-  <li><span class="step-emoji">💬</span><span class="step-name">Talk</span><br>"how are they the same?"</li>
-</ul>
+  loop: [
+    { emoji: "👀", name: "Notice", tone: "notice" },
+    { emoji: "💭", name: "Wonder", tone: "wonder" },
+    { emoji: "🤔", name: "Predict", tone: "predict" },
+    { emoji: "🧪", name: "Test", tone: "test" },
+    { emoji: "💬", name: "Talk", tone: "talk" }
+  ],
 
-<div class="box wonder">
-  <p class="box-title">The big idea: classifying</p>
-  <p>Classifying means <strong>grouping things by a rule</strong> — and the magic is that the
-  <em>same</em> bugs can be grouped a new way when you pick a new rule (by color, then by legs,
-  then by where they live). Re-sorting by a fresh rule is flexible thinking, and it's harder
-  (and more fun) than the one-rule sorting from <a href="0001-sink-or-float.html">Project 1</a>.</p>
-</div>
+  win: {
+    label: "The win this earns",
+    html: "{name} already predicts and tests. Now he learns to <strong>look closely and sort living things into groups</strong> — by legs, wings, colour, where they live. Classifying is how scientists tame a messy world, and it’s deep early-math thinking dressed up as a bug hunt. The bonus win: <em>gentleness and respect for small creatures.</em>"
+  },
 
-<h2>What you'll prepare</h2>
-<p><strong>Prep time:</strong> ~10 min. <strong>Cost:</strong> a kids' magnifier is a few
-dollars; everything else is household. <strong>Best on:</strong> a warm, calm day — bugs hide
-in cold/wind. Have a rainy-day backup (see FAQ).</p>
+  prep: {
+    gearKicker: "Gather the night before",
+    gearTitle: "What you’ll prepare",
+    gearLead: "~10 minutes. A kids’ magnifier is a few dollars; the rest is household. Best on a warm, calm day — bugs hide in cold and wind. Tap each as you gather it.",
+    gear: [
+      { id: "magnifier", strong: "1–2 magnifying glasses", rest: " — the star tool. A clear bug-viewer jar with a magnifying lid is even better." },
+      { id: "jar", strong: "A clear catch container", rest: " — jar or bug box with air holes, for a quick, gentle, temporary look." },
+      { id: "scoop", strong: "A soft scooping tool", rest: " — a spoon, a small paintbrush, or a leaf. Never fingers on fragile bugs." },
+      { id: "tray", strong: "A white tray, plate, or paper", rest: " — bugs show up beautifully against white." },
+      { id: "cards", strong: "Simple bug picture cards", rest: " — print a few: ant, beetle, bee, butterfly, spider, worm, snail, ladybug, fly, for matching and sorting indoors." },
+      { id: "journal", strong: "The Bug Journal", rest: " + crayons." },
+      { id: "rainy", strong: "A rainy-day kit", rest: " — a tub of dried beans or rice + plastic toy bugs + tongs + the magnifier = an indoor “sensory safari.”" },
+      { id: "extras", strong: "Optional extras", rest: " — a sun hat, plus a field guide or a phone bug-ID app for you." }
+    ],
+    deepDive: {
+      kicker: "The important part",
+      eyebrowTone: "test",
+      title: "The big idea: classifying",
+      lead: "Classifying means <strong>grouping things by a rule</strong> — and the magic is that the <em>same</em> bugs regroup when you pick a new rule. Re-sorting by a fresh rule is flexible thinking, and it’s harder (and more fun) than the one-rule sorting from Project 1.",
+      blocks: [
+        { tone: "", label: "👀 Sort by what you see", html: "by colour · by size · by where you found it — pick one rule and make piles" },
+        { tone: "test", label: "🔢 Then re-sort a new way", html: "by legs (6 vs 8 vs lots) · by wings vs no wings · by air vs ground — same bugs, fresh rule" },
+        { tone: "predict", label: "✦ The real rule — insects", html: "3 body parts + 6 legs = an insect. Spiders have 8 legs — not insects! Kid words: head · middle · bottom." }
+      ]
+    },
+    safety: {
+      label: "⚠ Safety & kindness check",
+      html: "<strong>Look, don’t grab.</strong> Teach “we observe, then let them go home,” and release every bug where you found it. Don’t touch bees, wasps, biting ants, fuzzy or spiky caterpillars, spiders, or anything you don’t recognise — and watch for ticks in long grass. <strong>Never let a bug near his mouth, and no tasting anything.</strong> Wash hands after; use sun protection. Watch for any allergic reaction to stings and stop at once if one appears."
+    },
+    setup: {
+      kicker: "Setup",
+      title: "The night before",
+      steps: [
+        "Print 6–9 bug picture cards, or sketch simple ones.",
+        "Scout 3–4 bug spots: under a rock or log, on flowers, in grass, near a damp wall or pot.",
+        "Pack the safari kit in a basket so it’s grab-and-go.",
+        "Print the Bug Journal and set out crayons."
+      ]
+    }
+  },
 
-<h3>The gear</h3>
-<ul class="checklist">
-  <li><strong>1–2 magnifying glasses</strong> — the star tool. A clear bug-viewer jar with a magnifying lid is even better.</li>
-  <li><strong>A clear catch container</strong> (jar or bug box) with air holes — for a quick, gentle, temporary look.</li>
-  <li><strong>A soft tool to scoop</strong> — a spoon, a small paintbrush, or a leaf (never fingers on fragile bugs).</li>
-  <li><strong>A white tray, plate, or sheet of paper</strong> — bugs show up beautifully against white.</li>
-  <li><strong>Simple bug picture cards</strong> (print a few: ant, beetle, bee, butterfly, spider, worm, snail, ladybug, fly) — for matching and sorting indoors.</li>
-  <li><strong>The <a href="#journal">Bug Journal</a></strong> + crayons.</li>
-  <li><em>Rainy-day kit:</em> a tub of dried beans/rice + plastic toy bugs + tongs + the magnifier = an indoor "sensory safari."</li>
-  <li><em>Optional:</em> sun hat, a field guide or a phone bug-ID app for you.</li>
-</ul>
+  arc: {
+    kicker: "The five-day arc",
+    title: "Same loop, one notch harder",
+    lead: "Tap a day to jump into Run mode."
+  },
 
-<div class="box accent">
-  <p class="box-title">Safety &amp; kindness check</p>
-  <p><strong>Look, don't grab.</strong> Teach "we observe, then let them go home." Don't touch:
-  bees/wasps, fuzzy/spiky caterpillars, spiders, biting ants, anything you don't recognize. Wash
-  hands after. Watch for ticks in long grass; use sun protection. Release every bug where you
-  found it. Never let a bug near his mouth.</p>
-</div>
+  days: [
+    {
+      n: 1, stars: "★★★", lead: "", title: "First safari", tag: "find & observe",
+      goal: "Find real bugs and observe them up close — build the “look REALLY close” habit.",
+      setup: "Pack the basket. Before going out, make a guess list of bug hiding spots and practise the magnifier on your own hand or a leaf.",
+      doText: "Visit your bug spots one at a time. At each: predict what you’ll find, gently scoop one onto the white tray, observe with the magnifier, and count its legs together. Each habitat is a new round. Then let him draw a favourite while looking through the magnifier, and tally how many you found.",
+      ask: [
+        "Where do you think bugs like to hide? Let’s make a guess list!",
+        "How many legs does it have? Let’s count! Does it have wings?",
+        "What is it doing? Where do you think it was going?"
+      ],
+      watch: [
+        { icon: "✅", text: "He looks closely instead of just grabbing — observation over impulse." },
+        { icon: "✅", text: "He counts legs and notices features — wings, spots, antennae." },
+        { icon: "👀", text: "If he wants to touch everything, model gentle scooping and “we look, then let it go.”" }
+      ],
+      done: "he’s observed a few bugs closely and drawn one. Release everyone."
+    },
+    {
+      n: 2, stars: "★★★", lead: "", title: "Sort & re-sort", tag: "classify",
+      goal: "Classify — and then <em>re-classify</em> the same set by a new rule. That switch is the deep skill.",
+      setup: "Lay out the bug picture cards and/or toy bugs. “Remember the bugs we found? Let’s be sorting scientists today.”",
+      doText: "Sort by <strong>one rule</strong> first — say, colour — and count each pile. Then mix them up and sort the SAME bugs a <strong>new way</strong>: by legs (6 vs 8 vs lots), then wings vs none, then air vs ground. Each new rule is a fresh round. Let him invent his own rule and you guess it.",
+      ask: [
+        "Can you put the same kinds together? What makes them go together?",
+        "Now let’s sort a different way — by legs. Where does the spider go?",
+        "Which group has the most? How can we check?"
+      ],
+      watch: [
+        { icon: "✅", text: "He sorts consistently by the chosen rule." },
+        { icon: "✅", text: "He can switch rules and re-sort — flexible thinking, the big win." },
+        { icon: "😌", text: "Mixing up “insect vs spider” is normal — that’s tomorrow’s focus." }
+      ],
+      done: "he’s sorted the set at least two different ways and counted the groups."
+    },
+    {
+      n: 3, stars: "★★★", lead: "", title: "Insect or not?", tag: "the 6-legs rule",
+      goal: "A real classification rule — insects have <strong>3 body parts and 6 legs.</strong> Spiders have 8 — not insects!",
+      setup: "Teach the secret rule on your fingers: “Insects have SIX legs and THREE parts. Spiders have EIGHT — not insects!” Count to six and eight together.",
+      doText: "Go through the cards or toys one at a time: count legs, count body parts, and decide — insect, or not an insect? Make two piles (ant, bee, beetle, butterfly → insects; spider, worm, snail, centipede → not). Then build a “perfect insect” from playdough: three parts, six legs, two antennae.",
+      ask: [
+        "Let’s count the legs — six? Then it’s an insect! More than six?",
+        "Can you find the three body parts? Head… middle… bottom!",
+        "Eight legs? Then it’s not an insect — it’s something else."
+      ],
+      watch: [
+        { icon: "✅", text: "He applies the rule — “8 legs, not an insect!”" },
+        { icon: "✅", text: "Careful counting to 6 and 8." },
+        { icon: "😌", text: "He won’t get every bug right — applying a rule at all is the achievement." }
+      ],
+      done: "he’s sorted insects vs not-insects and built a 6-legged creature."
+    },
+    {
+      n: 4, stars: "★★★", lead: "", title: "Habitat detective", tag: "who lives where",
+      goal: "Connect each creature to where it lives and what it does.",
+      setup: "Guess homes together first: “Every bug has a home. Where do you think a worm lives? A bee?”",
+      doText: "Back outside, match bugs to homes: under wood and rocks (pill bugs, worms), on flowers (bees, butterflies), in webs (spiders), on leaves (caterpillars). Watch behaviour up close — eating, carrying, hiding? Visit several micro-habitats as rounds. Build a tiny temporary “bug hotel” in the jar, watch one explore, then release.",
+      ask: [
+        "Why do you think it lives here? What does it need — food? a hiding spot?",
+        "What is it doing right now? What do you think it eats?",
+        "Do we find MORE bugs in the sunny spot or the shady spot? Let’s count."
+      ],
+      watch: [
+        { icon: "✅", text: "He predicts where a bug will be based on its home." },
+        { icon: "✅", text: "He notices behaviour, not just appearance." },
+        { icon: "👀", text: "If he just wants to follow one ant around, let him — that’s real observation." }
+      ],
+      done: "he’s matched a few bugs to homes and watched one behave."
+    },
+    {
+      n: 5, stars: "★★★", lead: " · he leads", title: "Kai’s bug museum", tag: "Kai leads",
+      goal: "Ownership — {name} runs the whole safari and “curates” his findings.",
+      setup: "Empty basket, ready. “You’re the bug scientist today! What’s your plan?” Let him lead the route.",
+      doText: "He hunts, observes, and gathers (gently, temporarily) his “museum.” He sorts them his own way and names them — you only ask and scribe. Then he presents to you or a stuffed-animal audience: how many, how he grouped them, his favourite and why. End with a ceremonial release: “Thank you, bugs!”",
+      ask: [
+        "What’s your plan, scientist? Where should we hunt first?",
+        "Tell me about your collection — how did you group them?",
+        "Which is your favourite? Why? How many did you find?"
+      ],
+      watch: [
+        { icon: "✅", text: "He chooses his own grouping rule and explains it." },
+        { icon: "✅", text: "Pride, gentleness, and curiosity all at once." },
+        { icon: "😌", text: "If it becomes free play, great — he’s bonding with the natural world." }
+      ],
+      done: "he’s presented and released his museum. Celebrate the curator!"
+    }
+  ],
 
-<h3>Setup, before Day 1</h3>
-<ol class="steps">
-  <li>Print 6–9 bug picture cards (or sketch simple ones).</li>
-  <li>Scout 3–4 "bug spots": under a rock/log, on flowers, in grass, near a damp wall or pot.</li>
-  <li>Pack the safari kit in a basket so it's grab-and-go.</li>
-  <li>Print the Bug Journal; set out crayons.</li>
-</ol>
+  journal: {
+    kicker: "The keepsake",
+    title: "Bug Journal",
+    intro: "Log each creature {name} finds and how he sorts it. Type the bug, where you found it, and the legs or wings. <span data-print=\"hide\">Print it, or keep it on the phone.</span>",
+    headerTitle: "My bug log",
+    type: "log",
+    rows: 5,
+    columns: [
+      { key: "bug", placeholder: "creature" },
+      { key: "where", placeholder: "where found" },
+      { key: "legs", placeholder: "legs / wings" }
+    ],
+    said: "{name} said: “________________________________”"
+  },
 
-<h2>The arc at a glance</h2>
-<div class="days">
-  <div class="day"><div class="badge">Day&nbsp;1</div><h3>First safari</h3><div class="day-body"><p class="level">★★★ · find &amp; observe</p><p>Hunt across habitats; look close; count legs.</p></div></div>
-  <div class="day"><div class="badge">Day&nbsp;2</div><h3>Sort &amp; re-sort</h3><div class="day-body"><p class="level">★★★ · classify</p><p>Group bugs by one rule, then a new rule.</p></div></div>
-  <div class="day"><div class="badge">Day&nbsp;3</div><h3>Insect or not?</h3><div class="day-body"><p class="level">★★★ · the 6-legs rule</p><p>Check bugs against "3 parts + 6 legs."</p></div></div>
-  <div class="day"><div class="badge">Day&nbsp;4</div><h3>Habitat detective</h3><div class="day-body"><p class="level">★★★ · who lives where</p><p>Match bugs to homes; watch behavior.</p></div></div>
-  <div class="day"><div class="badge">Day&nbsp;5</div><h3>Kai's bug museum</h3><div class="day-body"><p class="level">★★★ · Kai leads</p><p>He hunts, sorts, names, presents, releases.</p></div></div>
-</div>
+  qbank: {
+    kicker: "Magic words",
+    title: "Question bank",
+    intro: "Pick one or two — never interrogate. Ask, then <strong>wait five seconds</strong> before rescuing the silence.",
+    items: [
+      { moment: "Before the hunt", say: "Where do you think we’ll find bugs? Let’s guess." },
+      { moment: "Observing close", say: "What do you see through the magnifier? Any tiny details?" },
+      { moment: "Counting", say: "How many legs? How many can you see?" },
+      { moment: "Classifying", say: "Which ones go together? What’s your rule?" },
+      { moment: "Re-sorting", say: "Now let’s sort a different way — how else could we group them?" },
+      { moment: "The insect rule", say: "Six legs and three parts? Then it’s an insect!" },
+      { moment: "Habitat", say: "Why does it live here? What does it need?" },
+      { moment: "Wondering (you)", say: "I wonder where this little ant is hurrying to…" },
+      { moment: "Kindness", say: "How can we be gentle so we don’t hurt it?" }
+    ]
+  },
 
-<div class="box predict">
-  <p class="box-title">How each day fills ~30 minutes</p>
-  <p>Every day below is built in three layers — <strong>warm-up (~5) → main, several rounds
-  (~15) → extend/stretch (~10)</strong> — plus a <em>Stretch it further</em> list for when Kai
-  races ahead. Run extra rounds before adding new tasks; repetition is where it sticks. (More on
-  this in the <a href="../reference/0001-parent-playbook.html">Playbook</a>.)</p>
-</div>
+  faq: {
+    kicker: "If it wobbles",
+    title: "Troubleshooting",
+    items: [
+      { q: "It’s raining / cold / we have no yard.", a: "Run an indoor “sensory safari”: bury plastic toy bugs in a tub of dried beans or rice, and {name} digs them out with tongs, observes with the magnifier, and sorts them — same classification skills, no weather needed. A windowsill, a potted plant, or a walk to a park also work. Even hunting bugs in picture books counts." },
+      { q: "He’s scared of bugs.", a: "Never push. Start with toy bugs and pictures, then observe a real one safely inside a clear jar from a distance. Let your own calm curiosity lead. Many kids warm up over a few days once they feel <em>in control</em> — he holds the jar, he decides how close. Respect a hard “no” on any specific bug." },
+      { q: "He wants to keep or squish the bugs.", a: "Set the rule up front: “We’re scientists — we look, then let them go home to their families.” Give catching a time limit and make the release a happy ritual (“Bye bug!”). If squishing is impulse-driven, switch to observing bugs in place, on the ground or a leaf, without catching." },
+      { q: "We can’t find any bugs.", a: "Look in the right places: under rocks, logs, and pots (damp spots), in flowers, in long grass, near outdoor lights at dusk, on a spider web. Warm mid-mornings are best. If truly none, switch to the indoor sensory safari and try outside another day — “where ARE they hiding?” is itself a good science question." },
+      { q: "He keeps miscounting legs.", a: "Totally normal at 3.5. Count together slowly, touching each leg or pointing on the magnified view. The goal is the one-to-one counting <strong>habit</strong>, not a correct total. Celebrate the effort, model the right count, move on." },
+      { q: "He insists a spider is an insect.", a: "Don’t make it a correction battle — make it a counting check: “Let’s count… 1,2,3,4,5,6,7,8 — eight! Insects only have six, so spiders are something else: arachnids.” The rule does the teaching. If it doesn’t land today, it will with repetition." },
+      { q: "How do I handle a bee or wasp showing up?", a: "Calm and still: “We don’t touch bees — we watch them from here.” Don’t swat (that provokes). Admire from a safe distance; bees on flowers are great to <em>observe</em>, never catch. Model that respect, not fear, keeps everyone safe." },
+      { q: "Is it okay to keep a bug overnight?", a: "Better not, for this age — most bugs need their habitat, food, and moisture, and a forgotten jar ends sadly. Keep it to a few minutes of observation, then release. If he’s keen on longer observation, a snail in a ventilated tub with a leaf for an hour is gentle and easy." },
+      { q: "He finished everything in 10 minutes again.", a: "Lean on the layers: run more rounds (more bug spots, more sorting rules), add a stretch option, or hand him the lead early. And it’s fine to stop short on a high note, then do a second short session later the same day. Quality and joy beat clock-watching." }
+    ]
+  },
 
-<h2>Day by day, in detail</h2>
-
-<div class="daydetail">
-  <span class="tag">Day 1 · ★★★ · ≈30 min</span>
-  <h3>First safari</h3>
-  <p><strong>Goal:</strong> find real bugs and observe them up close — build the "look REALLY close" habit.</p>
-  <h4>Warm-up (~5 min)</h4>
-  <p>Before going out: <span class="say">Where do you think bugs like to hide? Let's make a guess list!</span> (under things, in flowers, in grass, near water). Hand him the magnifier and practise on your own hand/a leaf.</p>
-  <h4>Main — several rounds (~15 min)</h4>
-  <p>Visit your bug spots one at a time. At each: predict what you'll find, gently look, scoop one onto the white tray, and observe with the magnifier. Count its legs together. Move to the next spot and repeat — each habitat is a new round.</p>
-  <h4>Extend / stretch (~10 min)</h4>
-  <p>Pick a favorite bug; Kai draws it in the journal while looking through the magnifier. Tally how many bugs you found in total.</p>
-  <h4>Ask</h4>
-  <p class="say">How many legs does it have? Let's count! Does it have wings?</p>
-  <p class="say">What is it doing? Where do you think it was going?</p>
-  <h4>Watch for</h4>
-  <ul class="observe">
-    <li class="good">He looks closely instead of just grabbing — observation over impulse.</li>
-    <li class="good">He counts legs and notices features (wings, spots, antennae).</li>
-    <li class="watch">If he wants to touch everything, model gentle scooping and "we look, then let it go."</li>
-  </ul>
-  <h4>Stretch it further</h4>
-  <ul class="observe">
-    <li class="relax">Bug bingo: who can spot something flying / crawling / with spots / very tiny?</li>
-    <li class="relax">Listen: close eyes — can you hear any bugs? Where's the sound?</li>
-    <li class="relax">Find the smallest bug and the biggest; compare.</li>
-  </ul>
-  <h4>Done when</h4><p>He's observed a few bugs closely and drawn one. Release everyone.</p>
-</div>
-
-<div class="daydetail">
-  <span class="tag">Day 2 · ★★★ · ≈30 min</span>
-  <h3>Sort &amp; re-sort</h3>
-  <p><strong>Goal:</strong> classify — and then <em>re-classify</em> the same set by a new rule (the deep skill).</p>
-  <h4>Warm-up (~5 min)</h4>
-  <p>Lay out the bug picture cards (and/or toy bugs). <span class="say">Remember the bugs we found? Let's be sorting scientists today.</span></p>
-  <h4>Main — several rounds (~15 min)</h4>
-  <p>Sort by <strong>one rule</strong> first — say, color. Count each pile. Then mix them up and sort the SAME bugs a <strong>new way</strong> — by number of legs (6 vs 8 vs lots), then by wings / no wings, then by "found in the air vs on the ground." Each new rule is a fresh round.</p>
-  <h4>Extend / stretch (~10 min)</h4>
-  <p>Let Kai invent his OWN sorting rule and have you guess it. Make a simple "more / fewer" comparison: which group has the most?</p>
-  <h4>Ask</h4>
-  <p class="say">Can you put the same kinds together? What makes them go together?</p>
-  <p class="say">Now let's sort a different way — by how many legs. Where does the spider go?</p>
-  <p class="say">Which group has the most? How can we check?</p>
-  <h4>Watch for</h4>
-  <ul class="observe">
-    <li class="good">He sorts consistently by the chosen rule.</li>
-    <li class="good">He can <em>switch</em> rules and re-sort — flexible thinking (the big win).</li>
-    <li class="relax">Mixing up "insect vs spider" is normal — that's tomorrow's focus.</li>
-  </ul>
-  <h4>Stretch it further</h4>
-  <ul class="observe">
-    <li class="relax">Sort by two rules at once: "red AND flying."</li>
-    <li class="relax">Make a bug "family line-up" from smallest to biggest.</li>
-  </ul>
-  <h4>Done when</h4><p>He's sorted the set at least two different ways and counted the groups.</p>
-</div>
-
-<div class="daydetail">
-  <span class="tag">Day 3 · ★★★ · ≈30 min</span>
-  <h3>Insect or not?</h3>
-  <p><strong>Goal:</strong> a real classification rule — insects have <strong>3 body parts and 6 legs</strong>.<sup><a href="#n2">2</a></sup> (Kid words: head, middle, bottom; six legs.)</p>
-  <h4>Warm-up (~5 min)</h4>
-  <p>Teach the secret rule with your fingers: "Insects have SIX legs and THREE parts. Spiders have EIGHT legs — they're not insects!" Count to six and eight together.</p>
-  <h4>Main — several rounds (~15 min)</h4>
-  <p>Go through bug cards/toys one at a time: count legs, count body parts, and decide — <span class="say">Insect? Or not an insect?</span> Make two piles. Spider, worm, snail, centipede → "not insects." Ant, bee, beetle, butterfly → "insects!"</p>
-  <h4>Extend / stretch (~10 min)</h4>
-  <p>Build a "perfect insect" from playdough (or pipe cleaners): three body parts, six legs, two antennae. Counting + representation + fine motor.</p>
-  <h4>Ask</h4>
-  <p class="say">Let's count the legs — six? Then it's an insect! More than six?</p>
-  <p class="say">Can you find the three body parts? Head… middle… bottom!</p>
-  <h4>Watch for</h4>
-  <ul class="observe">
-    <li class="good">He applies the rule ("8 legs — not an insect!").</li>
-    <li class="good">Careful counting to 6 and 8.</li>
-    <li class="relax">He won't get every bug right — applying a rule at all is the achievement.</li>
-  </ul>
-  <h4>Stretch it further</h4>
-  <ul class="observe">
-    <li class="relax">Make a playdough spider too — count out 8 legs.</li>
-    <li class="relax">Hunt the house/garden for one real insect to test the rule on.</li>
-  </ul>
-  <h4>Done when</h4><p>He's sorted insects vs not-insects and built a 6-legged creature.</p>
-</div>
-
-<div class="daydetail">
-  <span class="tag">Day 4 · ★★★ · ≈30 min</span>
-  <h3>Habitat detective</h3>
-  <p><strong>Goal:</strong> connect each creature to where it lives and what it does.</p>
-  <h4>Warm-up (~5 min)</h4>
-  <p><span class="say">Every bug has a home. Where do you think a worm lives? A bee?</span> Guess together.</p>
-  <h4>Main — several rounds (~15 min)</h4>
-  <p>Go back outside and match bugs to homes: under wood/rocks (pill bugs, worms), on flowers (bees, butterflies), in webs (spiders), on leaves (caterpillars). Observe behavior up close: what's it doing — eating, carrying, hiding? Visit several micro-habitats as rounds.</p>
-  <h4>Extend / stretch (~10 min)</h4>
-  <p>Build a tiny temporary "bug hotel" in the catch jar (leaves, soil, a twig) and watch one bug explore for a few minutes — then release. Draw its home in the journal.</p>
-  <h4>Ask</h4>
-  <p class="say">Why do you think it lives here? What does it need — food? a hiding spot?</p>
-  <p class="say">What is it doing right now? What do you think it eats?</p>
-  <h4>Watch for</h4>
-  <ul class="observe">
-    <li class="good">He predicts where a bug will be based on its home.</li>
-    <li class="good">He notices behavior, not just appearance.</li>
-  </ul>
-  <h4>Stretch it further</h4>
-  <ul class="observe">
-    <li class="relax">A mini fair test (callback to <a href="0002-will-it-grow.html">Project 2</a>): do we find MORE bugs in the sunny spot or the shady spot? Count and compare.</li>
-    <li class="relax">Follow one ant — where does it go? Does it have friends?</li>
-  </ul>
-  <h4>Done when</h4><p>He's matched a few bugs to homes and watched one behave.</p>
-</div>
-
-<div class="daydetail">
-  <span class="tag">Day 5 · ★★★ · Kai leads · ≈30 min</span>
-  <h3>Kai's bug museum</h3>
-  <p><strong>Goal:</strong> ownership — Kai runs the whole safari and "curates" his findings.</p>
-  <h4>Warm-up (~5 min)</h4>
-  <p><span class="say">You're the bug scientist today! What's your plan?</span> Let him lead the route.</p>
-  <h4>Main — several rounds (~15 min)</h4>
-  <p>Kai hunts, observes, and gathers (gently, temporarily) his "museum." He sorts them his own way and gives them names. You only ask and scribe.</p>
-  <h4>Extend / stretch (~10 min)</h4>
-  <p>He "presents" his museum to you (or a stuffed-animal audience): how many, how he grouped them, his favorite and why. Then a careful, ceremonial release: "Thank you, bugs!" Draw the museum in the journal.</p>
-  <h4>Ask (only)</h4>
-  <p class="say">Tell me about your collection — how did you group them?</p>
-  <p class="say">Which is your favorite? Why? How many did you find?</p>
-  <h4>Watch for</h4>
-  <ul class="observe">
-    <li class="good">He chooses his own grouping rule and explains it.</li>
-    <li class="good">Pride, gentleness, and curiosity all at once.</li>
-    <li class="relax">If it becomes free play, great — he's bonding with the natural world.</li>
-  </ul>
-  <h4>Done when</h4><p>He's presented and released his museum. Celebrate the curator!</p>
-</div>
-
-<h2>The full question bank (for this project)</h2>
-<table>
-  <thead><tr><th>Moment</th><th>Say this</th></tr></thead>
-  <tbody>
-    <tr><td>Before the hunt</td><td>"Where do you think we'll find bugs? Let's guess."</td></tr>
-    <tr><td>Observing close</td><td>"What do you see through the magnifier? Any tiny details?"</td></tr>
-    <tr><td>Counting</td><td>"How many legs? How many can you see?"</td></tr>
-    <tr><td>Classifying</td><td>"Which ones go together? What's your rule?"</td></tr>
-    <tr><td>Re-sorting</td><td>"Now let's sort a different way — how else could we group them?"</td></tr>
-    <tr><td>The insect rule</td><td>"Six legs and three parts? Then it's an insect!"</td></tr>
-    <tr><td>Habitat</td><td>"Why does it live here? What does it need?"</td></tr>
-    <tr><td>Wondering (you)</td><td>"I wonder where this little ant is hurrying to…"</td></tr>
-    <tr><td>Kindness</td><td>"How can we be gentle so we don't hurt it?"</td></tr>
-  </tbody>
-</table>
-
-<h2>What to observe (is it working?)</h2>
-<ul class="observe">
-  <li class="good"><strong>Green flags:</strong> he looks before grabbing; counts legs; sorts and re-sorts by different rules; uses words like insect, legs, wings, antennae, habitat; predicts where bugs hide; treats creatures gently.</li>
-  <li class="watch"><strong>Gently steer:</strong> rough handling → model gentleness and the "look, then release" rule; only wants to catch, not observe → slow down at the white tray with the magnifier.</li>
-  <li class="relax"><strong>Don't worry about:</strong> mixing up insect vs spider, "wrong" sorting, fear of certain bugs (respect it), or wanting to just dig in the dirt. Curiosity and kindness are the wins.</li>
-</ul>
-
-<h2 id="journal">The Bug Journal page</h2>
-<p>Kai draws bugs (while looking through the magnifier!) and you scribe his words and counts.
-See <a href="../reference/0001-parent-playbook.html#how-the-science-journal-works">how the journal works</a>.</p>
-<div class="box grow">
-  <p class="box-title">My Bug Journal &nbsp;·&nbsp; Date: ____________</p>
-  <table>
-    <thead><tr><th>Bug I found (draw it)</th><th>How many legs?</th><th>Where it lived</th></tr></thead>
-    <tbody>
-      <tr><td style="height:2.4rem;">1.</td><td>______</td><td>______________</td></tr>
-      <tr><td style="height:2.4rem;">2.</td><td>______</td><td>______________</td></tr>
-      <tr><td style="height:2.4rem;">3.</td><td>______</td><td>______________</td></tr>
-    </tbody>
-  </table>
-  <p style="margin-top:0.6rem;">🔢 Total bugs found today: ____ &nbsp;&nbsp; Insects (6 legs): ____ &nbsp;&nbsp; Not insects: ____</p>
-  <p class="say" style="margin-top:0.4rem;">Kai said: "________________________________"</p>
-</div>
-
-<h2>FAQ &amp; troubleshooting</h2>
-
-<details class="faq"><summary>It's raining / cold / we have no yard.</summary>
-<div class="faq-body"><p>Run an indoor "sensory safari": bury plastic toy bugs in a tub of dried beans or rice, and Kai digs them out with tongs, observes with the magnifier, and sorts them — same classification skills, no weather needed. A windowsill, a potted plant, or a walk to a park also work. Even hunting bugs in picture books counts.</p></div></details>
-
-<details class="faq"><summary>He's scared of bugs.</summary>
-<div class="faq-body"><p>Never push. Start with toy bugs and pictures, then observe a real one safely inside a clear jar from a distance. Let your own calm curiosity lead. Many kids warm up over a few days once they feel in control (he holds the jar, he decides how close). Respect a hard "no" on any specific bug.</p></div></details>
-
-<details class="faq"><summary>He wants to keep / squish the bugs.</summary>
-<div class="faq-body"><p>Set the rule up front: "We're scientists — we look, then let them go home to their families." Give catching a time limit and make the release a happy ritual ("Bye bug!"). If squishing is impulse-driven, switch to observing bugs in place (on the ground/leaf) without catching.</p></div></details>
-
-<details class="faq"><summary>We can't find any bugs.</summary>
-<div class="faq-body"><p>Look in the right places: under rocks, logs, and pots (damp spots), in flowers, in long grass, near outdoor lights at dusk, on a spider web. Warm mid-mornings are best. If truly none, switch to the indoor sensory safari and try outside another day — "where ARE they hiding?" is itself a good science question.</p></div></details>
-
-<details class="faq"><summary>He keeps miscounting legs.</summary>
-<div class="faq-body"><p>Totally normal at 3.5. Count together slowly, touching each leg (or pointing on the magnified view). The goal is the one-to-one counting habit, not a correct total. Celebrate the effort, model the right count, move on.</p></div></details>
-
-<details class="faq"><summary>He insists a spider is an insect.</summary>
-<div class="faq-body"><p>Don't make it a correction battle — make it a counting check: "Let's count… 1,2,3,4,5,6,7,8 — eight! Insects only have six, so spiders are something else: arachnids." The rule does the teaching. If it doesn't land today, it will with repetition.</p></div></details>
-
-<details class="faq"><summary>How do I handle a bee or wasp showing up?</summary>
-<div class="faq-body"><p>Calm and still: "We don't touch bees — we watch them from here." Don't swat (that provokes). Admire from a safe distance; bees on flowers are great to <em>observe</em>, never catch. Model that respect, not fear, keeps everyone safe.</p></div></details>
-
-<details class="faq"><summary>Is it okay to keep a bug overnight?</summary>
-<div class="faq-body"><p>Better not, for this age — most bugs need their habitat, food, and moisture, and a forgotten jar ends sadly (a hard lesson). Keep it to a few minutes of observation, then release. If he's keen on longer observation, a snail in a ventilated tub with a leaf for an hour is gentle and easy.</p></div></details>
-
-<details class="faq"><summary>He finished everything in 10 minutes again.</summary>
-<div class="faq-body"><p>Lean on the layers: run more rounds (more bug spots, more sorting rules), add a <em>Stretch it further</em> option, or hand him the lead early. And it's fine to stop short on a high note — then do a second short session later the same day. Quality and joy beat clock-watching.</p></div></details>
-
-<h2>Read this first (primary source)</h2>
-<div class="box accent">
-  <p>Practical, observation-first bug activities for exactly this age, including sorting by attributes:</p>
-  <p><strong>→ Preschool STEAM: <a href="https://preschoolsteam.com/insect-activities-for-preschool-that-build-observation-skills/">Insect Activities that Build Observation Skills</a></strong>
-  &nbsp;·&nbsp; body parts: <a href="https://learning-center.homesciencetools.com/article/early-elementary-insects-science-lesson/">Insects Science Lesson</a></p>
-</div>
-
-<div class="ask-teacher">
-  <strong>I'm your teacher — ask me anything.</strong> Want a butterfly life-cycle add-on? A worm
-  or snail deep-dive? A fully indoor version? Tell me what Kai loved (and how long it held him)
-  and I'll tune Project 5 and beyond.
-</div>
-
-<hr style="border:none;border-top:1px solid var(--rule);margin:2.5rem 0 1rem;">
-<p class="footnote" id="n1"><strong>1.</strong> Preschool STEAM, <a href="https://preschoolsteam.com/insect-activities-for-preschool-that-build-observation-skills/">Insect Activities that Build Observation Skills</a> — sorting/grouping bugs strengthens observation and early math.</p>
-<p class="footnote" id="n2"><strong>2.</strong> Home Science Tools, <a href="https://learning-center.homesciencetools.com/article/early-elementary-insects-science-lesson/">Insects Science Lesson</a> — insects have three body parts and six legs.</p>
-
-<nav class="doc-nav">
-  <a href="../index.html">🏠 Home</a>
-  <a href="0003-kitchen-color-lab.html">← Project 3</a>
-  <a href="../reference/0001-parent-playbook.html">📖 Parent Playbook</a>
-  <a href="0005-shadow-play.html">Project 5 → Shadow Play</a>
-</nav>
-
+  footer: {
+    homeHref: "../index.html",
+    teacherHTML: "<strong>I’m your teacher — tell me how it went.</strong> Want a butterfly life-cycle add-on? A worm or snail deep-dive? A fully indoor version? Tell me what {name} loved and how long it held him, and I’ll tune Project 5 to fit.",
+    links: [
+      { href: "../index.html", label: "🏠 Home" },
+      { href: "../reference/0001-parent-playbook.html", label: "📖 Playbook" },
+      { href: "0005-shadow-play.html", label: "Project 5 →" }
+    ]
+  }
+};
+</script>
+<script src="../assets/lesson.js"></script>
 </body>
 </html>
