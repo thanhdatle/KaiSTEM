@@ -16,7 +16,14 @@
 - Keep the science vocabulary in lessons matched to the Glossary in the Parent Playbook.
 - Tone: warm, encouraging, concrete scripts ("say this") over theory.
 
+## Calibration log
+- **2026-06-24 (after Project 1):** Kai learned P1 *very well*, but each day finished in ~10 min,
+  not 30. Takeaway: lessons were too thin, not his attention. Going forward, build every day in
+  **3 layers** (warm-up ~5 / main = several rounds ~15 / extend + "stretch it further" ~10).
+  Applied to P4–P5. Offered to retrofit P1–P3. See [learning record 0003](./learning-records/0003-p1-feedback-and-extension.md).
+
 ## Open questions to revisit
 - Pick a parent community (see RESOURCES.md).
 - Confirm what materials are already at home vs. need buying.
-- Kai's attention span in practice — adjust session length after Project 1.
+- Did the 3-layer days actually hit ~30 min for Kai? Re-tune after P4/P5.
+- Retrofit P1–P3 with "Stretch it further" layers? (awaiting parent's go)

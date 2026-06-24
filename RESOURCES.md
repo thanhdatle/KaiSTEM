@@ -24,6 +24,10 @@ High-trust sources grounding this workspace. Tiered by how much we lean on them.
 | **Little Bins for Little Hands — Seed Jar Experiment** | Jar/bag germination so kids see roots grow | https://littlebinsforlittlehands.com/seed-jar-science-experiment-kids/ |
 | **Buggy and Buddy — Exploring Colors with Baking Soda & Vinegar** | Safe color + fizz chemistry setup | https://buggyandbuddy.com/exploring-colors-with-baking-soda-and-vinegar/ |
 | **Little Passports — Vinegar & Baking Soda Reaction Explained** | The acid-base / CO₂ science, plain-language | https://www.littlepassports.com/blog/science/vinegar-and-baking-soda-reaction/ |
+| **Preschool STEAM — Insect Activities that Build Observation Skills** | Bug observation + sorting/classifying by attributes | https://preschoolsteam.com/insect-activities-for-preschool-that-build-observation-skills/ |
+| **Home Science Tools — Insects Science Lesson** | Insect body parts (3 parts, 6 legs) in kid terms | https://learning-center.homesciencetools.com/article/early-elementary-insects-science-lesson/ |
+| **NAEYC — What's in a Shadow?** | What 3-year-olds can grasp about light + shadows | https://www.naeyc.org/resources/blog/whats-shadow |
+| **Inventors of Tomorrow — Light and Shadow Experiments** | Tracing/measuring shadows as the sun moves | https://inventorsoftomorrow.com/light-and-shadow-experiments-for-kids/ |
 
 ## Communities (for wisdom — testing ideas with other parents)
 

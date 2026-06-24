@@ -45,9 +45,11 @@ Each project keeps the same loop but advances the *kind of prediction* Kai makes
 | 1 | [Sink or Float?](./lessons/0001-sink-or-float.html) | predict→test, sort, count | a **position** (up/down) | ★☆☆→★★★ |
 | 2 | [Will It Grow?](./lessons/0002-will-it-grow.html) | **fair test**, observe over time, measure | a **change over days** | ★★☆ |
 | 3 | [Kitchen Color Lab](./lessons/0003-kitchen-color-lab.html) | predict a **transformation**, invent | what it **turns into** | ★★★→★★★★ |
+| 4 | [Backyard Bug Safari](./lessons/0004-bug-safari.html) | **classify** (group by attributes), close observation | how living things **group** | ★★★ |
+| 5 | [Shadow Play](./lessons/0005-shadow-play.html) | **measure & compare**, spot a pattern over time | a shadow's **size/shape** & how it changes | ★★★→★★★★ |
 
-*Coming next:* Project 4 will likely center **animals/nature** (e.g. a bug safari) to add
-**classification** — pending how the first projects actually land with Kai.
+*Coming next:* Project 6, tuned to whatever lit Kai up most. Projects 4–5 are built with
+richer per-day layers (warm-up → main → extend) after we learned each day was finishing fast.
 
 ---
 
