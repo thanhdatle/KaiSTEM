@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Words · Lesson 2 — Word Beats — KaiSTEM</title>
+<meta name="description" content="Five days of clapping words into beats: Kai discovers that words break into parts — cat (1), ti-ger (2), el-e-phant (3) — the next rung of the ear for sound.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500;1,6..72,600&family=Space+Mono:wght@400;700&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/lesson.css">
+</head>
+<body>
+<div id="app"></div>
+
+<script>
+window.LESSON = {
+  storageKey: "syllables-v1",
+  childName: "Kai",
+  track: "words",
+  index: 2, total: 2,
+  locatorLabel: "WORDS · LESSON TWO",
+  locatorHome: "All lessons",
+  defaultMode: "prep",
+  title: "Words · Lesson 2 — Word Beats — KaiSTEM",
+
+  theme: { "--accent": "oklch(66% 0.16 48)", "--accent-deep": "oklch(54% 0.16 48)" },
+
+  hero: {
+    kicker: "KaiSTEM · Words · Lesson Two",
+    titleHTML: '<span class="lc">Word</span> <span class="rc">Beats</span>',
+    subHTML: "Five days of clapping, marching, and drumming words into <strong>beats</strong>, where {name} discovers that every word breaks into parts — <em>cat</em> (1), <em>ti-ger</em> (2), <em>el-e-phant</em> (3).",
+    tags: [
+      { text: "~20–30 min × 5 days" },
+      { text: "👏 clap · 🦓 animals · 🥁 move" },
+      { text: "★☆☆ → ★★★★ hear the beats in words", lead: true }
+    ]
+  },
+
+  loop: [
+    { emoji: "👂", name: "Listen", tone: "listen" },
+    { emoji: "💡", name: "Wonder", tone: "wonder" },
+    { emoji: "🎭", name: "Play", tone: "play" },
+    { emoji: "✏️", name: "Make", tone: "make" },
+    { emoji: "💬", name: "Share", tone: "share" }
+  ],
+  loopLabel: "The Words loop · same every day",
+
+  win: {
+    label: "The win this earns",
+    html: "In W1 {name} heard whole words sound alike at the end. Now his ear gets <strong>finer</strong> — he hears that a single word is built from <strong>beats</strong> he can clap. Breaking words into parts is the next rung of the sound-ladder, and it's a whole-body giggle: clap, march, drum the beats."
+  },
+
+  prep: {
+    gearKicker: "Gather the night before",
+    gearTitle: "What you'll prepare",
+    gearLead: "~5 minutes — almost all of it is your own two hands. The rest just makes the beats louder and sillier. Tap each as you gather it.",
+    gear: [
+      { id: "hands", strong: "Your hands (the main instrument)", rest: " — clapping is the whole game. Everything else is a bonus." },
+      { id: "drum", strong: "A drum or pot + wooden spoon", rest: " — for banging out beats. A tambourine, a tub, or knees-to-slap all work." },
+      { id: "animals", strong: "Toy animals or animal cards", rest: " — animals have the best beat-variety: cat (1), zebra (2), elephant (3), hippopotamus (5!)." },
+      { id: "names", strong: "A few family names / photos", rest: " — names are the most motivating words of all. Kai (1), Ma-ma (2), Grand-ma (2)…" },
+      { id: "paper", strong: "Paper + crayons", rest: " — to dot the beats (●●● for a 3-beat word)." },
+      { id: "journal", strong: "The Word-Beats Journal", rest: " — to log words and how many beats they have." }
+    ],
+    deepDive: {
+      kicker: "The important part",
+      eyebrowTone: "test",
+      title: "Words are made of beats you can clap",
+      lead: "Every spoken word breaks into <strong>syllables</strong> — beats. Say it slowly and clap once per chunk: <em>el-e-phant</em> = 👏👏👏. This is still an <strong>ear</strong> skill, not letters — but it's <em>finer</em> than rhyme: rhyme listens to whole-word endings, beats listen to the parts <em>inside</em> one word.<sup>(Reading Rockets, Zero to Three)</sup>",
+      blocks: [
+        { tone: "", label: "👏 One clap per beat", html: "Say it slow, robot-style — “di-no-saur” — and clap each chunk. The clap makes the invisible beat audible." },
+        { tone: "test", label: "🦴 Start with his name", html: "“Kai” is one big clap; “Grand-ma” is two. His own world (names, pets, snacks) is the most motivating word list there is." },
+        { tone: "predict", label: "🤸 Use the whole body", html: "jump, march, or drum each beat, not just clap. Movement cements the chunking far better than sitting still." }
+      ]
+    },
+    safety: {
+      label: "⚠ Keep it light (and safe)",
+      html: "No hazards — just <strong>joyful, not graded</strong>: if {name} claps the wrong number, you clap the right one slowly together and play on, never “no, count again.” <strong>Close counts as winning</strong> — the goal is hearing that words have parts, not perfect counts. Mind little ears with the drum (no banging by the face), and if his joy dips, <strong>stop at 10–15 minutes</strong> — short and happy wins."
+    },
+    setup: {
+      kicker: "Setup",
+      title: "Before you start",
+      steps: [
+        "Clear a little floor space — this lesson likes to march and jump.",
+        "Set out the drum/pot and the animals/photos in a bag for a fun reveal.",
+        "Warm up your own ear: clap a few words yourself so the chunks feel natural.",
+        "Print the Word-Beats Journal — or keep it on the phone."
+      ]
+    }
+  },
+
+  arc: {
+    kicker: "The five-day arc",
+    title: "Same loop, one notch finer",
+    lead: "Each day is built in three layers — warm-up (~5) → main, several rounds (~10–15) → extend (~5–10). Tap a day to jump into Run mode."
+  },
+
+  days: [
+    {
+      n: 1, stars: "★☆☆", lead: "", title: "Clap your name", tag: "names first",
+      goal: "Discover that words have beats — starting with the most important word of all: his name.",
+      setup: "Sit close. Warm up by just saying names in a sing-song. “Kai, Kai, Kai!” Then: “Did you know your name has a beat? Watch — KAI!” (one big clap).",
+      doText: "Clap each family member's name together, one clap per beat: “Kai” 👏, “Ma-ma” 👏👏, “Grand-ma” 👏👏, “Daddy” 👏👏. Each person is a round — go round the whole family, pets included. Count the claps together: “How many beats was that?” Say each name robot-slow first so the chunks pop. Extend by clapping his favourite foods and toys (“ba-na-na” 👏👏👏, “di-no-saur” 👏👏👏).",
+      ask: [
+        "Your name has a beat — listen! KAI! How many claps was that?",
+        "Let's clap Mama's name. Ma-ma — how many?",
+        "Whose name do you want to clap next?"
+      ],
+      watch: [
+        { icon: "✅", text: "He claps along, roughly one clap per beat — even if the count wobbles." },
+        { icon: "✅", text: "He's delighted that his own name has a “beat.”" },
+        { icon: "😌", text: "He claps too many/few — just say it slowly and clap it together. Close counts." }
+      ],
+      done: "he's clapped his own name and a few others, and noticed words have beats."
+    },
+    {
+      n: 2, stars: "★★☆", lead: "", title: "Animal beat parade", tag: "short vs long",
+      goal: "Clap animal names and sort them into short (1–2 beats) and long (3+ beats).",
+      setup: "Tip out the animals. Warm up: “Every animal is going to march — but first we clap its name!” Clap one together as a demo (“ti-ger” 👏👏).",
+      doText: "Pick an animal, say it robot-slow, clap the beats: “cat” 👏 (1), “ze-bra” 👏👏 (2), “el-e-phant” 👏👏👏 (3), “hip-po-pot-a-mus” 👏👏👏👏👏 (5!). Then <strong>sort</strong> them into a “short pile” (1–2 beats) and a “long pile” (3+). Each animal is a round. (This reuses his sorting skill from W1 and from science — now sorting by beats.) Extend by marching the beats: take one step per clap around the room — long animals take a long walk!",
+      ask: [
+        "Let's clap this one. Cat — how many beats? Short or long?",
+        "Which animal has the MOST beats? Let's find the longest!",
+        "Put it in the right pile — short claps here, long claps there."
+      ],
+      watch: [
+        { icon: "✅", text: "He claps each animal and helps sort short vs long." },
+        { icon: "✅", text: "He's wowed by the giant ones (“hippopotamus!”)." },
+        { icon: "🎈", text: "Exact counts aren't the point — “more beats vs fewer beats” is the win." }
+      ],
+      done: "he's clapped several animals and sorted them by short vs long."
+    },
+    {
+      n: 3, stars: "★★★", lead: "", title: "How many beats?", tag: "guess then clap",
+      goal: "Guess how many beats a word has, then clap to check — a guess-first move he knows from science.",
+      setup: "Hold up an object or picture. Warm up with an easy one: “Ball — guess how many beats? Then we clap to check!”",
+      doText: "Show a word (an object, a toy, a photo). {name} <strong>guesses</strong> the number of beats first, then you clap it together to find out — just like guessing then testing in science. Cheer whether or not the guess matched; the clap is the fun reveal. Mix easy (1–2 beats) and silly-long ones. Each word is a round. Extend with a “find the longest word in the house” hunt — “re-fri-ge-ra-tor” (5!), “ca-ter-pil-lar” (4).",
+      ask: [
+        "How many beats do you think? Guess first… now let's clap and see!",
+        "Was it more or fewer than you guessed?",
+        "Can you find a really LONG word somewhere in the room?"
+      ],
+      watch: [
+        { icon: "✅", text: "He makes a guess, then claps to check — guess-first, like science." },
+        { icon: "✅", text: "He enjoys the reveal whether or not his guess was right." },
+        { icon: "😌", text: "If guessing a number is hard, just ask “short or long?” — that's the same skill." }
+      ],
+      done: "he's guessed-then-clapped several words and hunted a long one."
+    },
+    {
+      n: 4, stars: "★★★", lead: "", title: "Beat band", tag: "drum the beats",
+      goal: "Make beats with the whole body and instruments — chain words into a silly rhythm.",
+      setup: "Grab the drum/pot. Warm up by drumming a name: “Kai!” (1 bang), “Grand-ma!” (2 bangs). “We're a beat band today!”",
+      doText: "Now beat the words with drums, stomps, and jumps instead of just claps. Pick words and perform their beats — drum “di-no-saur” (3), stomp “but-ter-fly” (3), jump “cat” (1). Chain a few into a goofy little “beat song” and repeat it together. Each word/move is a round. Extend by beating a whole short sentence one <em>word</em> at a time (“I — love — pizza”) — a sneaky peek at words inside sentences.",
+      ask: [
+        "Drum it with me — di-no-saur! How many drums?",
+        "Should we stomp this one or jump it?",
+        "Let's make a beat song — what word comes next?"
+      ],
+      watch: [
+        { icon: "✅", text: "He beats the syllables with body/instrument, roughly one per beat." },
+        { icon: "✅", text: "He invents his own beat patterns and wants to repeat them." },
+        { icon: "😌", text: "If it dissolves into joyful drumming, great — he's feeling rhythm, which is the root." }
+      ],
+      done: "he's drummed/stomped the beats of several words in a little band."
+    },
+    {
+      n: 5, stars: "★★★★", lead: " · he leads", title: "Kai's beat show", tag: "Kai leads",
+      goal: "Ownership — {name} runs the beat band, picks the words, and calls short or long.",
+      setup: "“You're the band leader today! You pick the words, I'll follow your beat.” Have the journal ready to scribe his picks.",
+      doText: "{name} chooses the words and leads the beating — clap, drum, march, his call. He decides “short or long” for each and points to its pile. You follow and admire; you do not drive. Let him invent a “longest word ever” (real or made-up — “su-per-di-no-sau-rus!”) and beat it out. Write his favourites and their beat-counts in the journal and read them back. Extend by letting him teach YOU a tricky word's beats.",
+      ask: [
+        "You're the leader — which word should we beat?",
+        "How many beats did that one have? Short or long?",
+        "Teach me a really tricky long word — I'll try to clap it!"
+      ],
+      watch: [
+        { icon: "✅", text: "He picks words and leads the beating without you driving." },
+        { icon: "✅", text: "He reuses “beats” and “short/long” on his own." },
+        { icon: "😌", text: "Made-up giant words are a triumph — inventing beats proves he hears them." }
+      ],
+      done: "he's led his own beat show. Take a bow, band leader!"
+    }
+  ],
+
+  journal: {
+    kicker: "The keepsake",
+    title: "Word-Beats journal",
+    intro: "Jot the words {name} beats out and how many beats each had — dot them (●●●) so the count is visible. <span data-print=\"hide\">Print it, or keep it on the phone.</span>",
+    headerTitle: "My word-beats log",
+    type: "log",
+    rows: 5,
+    columns: [
+      { key: "word", placeholder: "a word" },
+      { key: "beats", placeholder: "beats ●●● (how many?)" }
+    ],
+    said: "{name}'s longest word: “________________________________”"
+  },
+
+  qbank: {
+    kicker: "Magic words",
+    title: "Question bank",
+    intro: "Pick one or two — never interrogate. Say the word robot-slow, then clap. Cheer every try, right count or not.",
+    items: [
+      { moment: "Starting the beat", say: "Listen — el-e-phant. Clap it with me!" },
+      { moment: "Counting beats", say: "How many beats was that? Let's count the claps." },
+      { moment: "Short or long", say: "Short word or long word? Which pile?" },
+      { moment: "Guess first", say: "Guess how many beats — then we clap to check!" },
+      { moment: "Using his name", say: "Your name is one big beat — KAI! Try Mama's." },
+      { moment: "Wondering (you)", say: "I wonder what the longest word in the house is…" },
+      { moment: "Whole body", say: "Should we march this one or drum it?" },
+      { moment: "Handing over", say: "You're the band leader — pick a word!" }
+    ]
+  },
+
+  faq: {
+    kicker: "If it wobbles",
+    title: "Troubleshooting",
+    items: [
+      { q: "He claps the wrong number of beats.", a: "Totally normal at 3.5 — and not a problem. Say the word slowly, robot-style, and clap it together: “el — e — phant.” Don't say “no, count again”; just model the right beat warmly and move on. Hearing that words have parts is the win; exact counts come later. “Close” is a success." },
+      { q: "He claps every single sound, not the beats.", a: "Slow WAY down and exaggerate the chunks — “hip… po… pot… a… mus” — and clap big on each chunk. Anchor to his name first (one clap) so he feels what a single beat is. Long, silly words actually make the chunks easier to feel than short ones." },
+      { q: "Isn't this just the same as rhyming?", a: "Different ear. Rhyme (W1) listens to whole words that match at the end — “cat/hat.” Beats listen to the parts <em>inside</em> one word — “ti-ger” has two. Doing both builds a fuller ear for sound; this is the natural next step up from rhyme." },
+      { q: "He won't sit still for it.", a: "Don't make him — this lesson is <em>better</em> moving. March the beats down the hall, jump them on the trampoline, stomp them outside, drum them on a pot. Movement actually cements syllable chunking better than sitting and clapping." },
+      { q: "He loses interest after a few minutes.", a: "Stop — a 10-minute happy burst beats a long slog. Beats live in tiny moments all day: clap his name at the table, drum the snack (“cra-cker!”), march the beats of where you're going. Short and frequent wins for this skill." },
+      { q: "He doesn't get what a “beat” is.", a: "Anchor it to music he already feels — clap along to a favourite song first, then “words have beats too!” Or use the robot voice: say words in slow, even chunks like a robot, and the beats become obvious. His name is the best starting anchor." },
+      { q: "He finished in 10 minutes again.", a: "Reach for longer words (“hip-po-pot-a-mus,” “re-fri-ge-ra-tor”), beat whole short sentences word-by-word, run the “longest word in the house” hunt, or hand him the band-leader role early. Spread it across the day in tiny bursts, too." }
+    ]
+  },
+
+  footer: {
+    homeHref: "../index.html",
+    teacherHTML: "<strong>Words Lesson 2 — done!</strong> {name}'s ear just got finer: from whole-word rhymes to the beats inside a single word. Tell me how it landed — did he start clapping words out on his own? That tells me whether the next Words step is first sounds (“ball starts with /b/”) or a story-telling turn.",
+    links: [
+      { href: "../index.html", label: "🏠 Home" },
+      { href: "../reference/0001-parent-playbook.html", label: "📖 Playbook" },
+      { href: "L0001-rhyme-time.html", label: "← Words 1" }
+    ]
+  }
+};
+</script>
+<script src="../assets/lesson.js"></script>
+</body>
+</html>

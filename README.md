@@ -55,10 +55,12 @@ The goal is the **habit** ("guess/try first, then find out"), not the facts.
 | # | Project | New skill | The ear for… | Difficulty |
 |---|---------|-----------|--------------|------------|
 | W1 | [Rhyme Time](./lessons/L0001-rhyme-time.html) | **hear & make rhymes** (phonological awareness) | words that **sound alike** | ★☆☆→★★★★ |
+| W2 | [Word Beats](./lessons/L0002-word-beats.html) | **clap words into syllables** (segment & count beats) | the **beats inside** a word | ★☆☆→★★★★ |
 
-*Coming next:* a Science Project 6 tuned to whatever lit Kai up most, and Words W2 once we've
-run the rhyme pilot with him. Lessons are built with richer per-day layers (warm-up → main →
-extend) after we learned each day was finishing fast.
+*Coming next:* a Science Project 6 tuned to whatever lit Kai up most, and Words W3 (likely **first
+sounds** — "ball starts with /b/" — or a story-telling turn) after we run W1–W2 with him. Lessons
+are built with richer per-day layers (warm-up → main → extend) after we learned each day was
+finishing fast.
 
 ---
 
