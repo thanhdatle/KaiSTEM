@@ -354,9 +354,12 @@
   }
 
   function locatorBlock() {
+    // L.locatorLabel lets non-science tracks (e.g. Words) override the default "PROJECT NN / NN".
+    var label = L.locatorLabel || ("PROJECT " + pad(L.index) + " / " + pad(L.total));
+    var home = (L.footer && L.footer.homeHref) || "../index.html";
     return '<div class="locator">' +
-      '<a href="' + attr((L.footer && L.footer.homeHref) || "../index.html") + '">← All projects</a>' +
-      "<span>PROJECT " + pad(L.index) + " / " + pad(L.total) + "</span></div>";
+      '<a href="' + attr(home) + '">← ' + esc(L.locatorHome || "All projects") + '</a>' +
+      "<span>" + esc(label) + "</span></div>";
   }
   function pad(n) { return ("0" + (n || 0)).slice(-2); }
 

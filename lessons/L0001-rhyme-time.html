@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Words · Lesson 1 — Rhyme Time — KaiSTEM</title>
+<meta name="description" content="Five days of silly rhymes: Kai hears that words can sound alike, sorts them, and invents his own — the ear that pre-reading rests on.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500;1,6..72,600&family=Space+Mono:wght@400;700&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/lesson.css">
+</head>
+<body>
+<div id="app"></div>
+
+<script>
+window.LESSON = {
+  storageKey: "rhyme-v1",
+  childName: "Kai",
+  track: "words",
+  index: 1, total: 1,
+  locatorLabel: "WORDS · LESSON ONE",
+  locatorHome: "All lessons",
+  defaultMode: "prep",
+  title: "Words · Lesson 1 — Rhyme Time — KaiSTEM",
+
+  theme: { "--accent": "oklch(64% 0.18 15)", "--accent-deep": "oklch(52% 0.18 16)" },
+
+  hero: {
+    kicker: "KaiSTEM · Words · Lesson One",
+    titleHTML: '<span class="lc">Rhyme</span> <span class="rc">Time</span>',
+    subHTML: "Five days of silly rhymes, where {name} hears that <strong>words can sound alike</strong>, sorts the ones that match, and invents his very own — all through giggles, never drills.",
+    tags: [
+      { text: "~20–30 min × 5 days" },
+      { text: "📖 indoors · 🐾 animals · 🎵 silly" },
+      { text: "★☆☆ → ★★★★ hear & make rhymes", lead: true }
+    ]
+  },
+
+  loop: [
+    { emoji: "👂", name: "Listen", tone: "listen" },
+    { emoji: "💡", name: "Wonder", tone: "wonder" },
+    { emoji: "🎭", name: "Play", tone: "play" },
+    { emoji: "✏️", name: "Make", tone: "make" },
+    { emoji: "💬", name: "Share", tone: "share" }
+  ],
+  loopLabel: "The Words loop · same every day",
+
+  win: {
+    label: "The win this earns",
+    html: "{name} starts to <strong>hear</strong> that “cat” and “hat” end the same way — a quiet superpower of the ear, built entirely from giggles. No letters, no drills, no “later”: just the two of you being gloriously silly with words <em>today</em>."
+  },
+
+  prep: {
+    gearKicker: "Gather the night before",
+    gearTitle: "What you'll prepare",
+    gearLead: "~5 minutes, almost all from around the house. The star is a rhyming book you already love. Tap each as you gather it.",
+    gear: [
+      { id: "book", strong: "A favourite rhyming book", rest: " — Dr. Seuss, a Julia Donaldson (Gruffalo, Room on the Broom), Llama Llama, or any nursery-rhyme collection. Bounciest rhythm wins." },
+      { id: "animals", strong: "A handful of toy animals or animal cards", rest: " — your “rhyme zoo”: cat, dog, frog, bug, snake, bee… whatever he has." },
+      { id: "basket", strong: "A “rhyme basket”", rest: " — 5–8 small objects with easy-to-rhyme names: a sock, a cup, a ball, a star, a car, a hat." },
+      { id: "paper", strong: "Paper + crayons", rest: " — for drawing the silliest rhyme of the day." },
+      { id: "journal", strong: "The Rhyme Journal", rest: " — to jot the rhyme pairs {name} finds and invents." }
+    ],
+    deepDive: {
+      kicker: "The important part",
+      eyebrowTone: "test",
+      title: "Rhyme is for the ears, not the eyes",
+      lead: "This is <strong>not</strong> reading practice and {name} doesn't need to know a single letter. Rhyming trains him to hear that words are made of sounds — the skill reading research (NAEYC, Reading Rockets, Zero to Three) flags as the biggest predictor of easy reading later. Your only job is to make the sounds <em>fun</em>.",
+      blocks: [
+        { tone: "", label: "👂 It's a listening game", html: "“cat / hat / bat” — he hears the matching end. No spelling, no flashcards, no quizzing." },
+        { tone: "test", label: "🤪 Nonsense & near-misses count", html: "Invented words (“zat”) AND loose, partial rhymes (“cat / cap”) both count as <strong>winning</strong> — each one proves he's listening to the ending. There is no wrong answer here; cheer the silly ones loudest." },
+        { tone: "predict", label: "🎵 Rhythm helps", html: "clap or bounce to the beat of a rhyme. The body feels the pattern before the ear names it." }
+      ]
+    },
+    safety: {
+      label: "⚠ Keep it light (and safe)",
+      html: "No real hazards here — the main rule is <strong>joyful, not graded</strong>: if {name} mishears a rhyme, you just play on, never correct-and-repeat. <strong>Loose, partial, and made-up rhymes all count as winning</strong> — getting it “right” is never the point. One small thing: pick rhyme-basket objects <strong>too big to swallow</strong>, since little ones explore with their mouths. And if his joy dips, <strong>stop at 10–15 minutes</strong> — a short happy session beats a stretched one."
+    },
+    setup: {
+      kicker: "Setup",
+      title: "Before you start",
+      steps: [
+        "Pick a cosy spot — couch, bed, or floor cushions. Rhyme loves snuggling.",
+        "Have the book within reach and the animals/basket in a bag for a fun reveal.",
+        "Read the rhyming book once yourself so you know where the rhymes land.",
+        "Print the Rhyme Journal — or just keep it on the phone."
+      ]
+    }
+  },
+
+  arc: {
+    kicker: "The five-day arc",
+    title: "Same loop, one notch sillier",
+    lead: "Each day is built in three layers — warm-up (~5) → main, several rounds (~10–15) → extend (~5–10). Tap a day to jump into Run mode."
+  },
+
+  days: [
+    {
+      n: 1, stars: "★☆☆", lead: "", title: "Hear the rhyme", tag: "read together",
+      goal: "Just notice that some words at the end of lines sound the same — no pressure to produce any.",
+      setup: "Snuggle up with the rhyming book. Warm up by clapping the beat of his name and a couple of animals — “Kai!” (clap), “el-e-phant!” (clap-clap-clap).",
+      doText: "Read the book with big bouncy rhythm. Each spread is a round. Now and then, <strong>pause</strong> right before the rhyming word and let the beat hang — if {name} blurts it, delight; if not, say it warmly and read on. Land hard on the rhyming pairs: “moose… loose! Hear it?” Extend by singing one rhyming song (“Down by the Bay”, “Willaby Wallaby”) and bouncing to it.",
+      ask: [
+        "Did you hear that? “Cat” and “hat” — they sound the same at the end!",
+        "What's coming next… the frog sat on a … ? (wait, smile, no pressure)",
+        "Can you clap the beat with me — boom, boom, boom?"
+      ],
+      watch: [
+        { icon: "✅", text: "He grins or chimes in when a rhyme lands — that's the whole goal today." },
+        { icon: "✅", text: "He wants the page read again — repetition is how the ear tunes in." },
+        { icon: "😌", text: "He doesn't supply any rhyme yet. Totally fine — hearing comes first." }
+      ],
+      done: "you read together and he noticed at least one pair sound alike."
+    },
+    {
+      n: 2, stars: "★★☆", lead: "", title: "Same-sound safari", tag: "silly sorting",
+      goal: "Play with which word-pairs sound alike at the end — as a giggly game, never a test.",
+      setup: "Line up a few rhyme-zoo animals. Warm up: “I'm going to say two words. If they sound the SAME at the end, do a big jump!”",
+      doText: "Say pairs out loud — some rhyme (“dog / frog”), some don't (“dog / cup”). When they match, {name} jumps / claps / roars; when they don't, he flops down giggling. It's a body game, not a quiz — if he jumps on a wrong one, jump WITH him and move on. Several quick rounds. (This reuses his science “sorting” skill, now with sounds.) Extend by hiding animals around the room — each one he finds has to find its rhyme buddy.",
+      ask: [
+        "“Cat… hat.” Same at the end? JUMP if you hear it!",
+        "“Cat… dog.” Hmm — do those match? (flop if not!)",
+        "You pick two words — do THEY rhyme? You're the judge!"
+      ],
+      watch: [
+        { icon: "✅", text: "He reacts to the sound, not just copying you — even if he's wrong sometimes." },
+        { icon: "✅", text: "He's laughing. Laughing means the sounds are landing." },
+        { icon: "🎈", text: "Never say “no, wrong.” Just replay the pair slowly and cheer the next hit." }
+      ],
+      done: "he played the same-sound game and enjoyed it — accuracy doesn't matter."
+    },
+    {
+      n: 3, stars: "★★★", lead: "", title: "Silly rhyme zoo", tag: "make nonsense",
+      goal: "Make up rhymes — real OR nonsense — for animals. This is the big creative leap.",
+      setup: "Open the rhyme zoo. “Every animal here needs a silly rhyme name!” Warm up by rhyming his own name (“Kai… pie… fly… bai!”).",
+      doText: "Pick an animal and chain rhymes together: “cat → hat → bat → splat → zat!” Nonsense words are the BEST — they prove he's hearing the ending, not just remembering real words. Take turns; go fast and goofy. Each animal is a round. If he stalls, offer two and let him pick the sillier. Extend by drawing the most ridiculous rhyme creature (“the splat-cat!”) and naming it.",
+      ask: [
+        "The cat wears a… hat! What else rhymes with cat?",
+        "Make up a NOT-real word that rhymes — silliest wins!",
+        "What's this one's rhyme name? You decide!"
+      ],
+      watch: [
+        { icon: "✅", text: "He produces a rhyme — invented words absolutely count." },
+        { icon: "✅", text: "He's delighted by his own silliness and wants another." },
+        { icon: "😌", text: "If real rhymes are hard, you start the chain; he just adds the last sound." }
+      ],
+      done: "he made up at least one rhyme — bonus joy for the nonsense ones."
+    },
+    {
+      n: 4, stars: "★★★", lead: "", title: "Fill in the rhyme", tag: "he supplies it",
+      goal: "Supply the missing rhyming word in a rhyme he already knows.",
+      setup: "Recite a nursery rhyme together first so it's warm in his ear (“Twinkle twinkle little star…”). Warm up by doing it once all the way through, cheerful and loud.",
+      doText: "Now recite it again but <strong>stop right before the rhyme</strong> and look at him expectantly: “Twinkle twinkle little star, how I wonder what you …?” Let him land “are!” Cheer hugely. Do several known rhymes this way (Humpty, Jack and Jill, Baa Baa). Each blank is a round. Extend by inviting him to swap in a SILLY ending instead — “…what you BARRRR!” — and laugh together.",
+      ask: [
+        "“…how I wonder what you ___?” (wait, beam, let him fill it)",
+        "Want to give it a silly ending instead? You choose!",
+        "Which rhyme should we do next — you pick the one!"
+      ],
+      watch: [
+        { icon: "✅", text: "He fills the blank with the rhyming word (or a silly rhyme of his own)." },
+        { icon: "✅", text: "He anticipates the gap and jumps in early — the ear is working." },
+        { icon: "🎈", text: "If he blanks, say it together; next round leave a smaller pause." }
+      ],
+      done: "he completed at least one rhyme out loud."
+    },
+    {
+      n: 5, stars: "★★★★", lead: " · he leads", title: "Kai's own rhyme", tag: "Kai leads",
+      goal: "Ownership + creativity — {name} invents a rhyme and “reads” it back to you.",
+      setup: "“Today YOU'RE the rhyme-maker — I'll write down every word you say.” Have the journal and a pen ready to scribe.",
+      doText: "Let {name} make up a tiny rhyme or rhyming song — about an animal, about you, about lunch, anything. You are the scribe and the audience: write his <em>exact</em> words (silly ones included), then read his rhyme back to him with full ceremony. He can “perform” it. Extend by folding the paper into a tiny book or adding a drawing — his first authored rhyme, dated and kept.",
+      ask: [
+        "What's your rhyme about? I'm ready to write it!",
+        "Ooh, what rhymes with that? You're the boss!",
+        "Should we read your rhyme out loud together — ta-daa?"
+      ],
+      watch: [
+        { icon: "✅", text: "He strings together his own rhyme — loose, partial, or pure nonsense all count as a win." },
+        { icon: "✅", text: "He reuses “sounds the same at the end” without you prompting it." },
+        { icon: "😌", text: "Pure made-up babble that rhymes is a triumph — wonder over correctness." }
+      ],
+      done: "he authored his own rhyme. Take a bow, poet!"
+    }
+  ],
+
+  journal: {
+    kicker: "The keepsake",
+    title: "Rhyme journal",
+    intro: "Jot the rhyme pairs {name} hears and invents — real words and gloriously made-up ones side by side. <span data-print=\"hide\">Print it, or keep it on the phone.</span>",
+    headerTitle: "My rhyme log",
+    type: "log",
+    rows: 5,
+    columns: [
+      { key: "word", placeholder: "a word" },
+      { key: "rhymes", placeholder: "rhymes with… (silly is great!)" }
+    ],
+    said: "{name}'s own rhyme: “________________________________”"
+  },
+
+  qbank: {
+    kicker: "Magic words",
+    title: "Question bank",
+    intro: "Pick one or two — never interrogate. Ask, then <strong>wait a few seconds</strong> before rescuing the silence. Cheer every try.",
+    items: [
+      { moment: "Tuning the ear", say: "Hear it? “Cat” and “hat” end the same!" },
+      { moment: "Inviting a rhyme", say: "What rhymes with frog? Real or silly!" },
+      { moment: "Filling a gap", say: "“…what you ___?” (then wait and smile)" },
+      { moment: "Celebrating nonsense", say: "“Splat-cat”?! That's the best one yet!" },
+      { moment: "Sorting sounds", say: "Same at the end, or different?" },
+      { moment: "Wondering (you)", say: "I wonder what rhymes with your name…" },
+      { moment: "Handing over", say: "You're the rhyme boss — what's next?" },
+      { moment: "If he's stuck", say: "Want me to start it, and you finish?" }
+    ]
+  },
+
+  faq: {
+    kicker: "If it wobbles",
+    title: "Troubleshooting",
+    items: [
+      { q: "He just makes up nonsense words — is that wrong?", a: "It's exactly right — celebrate it. Inventing “zat” to rhyme with “cat” is harder and more impressive than recalling “hat”, because it proves he's hearing the <em>ending sound</em> and generating a match. Nonsense rhymes are a green light, not a problem. Cheer the silly ones loudest." },
+      { q: "He can't read yet — isn't this too early?", a: "Rhyming has nothing to do with reading letters. It's an ear skill — hearing that spoken words share sounds — and 3.5 is a perfect age for it. You're building the foundation that makes letters click later, with zero pressure now. No flashcards, no “sound it out.”" },
+      { q: "He won't produce any rhymes at all.", a: "Stay on the listening days (1 and 2) longer — hearing always comes before making. Give him the easiest possible job: you say “cat… h—?” and let him add just the last sound. Use his favourite words (his name, a pet, a snack). It clicks in its own time; keep it playful and drop the pressure entirely." },
+      { q: "He mishears and says non-rhymes confidently.", a: "Never correct-and-repeat (“no, that doesn't rhyme”). Just replay the matching pair slowly and warmly — “listen… dog… frog…” — and move on. The ear sharpens through hearing good examples, not through being told it's wrong. Keep his confidence sky-high." },
+      { q: "He loses interest after a few minutes.", a: "Stop — a 10-minute joyful burst beats a 30-minute slog, every time. Rhyme also lives in tiny moments all day: rhyme his name at bath time, rhyme the snack, sing in the car. Short and frequent beats long and forced for this skill." },
+      { q: "He doesn't like sitting for the book.", a: "Skip the book and make it physical: bounce him on your knee to a rhyme, do action songs (“Wheels on the Bus” rhymes), or rhyme while stacking blocks. The book is just one doorway — the goal is hearing sounds, which you can do anywhere, moving." },
+      { q: "He finished the whole thing in 10 minutes.", a: "Add rounds (more animals, more known rhymes to fill in), pull an extend option, or hand him the lead early. Or spread the “make a rhyme” habit into the day — one silly rhyme at breakfast, one at bedtime — so the project breathes across a whole day in small bursts." }
+    ]
+  },
+
+  footer: {
+    homeHref: "../index.html",
+    teacherHTML: "<strong>{name}'s first Words lesson — done!</strong> He's started hearing the sounds inside words, the quiet superpower behind reading. Tell me how it landed: did he start rhyming on his own, out loud, away from the activity? That tells me where the Words track goes next.",
+    links: [
+      { href: "../index.html", label: "🏠 Home" },
+      { href: "../reference/0001-parent-playbook.html", label: "📖 Playbook" },
+      { href: "0001-sink-or-float.html", label: "🔬 Science track" }
+    ]
+  }
+};
+</script>
+<script src="../assets/lesson.js"></script>
+</body>
+</html>

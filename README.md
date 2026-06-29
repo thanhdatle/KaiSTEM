@@ -1,6 +1,7 @@
-# 🔬 KaiSTEM
+# 🔬📖 KaiSTEM
 
-A home STEM "course" for **Kai (age 3.5)** — and a teaching guide for **you**, the parent.
+A home learning "course" for **Kai (age 3.5)** — and a teaching guide for **you**, the parent.
+Two tracks: **🔬 Science** (hands-on inquiry) and **📖 Words** (language & literacy through play).
 
 > **Mission:** spark *lifelong curiosity* and *quality bonding time*.
 > Joy and wonder over correctness. ([full mission](./MISSION.md))
@@ -13,12 +14,13 @@ Kai can't read these files — so **you're the learner here**. Each lesson teach
 how to run a short, hands-on science project *with* Kai: what to prep, what to say, what to
 look for. Kai is the scientist; you're the guide.
 
-Every project — forever — runs the same five-move loop, so it feels familiar to Kai and
-effortless for you:
+Every project runs a familiar **five-move loop**, so it feels effortless for both of you. Each
+**track** has its own loop, tuned to how that kind of thinking grows:
 
-> 👀 **Notice** → 💭 **Wonder** → 🤔 **Predict** → 🧪 **Test** → 💬 **Talk**
+> 🔬 Science · 👀 **Notice** → 💭 **Wonder** → 🤔 **Predict** → 🧪 **Test** → 💬 **Talk**
+> 📖 Words · 👂 **Listen** → 💡 **Wonder** → 🎭 **Play** → ✏️ **Make** → 💬 **Share**
 
-The goal is the **habit** ("guess first, then find out"), not the facts.
+The goal is the **habit** ("guess/try first, then find out"), not the facts.
 
 ---
 
@@ -38,7 +40,7 @@ The goal is the **habit** ("guess first, then find out"), not the facts.
 
 ## The curriculum so far
 
-Each project keeps the same loop but advances the *kind of prediction* Kai makes:
+### 🔬 Science track — each project advances the *kind of prediction* Kai makes
 
 | # | Project | New skill | Predicts… | Difficulty |
 |---|---------|-----------|-----------|------------|
@@ -48,8 +50,15 @@ Each project keeps the same loop but advances the *kind of prediction* Kai makes
 | 4 | [Backyard Bug Safari](./lessons/0004-bug-safari.html) | **classify** (group by attributes), close observation | how living things **group** | ★★★ |
 | 5 | [Shadow Play](./lessons/0005-shadow-play.html) | **measure & compare**, spot a pattern over time | a shadow's **size/shape** & how it changes | ★★★→★★★★ |
 
-*Coming next:* Project 6, tuned to whatever lit Kai up most. Projects 4–5 are built with
-richer per-day layers (warm-up → main → extend) after we learned each day was finishing fast.
+### 📖 Words track — language & literacy through play, before letters
+
+| # | Project | New skill | The ear for… | Difficulty |
+|---|---------|-----------|--------------|------------|
+| W1 | [Rhyme Time](./lessons/L0001-rhyme-time.html) | **hear & make rhymes** (phonological awareness) | words that **sound alike** | ★☆☆→★★★★ |
+
+*Coming next:* a Science Project 6 tuned to whatever lit Kai up most, and Words W2 once we've
+run the rhyme pilot with him. Lessons are built with richer per-day layers (warm-up → main →
+extend) after we learned each day was finishing fast.
 
 ---
 

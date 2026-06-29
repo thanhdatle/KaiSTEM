@@ -98,6 +98,11 @@ input::placeholder{color:var(--ink-soft);opacity:.5}
 .loop-card.predict{border-top-color:var(--predict);}
 .loop-card.test{border-top-color:var(--test);}
 .loop-card.talk{border-top-color:var(--grow);}
+/* Words track loop tones (Listen → Wonder → Play → Make → Share). Additive; STEM tones above unchanged. */
+.loop-card.listen{border-top-color:var(--test);}
+.loop-card.play{border-top-color:var(--accent);}
+.loop-card.make{border-top-color:var(--predict);}
+.loop-card.share{border-top-color:var(--grow);}
 .loop-card .emoji{font-size:25px;line-height:1;}
 .loop-card .name{font-family:var(--mono);font-size:11px;text-transform:uppercase;
   letter-spacing:.04em;margin-top:5px;color:var(--ink);}

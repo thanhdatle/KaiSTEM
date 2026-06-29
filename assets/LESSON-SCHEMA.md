@@ -6,8 +6,11 @@ a mobile-first interactive page with two modes — **Prep** (the night before) a
 (live, day-by-day) — plus a tappable gear checklist, an interactive science journal that
 saves to `localStorage`, a question bank, FAQs, and a "Say this" bottom sheet.
 
-To add a future lesson: copy `lessons/0001-sink-or-float.html`, change the `LESSON` data,
-pick a theme, and link it from `index.html`. No build step.
+To add a future lesson: copy an existing lesson, change the `LESSON` data, pick a theme, and link
+it from `index.html`. No build step. For a **Science** lesson copy `lessons/0001-sink-or-float.html`;
+for a **Words** (literacy) lesson copy `lessons/L0001-rhyme-time.html` (it shows the words loop, the
+`locatorLabel`/`track` overrides, and a `type:"log"` journal). The engine is track-agnostic — the
+journal heading defaults to `"Science journal"` but any lesson overrides it via `journal.title`.
 
 ## Shell
 
@@ -29,12 +32,15 @@ pick a theme, and link it from `index.html`. No build step.
 |-------|---------|
 | `storageKey` | Unique per lesson, e.g. `"grow-v1"`. Namespaces localStorage. |
 | `childName` | Default `"Kai"`. Anywhere copy contains `{name}` it is substituted. |
-| `index`, `total` | Locator chip, e.g. `2` / `5`. |
+| `track` | Optional, e.g. `"science"` / `"words"`. Metadata to label the lesson's track; not required by the engine. |
+| `index`, `total` | Locator chip, e.g. `2` / `5`. Renders as `PROJECT NN / NN`. |
+| `locatorLabel` | Optional. Overrides the `PROJECT NN / NN` locator text — e.g. `"WORDS · LESSON ONE"` for a non-science track. |
+| `locatorHome` | Optional. Overrides the locator's back-link text (default `"All projects"`) — e.g. `"All lessons"`. |
 | `defaultMode` | `"prep"` or `"run"` (first visit). |
 | `title` | `<title>` text. |
 | `theme` | Optional map of CSS variables to override, e.g. `{ "--accent": "oklch(56% .13 150)", "--accent-deep": "oklch(46% .14 150)" }`. Gives each lesson its own colour. |
 | `hero` | `{ kicker, titleHTML, subHTML, tags:[{text, lead?}] }`. `titleHTML` may use `.lc`/`.rc`/`.joiner` spans for two-tone titles. |
-| `loop` | 5 cards: `{ emoji, name, tone }`. tone ∈ `notice|wonder|predict|test|talk`. |
+| `loop` | 5 cards: `{ emoji, name, tone }`. The loop is **track-agnostic** — any tone string works; only the card's top-border colour is tone-specific. Styled tones: science `notice\|wonder\|predict\|test\|talk`, words `listen\|wonder\|play\|make\|share` (`assets/lesson.css`). An unstyled tone just falls back to the neutral default border. Optional `loopLabel` overrides the label above the cards. |
 | `prepLabel` / `runLabel` | Optional toggle labels `{ main, sub, emoji }`. |
 | `win` | `{ label, html }` — the payoff box. |
 | `prep.gear*` | `gearKicker`, `gearTitle`, `gearLead`, and `gear:[{id, strong, rest}]` (tappable checklist; `id` must be unique within the lesson). |

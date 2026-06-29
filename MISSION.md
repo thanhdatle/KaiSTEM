@@ -1,4 +1,7 @@
-# Mission: Teaching Kai (3.5) STEM
+# Mission: Teaching Kai (3.5)
+
+> Started as STEM; now a two-track **curiosity course** (Science + Words). The north star,
+> the method, and the guardrails are shared — only the loop differs per track.
 
 ## Who is learning
 
@@ -18,7 +21,8 @@ Success a year from now is **not** facts memorized. It looks like:
 - Kai asking "why?" and "what if?" on his own, unprompted.
 - Kai expecting that *his* ideas get tested ("let's try it and see!").
 - A shelf of filled-in journal pages you both made together.
-- Kai seeing himself as "someone who figures things out" — early **STEM identity**.
+- Kai seeing himself as "someone who figures things out" — early **learner identity**
+  (across science *and* language, not facts in one subject).
 
 We optimize for **joy and wonder over correctness.** A wrong prediction enthusiastically
 tested is a bigger win than a right answer recited.
@@ -46,10 +50,24 @@ something genuinely interesting. Abstract explanation does NOT land yet — *doi
 - **Note-keeping:** Kai keeps a **Science Journal** — a printed page per project where he
   draws/marks predictions and results. This is the retention + bonding artifact.
 
+## The tracks (one course, two loops)
+
+The course grows in **tracks** — each a domain with its own toddler-sized loop. Same north star,
+same method, same 3-layer days; the loop is tuned to how that kind of thinking actually develops.
+
+| Track | Loop | What it grows |
+|-------|------|---------------|
+| 🔬 **Science** | Notice → Wonder → Predict → Test → Talk | inquiry: guess, then find out |
+| 📖 **Words** | Listen → Wonder → Play → Make → Share | language & literacy through play, before letters |
+
+New tracks can be added the same way (a track = a loop + a colour + lessons). Start narrow:
+Words launches with one pilot lesson (rhyme), and we expand it after running it with Kai.
+
 ## The method (every project uses it)
 
-The inquiry loop, kept toddler-sized: **Notice → Wonder → Predict → Test → Talk.**
-See the parent reference: [Parent Playbook](./reference/0001-parent-playbook.html).
+The loop above, whichever track — kept toddler-sized and identical in spirit:
+**guess/try first, then find out, and talk about it.** See the parent reference:
+[Parent Playbook](./reference/0001-parent-playbook.html).
 
 ## Guardrails
 
