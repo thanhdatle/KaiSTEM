@@ -1,7 +1,9 @@
 # 🔬📖 KaiSTEM
 
 A home learning "course" for **Kai (age 3.5)** — and a teaching guide for **you**, the parent.
-Two tracks: **🔬 Science** (hands-on inquiry) and **📖 Words** (language & literacy through play).
+Three tracks: **🔬 Science** (hands-on inquiry), **📖 Words** (language & literacy through play),
+and **🔄 Visual** (spatial thinking — the evidence-backed core of what "right-brain training" was
+reaching for).
 
 > **Mission:** spark *lifelong curiosity* and *quality bonding time*.
 > Joy and wonder over correctness. ([full mission](./MISSION.md))

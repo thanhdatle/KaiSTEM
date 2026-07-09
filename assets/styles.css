@@ -245,6 +245,12 @@ table { border-collapse: collapse; width: 100%; margin: 1.2rem 0; font-size: 0.9
 th, td { text-align: left; padding: 0.55rem 0.7rem; border-bottom: 1px solid var(--rule); vertical-align: top; }
 th { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-soft); }
 
+/* Dense tables scroll inside their own box rather than pushing the page
+   sideways on a phone. Wrap a wide table in <div class="table-scroll">. */
+.table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 1.2rem 0; }
+.table-scroll table { margin: 0; min-width: 34rem; }
+@media print { .table-scroll { overflow: visible; } .table-scroll table { min-width: 0; } }
+
 /* ---- Footer / nav between docs ---- */
 .doc-nav {
   margin-top: 3rem;

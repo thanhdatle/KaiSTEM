@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Visual · Lesson 1 — Turn It — KaiSTEM</title>
+<meta name="description" content="Four days of turning shapes: Kai learns that a shape stays itself when you turn it, but becomes a different shape when you flip it — the single distinction spatial thinking is built on.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500;1,6..72,600&family=Space+Mono:wght@400;700&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/lesson.css">
+<link rel="stylesheet" href="../assets/cards.css">
+<link rel="stylesheet" href="../assets/track-visual.css">
+</head>
+<body>
+<div id="app"></div>
+<div id="deck"></div>
+
+<script>
+window.LESSON = {
+  storageKey: "turnit-v1",
+  childName: "Kai",
+  track: "visual",
+  index: 1, total: 1,
+  locatorLabel: "VISUAL · LESSON ONE",
+  locatorHome: "All lessons",
+  defaultMode: "prep",
+  title: "Visual · Lesson 1 — Turn It — KaiSTEM",
+
+  theme: { "--accent": "oklch(58% 0.16 295)", "--accent-deep": "oklch(45% 0.16 296)" },
+
+  hero: {
+    kicker: "KaiSTEM · Visual · Lesson One",
+    titleHTML: '<span class="lc">Turn</span> <span class="rc">It</span>',
+    subHTML: "Four days of turning shapes, where {name} discovers that a shape <strong>stays itself when you turn it</strong> — but becomes a <strong>different shape when you flip it</strong>. He already loves puzzles. This is the thinking underneath them.",
+    tags: [
+      { text: "~30 min × 4 days" },
+      { text: "🧩 indoors · ✂️ cutting · 🪞 mirrors" },
+      { text: "★☆☆☆ → ★★★★ turn shapes in your head", lead: true }
+    ]
+  },
+
+  loop: [
+    { emoji: "👀", name: "Look",   tone: "look" },
+    { emoji: "💡", name: "Wonder", tone: "wonder" },
+    { emoji: "🔄", name: "Turn",   tone: "turn" },
+    { emoji: "🧱", name: "Make",   tone: "build" },
+    { emoji: "💬", name: "Talk",   tone: "talk" }
+  ],
+  loopLabel: "The Visual loop · same every day",
+
+  win: {
+    label: "The win this earns",
+    html: "Of everything in this workspace, <strong>this is the skill with the strongest evidence behind it.</strong> Spatial training works at {name}'s age, the gains last, and they transfer to shapes he has never seen — across <a href=\"https://pubmed.ncbi.nlm.nih.gov/22663761/\">217 studies</a>. Early spatial skill is also one of the better predictors of later maths and science. He'll just think you're playing with shapes."
+  },
+
+  prep: {
+    gearKicker: "Gather the night before",
+    gearTitle: "What you'll prepare",
+    gearLead: "~15 minutes, mostly cutting. Everything else you own already. Tap each as you gather it.",
+    gear: [
+      { id: "print", strong: "The printed card sheet", rest: " — open this page, tap <strong>🃏 Cards</strong>, then print. Twelve cards, cut lines included, answer key at the foot. <em>Can't print in time?</em> The same deck runs on screen — that's what the button is for." },
+      { id: "foam", strong: "Two identical shapes cut from card or craft foam", rest: " — trace one shape twice, cut both out. An L, a boot, anything <strong>not</strong> symmetrical. This is Day 1's entire material." },
+      { id: "mirror", strong: "A small mirror", rest: " — a hand mirror, or a phone's selfie camera. Day 3 needs it." },
+      { id: "tangram", strong: "{name}'s existing puzzles or tangrams", rest: " — you don't need new ones. The set he already reaches for is the right set." },
+      { id: "crayons", strong: "Paper and a fat crayon", rest: " — for Day 4, when he starts inventing the shapes himself." }
+    ],
+
+    deepDive: {
+      kicker: "Read this once",
+      eyebrowTone: "",
+      title: "The one distinction that matters",
+      lead: "All four days rest on a single idea. If you hold only one thing in your head while you play, hold this one.",
+      blocks: [
+        { tone: "", label: "Turned vs. flipped",
+          html: "<strong>Turn</strong> a shape and it is still the same shape. <strong>Flip</strong> it — mirror it — and it becomes a <em>different</em> shape that looks maddeningly similar. That is the difference between <strong>b</strong> and <strong>d</strong>, and between a left shoe and a right shoe. Noticing it is the engine of spatial reasoning, and later, of reading letters. Every card in the deck asks this one question." },
+        { tone: "test", label: "Say the words out loud",
+          html: "This is the highest-leverage thing you do all week. Parents who narrate space — <em>turn, flip, corner, edge, under, between, pointy</em> — have children with measurably better spatial thinking (<a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC3372906/\">Pruden, Levine &amp; Huttenlocher, 2011</a>). Not the cards. <strong>Your words about the cards.</strong>" },
+        { tone: "predict", label: "Hands before heads",
+          html: "On Day 1 he turns a real shape with real fingers. Only then does Day 2 ask him to turn one in his mind. A three-year-old builds the mental move out of the physical one — never skip straight to the picture. Children who play with physical puzzles show better mental transformation later (<a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC3289766/\">Levine et al., 2012</a>)." },
+        { tone: "grow", label: "Slow is the point",
+          html: "You may have flashed cards fast before. Don't here. The speed was never the mechanism — <a href=\"../reference/0002-visual-thinking-evidence.html\">the evidence card explains why, and what Shichida does get right</a>. What works is that he <em>looks</em>, he <em>guesses</em>, and <em>you talk about it</em>. One card can fill two happy minutes. Let it." }
+      ]
+    },
+
+    safety: {
+      label: "Safety",
+      html: "<strong>You cut, he sorts.</strong> Scissors stay in adult hands. Card edges are sharp enough to give a paper cut on a small palm — round the corners. If you use a glass mirror, sit down with it; a phone's front camera works just as well and doesn't shatter."
+    },
+
+    setup: {
+      kicker: "Ten minutes, the night before",
+      title: "Setting up",
+      steps: [
+        "Tap <strong>🃏 Cards</strong> at the bottom of this page and print the sheet. If the printer is down, skip this step — the button is the backup.",
+        "Cut the twelve cards apart. Snip the answer key off, or fold it under, so it can't show while you play.",
+        "Trace one asymmetrical shape twice onto card or foam and cut both out. Check them: laid on top of each other they should match exactly.",
+        "Put the mirror somewhere you will actually find it on Day 3.",
+        "Leave the pile where {name} will see it in the morning and ask what it's for. That question is the lesson starting itself."
+      ]
+    }
+  },
+
+  arc: {
+    kicker: "The four days",
+    title: "How it builds",
+    lead: "Hands first, then heads, then the hard case, then he takes over. Each day has three layers: a five-minute warm-up, about fifteen minutes of the real thing, and ten minutes of stretching it further."
+  },
+
+  days: [
+    {
+      n: 1, stars: "★☆☆☆", tag: "hands",
+      title: "Turn it with your hands",
+      goal: "{name} discovers that a shape you turn is still the same shape — by turning it himself, with his fingers, on the table.",
+      setup: "The two identical cut-out shapes. Nothing else. Sit side by side rather than across from each other — across, everything is upside-down and you will both get confused.",
+      doText: "<strong>Warm-up (~5 min).</strong> Give him both shapes. Let him stack them, match them, discover they are twins. Say it out loud: <em>“They're the same shape.”</em><br><br><strong>Main (~15 min).</strong> Lay one shape down and leave it there. Turn the other one a little. Ask: <em>“Is it still the same shape?”</em> Let him pick it up, turn it back, and check. Again — turn it further. Then a quarter turn. Then upside-down. Every round he verifies by physically turning it back. Five, six, ten rounds. He will not get bored of being right.<br><br><strong>Stretch it further (~10 min).</strong> Now <em>he</em> turns it and asks <em>you</em>. Be wrong sometimes, on purpose, and let him correct you — being the one who knows is the best part of his day. Finish by turning a shape behind your back and asking him to guess how it will look before you reveal it.",
+      ask: [
+        "Is it still the same shape?",
+        "How do you know?",
+        "Did I turn it, or did I change it?",
+        "Can you turn it back to where it was?",
+        "What if I turn it all the way around?"
+      ],
+      watch: [
+        { icon: "✅", text: "He turns the shape back to check. That is the physical version of the mental move — exactly what you want." },
+        { icon: "✅", text: "He says “same!” before he checks. He has started predicting." },
+        { icon: "⚠️", text: "He says it's different when it is merely turned. Completely normal at 3.5. Hand it to him, let him turn it back, say nothing corrective." },
+        { icon: "🌟", text: "He turns his own head or body instead of the shape. That is a real spatial strategy, not a mistake. Praise it." }
+      ],
+      done: "He can say “same shape” about a shape you have turned, without picking it up. Even once. Stop there."
+    },
+    {
+      n: 2, stars: "★★☆☆", tag: "heads",
+      title: "Turn it in your head",
+      goal: "The same question, but the shape is now on a card and he cannot pick it up. He has to turn it in his mind.",
+      setup: "Cards 1–6, the gentler turns. Keep the two foam shapes beside you as an escape hatch.",
+      doText: "<strong>Warm-up (~5 min).</strong> Two minutes of yesterday's foam-shape game, so the move is fresh in his fingers.<br><br><strong>Main (~15 min).</strong> Card 1. Point at the shape on the left: <em>“Here's our shape.”</em> Point right: <em>“One of these two is the same shape, just turned. One is a trick. Which is which?”</em> He points. Whatever he says, ask <strong>“how do you know?”</strong> before you react either way. Then reveal. Six cards, unhurried.<br><br><strong>Stretch it further (~10 min).</strong> When a card is hard, hand him the foam twin and let him <em>physically</em> turn it onto the answer. Then go back and re-ask the card. Watching a hard one become easy is the whole feeling we are building. Finish by letting him choose his favourite card to do once more.",
+      ask: [
+        "Which one is the same shape, just turned?",
+        "How do you know?",
+        "Which way would you turn it — this way, or this way?",
+        "What's wrong with the other one?",
+        "Can you turn your head and check?"
+      ],
+      watch: [
+        { icon: "✅", text: "He tilts his head, or rotates a hand in the air. He is doing the mental rotation with his body. This is the target behaviour." },
+        { icon: "✅", text: "He pauses before answering. Pausing is thinking. Do not fill the silence." },
+        { icon: "⚠️", text: "He always picks the left one, or always the right. He is pattern-matching your layout, not the shape. Rotate the card 180° between trials and that strategy dies." },
+        { icon: "🌟", text: "He calls the wrong one “backwards” or “the other way”. He has independently found the idea of a mirror image. That is a big day." }
+      ],
+      done: "Three cards right in a row, and he can point to <em>which way</em> the shape turned. Stop on a correct one."
+    },
+    {
+      n: 3, stars: "★★★☆", tag: "flipped",
+      title: "Turned, or flipped?",
+      goal: "Naming the trick. {name} meets the mirror image head-on, and gets a word for it.",
+      setup: "Cards 7–12, the hard turns, plus the mirror and the two foam shapes.",
+      doText: "<strong>Warm-up (~5 min).</strong> The mirror first, before any card. Stand a foam shape against the mirror. <em>“Look — the mirror one is not the same. It's flipped.”</em> Let him hold his own hand up to it. Then compare his two hands: same shape? No — <strong>flipped</strong>. Left hand, right hand. This may be the best three minutes of the whole lesson.<br><br><strong>Main (~15 min).</strong> Now the hard cards, with the new word in hand. The question grows one clause: <em>“Which is the same shape just turned — and which one is flipped?”</em> He now has to reject the decoy for a <em>reason</em>, not a feeling. Six cards.<br><br><strong>Stretch it further (~10 min).</strong> Hunt the house for flipped things: his two shoes, two hands, two ears, the letters <strong>b</strong> and <strong>d</strong> in a book. Then flip a foam shape and ask him to turn it back to matching. He can't — and discovering that he <em>can't</em> is the lesson landing.",
+      ask: [
+        "Is that one turned, or is it flipped?",
+        "Show me with your hands — which is left, which is right?",
+        "Can you turn the flipped one until it matches? Really try.",
+        "Why can't you?",
+        "What else in this room has a flipped twin?"
+      ],
+      watch: [
+        { icon: "✅", text: "He tries to rotate the flipped shape into place, fails, and looks puzzled. Perfect. Don't rescue him — sit in it with him." },
+        { icon: "✅", text: "He uses the word “flipped” without being prompted." },
+        { icon: "⚠️", text: "Six hard cards is a lot. If he sags at card 9, stop at card 9. Tomorrow exists." },
+        { icon: "🌟", text: "He points out a flipped thing later in the day, away from the table. That is transfer — the thing the research says these gains actually do." }
+      ],
+      done: "He can say “that one's flipped” about a decoy, and mean it. That is the skill."
+    },
+    {
+      n: 4, stars: "★★★★", lead: " · he leads", tag: "his turn",
+      title: "Kai makes the cards",
+      goal: "He builds the shapes, turns them, flips them, and quizzes you. Ownership — and the best evidence of what stuck.",
+      setup: "Paper, a fat crayon, and his own puzzles or tangrams. Put the printed deck away; today his cards are the deck.",
+      doText: "<strong>Warm-up (~5 min).</strong> He picks a card from the old deck and tests <em>you</em>. Get one wrong. Let him explain your error. He will be insufferable and it will be wonderful.<br><br><strong>Main (~15 min).</strong> Give him the crayon. <em>“Draw a shape that isn't the same on both sides.”</em> Help only if he asks. Then: draw it again, <strong>turned</strong>. Then draw it <strong>flipped</strong>. Then he holds up two and makes <em>you</em> choose. His drawings will be wobbly and the flip may well be wrong — say nothing. The point is that he is now thinking from inside the problem.<br><br><strong>Stretch it further (~10 min).</strong> Tangrams, with narration. Every time he rotates a piece to fit, name it: <em>“You turned it.”</em> Every time a piece won't fit however he turns it, name that too: <em>“That one's flipped — try a different piece.”</em> He is now doing real mental rotation, at speed, for fun, and he thinks it is a puzzle.",
+      ask: [
+        "Can you draw me a shape that's tricky to flip?",
+        "Now draw it turned. Which way did you turn it?",
+        "Is this one of yours turned, or flipped?",
+        "You test me — am I right?",
+        "Which piece will fit if I turn it?"
+      ],
+      watch: [
+        { icon: "✅", text: "He deliberately draws an asymmetrical shape. He has understood what makes the game work." },
+        { icon: "✅", text: "He narrates his own turning during tangrams, unprompted." },
+        { icon: "⚠️", text: "His drawings don't look like turns at all. Fine — he is 3.5 and his hand is far behind his head. Judge his talk, not his lines." },
+        { icon: "🌟", text: "He invents a rule you never taught: “flipped ones are backwards”, “you can't turn a flip”. Write his exact words in the journal. That sentence is the lesson." }
+      ],
+      done: "He has made a shape, turned it, and quizzed you with it. Then go and do something else entirely."
+    }
+  ],
+
+  journal: {
+    kicker: "The keepsake",
+    title: "Shape journal",
+    intro: "One row per card. Stamp what {name} <em>guessed</em>, then what it turned out to be. The wrong guesses are the interesting ones — that's where the thinking is. <span data-print=\"hide\">Print it, or keep it on the phone.</span>",
+    headerTitle: "Turned or flipped?",
+    type: "binary",
+    rows: 6,
+    itemPlaceholder: "which shape",
+    poles: {
+      a: { key: "turned",  icon: "🔄", label: "turned" },
+      b: { key: "flipped", icon: "🪞", label: "flipped" }
+    },
+    countLabel: "🔢 turned {a} · flipped {b}",
+    said: "{name}'s own word for a flip: “________________________________”"
+  },
+
+  qbank: {
+    kicker: "In the moment",
+    title: "What to say",
+    intro: "Your talk is the active ingredient — more so than the cards. Reach for these instead of “well done”.",
+    items: [
+      { moment: "He gets it right", say: "“How did you know?” Always ask before you celebrate. The reason is worth more than the answer." },
+      { moment: "He gets it wrong", say: "“Let's turn it and see.” Never “no”. Hand him the shape and let the shape tell him." },
+      { moment: "He's stuck", say: "“Turn your head and look again.” Then wait. Count to ten in your own head." },
+      { moment: "He's rushing", say: "“Show me the slow way.” Speed is the enemy here, not the goal." },
+      { moment: "He's bored", say: "“Your turn to trick me.” Handing over control resets his attention almost every time." },
+      { moment: "He nails a hard one", say: "“You turned that one in your head. You didn't even touch it.” Name the invisible thing he just did." }
+    ]
+  },
+
+  faq: {
+    kicker: "If it wobbles",
+    title: "Troubleshooting",
+    items: [
+      { q: "He just guesses. Is this doing anything?", a: "Watch his body, not his answers. A tilted head, a rotating hand, a pause — those <em>are</em> mental rotation happening. A 3.5-year-old scoring at chance on answers can still be building the machinery. But if he is genuinely guessing on every card, the angles are too big: go back to Day 1's foam shapes for a week. Nothing is lost." },
+      { q: "Should I flash the cards fast, the way Shichida did?", a: "No — and this is the one place I'd ask you to trust the evidence over the sales pitch. The speed was never the mechanism. A randomised trial of a fast-flash infant programme found <strong>no effect on 13 of 14 measures</strong>. What was working in those sessions was you: your voice, your attention, your questions. <a href=\"../reference/0002-visual-thinking-evidence.html\">The evidence card lays it out honestly</a>, including what Shichida gets right." },
+      { q: "He loved the memory-chain stories. Can we keep them?", a: "Keep them — as <em>stories</em>, not as memory training. Chaining images into a narrative to aid recall doesn't reliably work until roughly age 5 or 6; before that a child usually cannot deploy the strategy even when taught it. So tell the silly stories because they are silly, and because they are language. Just don't expect the recall, and don't let him feel he is failing at something." },
+      { q: "Four days feels short. What if he wants more?", a: "Then he has told you where to go next. The deck has twelve cards, the shapes are chiral, and you can re-angle them forever. Better still, ask me for the next lesson — pattern play and symmetry both build on this one, and both are places where your AI image generation genuinely earns its keep." },
+      { q: "He got everything right on Day 1.", a: "Then he is ahead of where I pitched this, and I need to know. Tell me, and I'll rebuild the deck at 135° and 180° only, add a third choice, and move him toward composing shapes rather than matching them." }
+    ]
+  },
+
+  footer: {
+    homeHref: "../index.html",
+    teacherHTML: "<strong>{name}'s first Visual lesson — done!</strong> This is the strongest-evidence skill in the whole workspace, and he came to it already loving puzzles. Tell me: did he find his own word for “flipped”? Did he spot a flipped thing somewhere else in the house, later, unprompted? That is transfer, and it decides what we build next. <strong>Ask me anything that was unclear — I'm your teacher here, not just the author of this page.</strong>",
+    links: [
+      { href: "../index.html", label: "🏠 Home" },
+      { href: "../reference/0001-parent-playbook.html", label: "📖 Playbook" },
+      { href: "../reference/0002-visual-thinking-evidence.html", label: "🔍 Evidence card" }
+    ]
+  }
+};
+</script>
+<script src="../assets/lesson.js"></script>
+<script src="../assets/cards.js"></script>
+<script>
+  /* Twelve trials, angle ramping 45° → 180°. Days 2 and 3 split them 1–6 / 7–12.
+     Shapes cycle through all four chiral forms, so no single shape gets learned
+     by rote instead of by turning. The answer side alternates A/B by construction. */
+  CARDS.mount({
+    mount: "#deck",
+    title: "Turn It · 12 cards",
+    launcherLabel: "Cards",
+    prompt: "Which one is <em>the same shape, just turned</em>?",
+    printNote: "Cut along the dashed lines. Show the left shape, then ask which of the two on the right is the same shape just turned — and which one is flipped. Cards 1–6 are the gentler turns (Day 2); cards 7–12 are the hard ones (Day 3). Snip the answer key off before you start.",
+    trials: [
+      { shape: "ell",  angle: 45  },
+      { shape: "flag", angle: 45  },
+      { shape: "boot", angle: 45  },
+      { shape: "ess",  angle: 90  },
+      { shape: "ell",  angle: 90  },
+      { shape: "flag", angle: 90  },
+      { shape: "boot", angle: 135 },
+      { shape: "ess",  angle: 135 },
+      { shape: "ell",  angle: 135 },
+      { shape: "flag", angle: 180 },
+      { shape: "boot", angle: 180 },
+      { shape: "ess",  angle: 180 }
+    ]
+  });
+</script>
+</body>
+</html>

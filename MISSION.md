@@ -1,7 +1,7 @@
 # Mission: Teaching Kai (3.5)
 
-> Started as STEM; now a two-track **curiosity course** (Science + Words). The north star,
-> the method, and the guardrails are shared — only the loop differs per track.
+> Started as STEM; now a three-track **curiosity course** (Science + Words + Visual). The north
+> star, the method, and the guardrails are shared — only the loop differs per track.
 
 ## Who is learning
 
@@ -59,9 +59,26 @@ same method, same 3-layer days; the loop is tuned to how that kind of thinking a
 |-------|------|---------------|
 | 🔬 **Science** | Notice → Wonder → Predict → Test → Talk | inquiry: guess, then find out |
 | 📖 **Words** | Listen → Wonder → Play → Make → Share | language & literacy through play, before letters |
+| 🔄 **Visual** | Look → Wonder → Turn → Make → Talk | spatial thinking: turning shapes in the mind |
 
 New tracks can be added the same way (a track = a loop + a colour + lessons). Start narrow:
-Words launches with one pilot lesson (rhyme), and we expand it after running it with Kai.
+Words launched with one pilot lesson (rhyme); Visual launches with one (Turn It). We expand each
+after running it with Kai.
+
+### On the Visual track and Shichida
+
+The family used the **Shichida method** and found it helpful. The Visual track keeps what that
+experience got right and drops what it got wrong. The "right/left brain" mechanism is a
+[debunked neuromyth](./reference/0002-visual-thinking-evidence.html); fast flash cards showed no
+effect in the one rigorous RCT; linking-memory mnemonics don't work until ~age 5–6; ESP games have
+no evidence. But **spatial/rotation play is the best-evidenced intervention in this whole
+workspace** (Uttal 2013 meta-analysis: 217 studies, g = 0.47, durable, transfers) — and it is
+exactly the part Kai already loved.
+
+The deeper lesson, which now shapes every track: across this literature the active ingredient is
+**the quality of the adult–child interaction**, not the branded content. Shichida worked partly
+because it put a warm parent and a delighted child face-to-face for thirty focused minutes.
+We keep that. See [learning record 0006](./learning-records/0006-visual-track-and-shichida-evidence.md).
 
 ## The method (every project uses it)
 
