@@ -5,6 +5,83 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Parent Playbook — KaiSTEM</title>
 <link rel="stylesheet" href="../assets/styles.css">
+<script src="../assets/theme.js" defer></script>
+<style>
+  /* Page-specific touches — Parent Playbook only. Tokens/classes come from styles.css. */
+
+  /* Question banks: the "Move" column reads as a small clay chip */
+  .qbank td:first-child {
+    white-space: nowrap;
+    width: 6.5rem;
+  }
+  .qbank .move {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent-deep);
+    background: var(--paper-2);
+    border: 1px solid var(--rule);
+    border-radius: var(--radius-pill);
+    padding: 0.25rem 0.7rem;
+    box-shadow: var(--shadow-clay-sm);
+  }
+
+  /* Journal ritual: numbered clay steps */
+  ol.ritual {
+    list-style: none;
+    counter-reset: ritual;
+    padding: 0;
+    margin: 1rem 0;
+  }
+  ol.ritual li {
+    counter-increment: ritual;
+    position: relative;
+    padding: 0.35rem 0 0.35rem 2.6rem;
+    max-width: var(--measure);
+  }
+  ol.ritual li::before {
+    content: counter(ritual);
+    position: absolute;
+    left: 0;
+    top: 0.35rem;
+    width: 1.7rem;
+    height: 1.7rem;
+    display: grid;
+    place-items: center;
+    font-family: var(--font-disp);
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: var(--accent-deep);
+    background: var(--paper-2);
+    border: 1px solid var(--rule);
+    border-radius: 50%;
+    box-shadow: var(--shadow-clay-sm);
+  }
+
+  .footnotes-rule {
+    border: none;
+    border-top: 1px solid var(--rule);
+    margin: 2.5rem 0 1rem;
+  }
+
+  /* Print: this page is taped inside a cupboard — force clean B/W.
+     styles.css resets paper/ink but not the accent tokens; do it here. */
+  @media print {
+    :root, :root[data-theme="dark"] {
+      --accent: #555;
+      --accent-deep: #000;
+      --wonder: #777; --predict: #777; --test: #777; --grow: #777;
+    }
+    .qbank .move, ol.ritual li::before {
+      box-shadow: none;
+      border-color: #bbb;
+    }
+    .say::before { content: ""; }
+  }
+</style>
 </head>
 <body>
 
@@ -12,7 +89,7 @@
   <a class="home" href="../index.html">🏠 All projects</a>
   <span class="here">Reference · Parent Playbook</span>
   <span class="nextprev">
-    <a href="../lessons/0001-sink-or-float.html">Start: Project 1 →</a>
+    <a href="../science/lessons/0001-sink-or-float.html">Start: Project 1 →</a>
   </span>
 </nav>
 
@@ -27,6 +104,8 @@
     <span>~3 min read</span>
   </div>
 </header>
+
+<main>
 
 <h2>The whole method, in five moves</h2>
 <p>Every project runs on a little five-move loop. You are not delivering facts. You are
@@ -63,14 +142,14 @@ spirit, tuned to how that kind of thinking grows.</p>
 answer, so Kai keeps talking and thinking instead of fishing for approval.<sup><a href="#n2">2</a></sup>
 Aim for one good question, then <em>wait</em> — count to five in your head before rescuing the silence.</p>
 
-<table>
+<table class="qbank">
   <thead><tr><th>Move</th><th>Say this</th></tr></thead>
   <tbody>
-    <tr><td>Notice</td><td>"What do you <strong>see</strong>? What does it feel like? Tell me about it."</td></tr>
-    <tr><td>Wonder</td><td>"I wonder what would happen if…" &nbsp; "Hmm, why do you think that is?"</td></tr>
-    <tr><td>Predict</td><td>"What do you think will happen? Let's <strong>guess</strong> first."</td></tr>
-    <tr><td>Test</td><td>"Should we try it and find out? You do it!"</td></tr>
-    <tr><td>Talk</td><td>"What happened? Was that what you thought? What should we try next?"</td></tr>
+    <tr><td><span class="move">Notice</span></td><td>"What do you <strong>see</strong>? What does it feel like? Tell me about it."</td></tr>
+    <tr><td><span class="move">Wonder</span></td><td>"I wonder what would happen if…" &nbsp; "Hmm, why do you think that is?"</td></tr>
+    <tr><td><span class="move">Predict</span></td><td>"What do you think will happen? Let's <strong>guess</strong> first."</td></tr>
+    <tr><td><span class="move">Test</span></td><td>"Should we try it and find out? You do it!"</td></tr>
+    <tr><td><span class="move">Talk</span></td><td>"What happened? Was that what you thought? What should we try next?"</td></tr>
   </tbody>
 </table>
 
@@ -86,14 +165,14 @@ Aim for one good question, then <em>wait</em> — count to five in your head bef
 from science in one way: <strong>never correct a rhyme — just replay a good one and play on.</strong>
 A child who says "zat" rhymes with "cat" is hearing the pattern, which is the whole win.<sup><a href="#n5">5</a></sup></p>
 
-<table>
+<table class="qbank">
   <thead><tr><th>Move</th><th>Say this</th></tr></thead>
   <tbody>
-    <tr><td>Listen</td><td>"Hear it? <strong>Cat… hat</strong> — they sound the same at the end!"</td></tr>
-    <tr><td>Wonder</td><td>"I wonder what rhymes with your name…"</td></tr>
-    <tr><td>Play</td><td>"What rhymes with frog? <strong>Real or silly</strong> — you pick!"</td></tr>
-    <tr><td>Make</td><td>"…how I wonder what you ___?" (then wait and smile)</td></tr>
-    <tr><td>Share</td><td>"Say me your rhyme — I'll write it down and read it back!"</td></tr>
+    <tr><td><span class="move">Listen</span></td><td>"Hear it? <strong>Cat… hat</strong> — they sound the same at the end!"</td></tr>
+    <tr><td><span class="move">Wonder</span></td><td>"I wonder what rhymes with your name…"</td></tr>
+    <tr><td><span class="move">Play</span></td><td>"What rhymes with frog? <strong>Real or silly</strong> — you pick!"</td></tr>
+    <tr><td><span class="move">Make</span></td><td>"…how I wonder what you ___?" (then wait and smile)</td></tr>
+    <tr><td><span class="move">Share</span></td><td>"Say me your rhyme — I'll write it down and read it back!"</td></tr>
   </tbody>
 </table>
 
@@ -102,16 +181,17 @@ A child who says "zat" rhymes with "cat" is hearing the pattern, which is the wh
 a <strong>keepsake</strong> — and quietly builds early literacy, counting, and memory. Science
 projects log a guess and a result; Words projects log the rhyme pairs Kai hears and invents — but
 the ritual is the same.</p>
-<ul>
+<ol class="ritual">
   <li><strong>Before testing:</strong> Kai marks his <em>prediction</em> (a circle, a sticker, a scribble — drawing ability is not the point).</li>
   <li><strong>After testing:</strong> Kai marks what <em>actually</em> happened, right next to his guess.</li>
   <li><strong>You scribe:</strong> write down Kai's exact words underneath. Quote him. ("Kai said: 'the duck is swimming!'")</li>
   <li><strong>Date it</strong> and keep them in a folder. Re-reading old pages is its own lesson.</li>
-</ul>
+</ol>
 
 <h2>Glossary — words we use the same way every time</h2>
 <p>Use these words with Kai consistently so they stick. Keep the kid-definition <em>simple</em>;
 the grown-up note tells you what's really going on.</p>
+<div class="table-scroll">
 <table>
   <thead><tr><th>Word</th><th>How to say it to Kai</th><th>What it really means</th></tr></thead>
   <tbody>
@@ -139,6 +219,7 @@ the grown-up note tells you what's really going on.</p>
     <tr><td><strong>Short / Long word</strong> 📖</td><td>"Few beats or lots of beats?"</td><td>Comparing syllable counts; "more vs fewer" matters more than the exact number.</td></tr>
   </tbody>
 </table>
+</div>
 
 <h2>Running a 30-minute session without it going sideways</h2>
 <ul>
@@ -181,20 +262,23 @@ the grown-up note tells you what's really going on.</p>
   That's what I'm here for.
 </div>
 
-<hr style="border:none;border-top:1px solid var(--rule);margin:2.5rem 0 1rem;">
+</main>
+
+<footer>
+<hr class="footnotes-rule">
 <p class="footnote" id="n1"><strong>1.</strong> NAEYC, <a href="https://www.naeyc.org/resources/pubs/yc/nov2017/stem-learners">Young Children Are Capable STEM Learners</a> — early math predicts later achievement.</p>
 <p class="footnote" id="n2"><strong>2.</strong> NAEYC, <a href="https://www.naeyc.org/resources/pubs/yc/summer2023/linking-science-and-language">Let's Talk: Linking Science &amp; Language</a> — "I notice / I wonder" and open-ended questions.</p>
 <p class="footnote" id="n3"><strong>3.</strong> HeadStart.gov, <a href="https://headstart.gov/school-readiness/article/science-preschool">Science in Preschool</a> — cross-cutting practices: ask, predict, observe, notice patterns.</p>
 <p class="footnote" id="n4"><strong>4.</strong> Zero to Three, <a href="https://www.zerotothree.org/resource/stem-activities-for-toddlers/">STEM Activities for Toddlers</a> — early joyful STEM and "STEM identity."</p>
 <p class="footnote" id="n5"><strong>5.</strong> Reading Rockets, <a href="https://www.readingrockets.org/topics/phonological-and-phonemic-awareness">Phonological and Phonemic Awareness</a> — hearing rhyme and sounds in spoken words is a foundational, strong predictor of later reading; see also NAEYC &amp; Zero to Three on early language play.</p>
 
-<nav class="doc-nav">
+<nav class="doc-nav" aria-label="Related documents">
   <a href="../index.html">🏠 Home</a>
-  <a href="../MISSION.md">↑ Mission</a>
-  <a href="../lessons/0001-sink-or-float.html">🔬 Science 1 → Sink or Float?</a>
-  <a href="../lessons/L0001-rhyme-time.html">📖 Words 1 → Rhyme Time</a>
-  <a href="../RESOURCES.md">All resources</a>
+  <a href="../HUB.md">🧭 The shared mission → HUB.md</a>
+  <a href="../science/lessons/0001-sink-or-float.html">🔬 Science 1 → Sink or Float?</a>
+  <a href="../words/lessons/0001-rhyme-time.html">📖 Words 1 → Rhyme Time</a>
 </nav>
+</footer>
 
 </body>
 </html>

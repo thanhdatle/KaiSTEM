@@ -1,19 +1,63 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-accent="visual">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Evidence Card: Shichida &amp; Right-Brain Training — KaiSTEM</title>
 <meta name="description" content="What the research actually says about right-brain education, Shichida, flash cards and photographic memory — and which visual skills really are trainable at 3–5.">
-<link rel="stylesheet" href="../assets/styles.css">
+<link rel="stylesheet" href="../../assets/styles.css">
+<script src="../../assets/theme.js" defer></script>
+<style>
+  /* Page-specific touches — evidence card only. Tokens/classes come from styles.css. */
+
+  /* Verdict chips: an evidence taxonomy the eye can scan. Every verdict is
+     emoji + TEXT (never colour alone); colour is reinforcement, not meaning. */
+  .verdict {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 0.74rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    line-height: 1.35;
+    color: var(--ink);
+    background: var(--paper-2);
+    border: 1.5px solid var(--rule);
+    border-left-width: 5px;
+    border-radius: var(--radius);
+    padding: 0.35rem 0.7rem;
+    box-shadow: var(--shadow-clay-sm);
+  }
+  .verdict.v-yes     { border-left-color: var(--grow);    }
+  .verdict.v-caution { border-left-color: var(--predict); }
+  .verdict.v-later   { border-left-color: var(--wonder);  }
+  .verdict.v-no      { border-left-color: var(--ink-soft); }
+  td:has(> .verdict) { min-width: 11rem; }
+
+  /* Citations: parenthetical source links stay quiet next to the argument */
+  .table-scroll td a, .box a, .footnote a {
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
+  }
+
+  /* Print: keep the audit clean B/W. styles.css resets paper/ink but not
+     accents/tones; do it here. Chip borders survive, shadows don't. */
+  @media print {
+    :root, :root[data-theme="dark"] {
+      --accent: #555;
+      --accent-deep: #000;
+      --wonder: #777; --predict: #777; --test: #777; --grow: #777;
+    }
+    .verdict { box-shadow: none; border-color: #bbb; border-left-color: #000; }
+  }
+</style>
 </head>
 <body>
 
 <nav class="coursebar" aria-label="Course navigation">
-  <a class="home" href="../index.html">🏠 All projects</a>
+  <a class="home" href="../index.html">🔄 Visual track</a>
   <span class="here">Reference · Evidence Card</span>
   <span class="nextprev">
-    <a href="../lessons/V0001-turn-it.html">Visual 1: Turn It →</a>
+    <a href="../lessons/0001-turn-it.html">Visual 1: Turn It →</a>
   </span>
 </nav>
 
@@ -72,42 +116,42 @@ people</strong> and 7,266 brain regions — they found that lateralization is a 
     <tr>
       <td><strong>Fast flash cards</strong> bypass conscious processing and train the right brain</td>
       <td>A randomised trial of a best-selling flash-card and DVD programme — 117 infants, seven months of daily use — found <strong>no difference on 13 of 14 measures</strong>. The one difference: parents <em>believed</em> their babies had learned to read (<a href="https://eric.ed.gov/?id=EJ1054471">Neuman et al., 2014</a>). The US FTC charged a similar “baby can read” product with <a href="https://www.ftc.gov/news-events/news/press-releases/2012/08/ads-touting-your-baby-can-read-were-deceptive-ftc-complaint-alleges">deceptive advertising</a>.</td>
-      <td>❌ The <em>speed</em> does nothing</td>
+      <td><span class="verdict v-no">❌ The <em>speed</em> does nothing</span></td>
     </tr>
     <tr>
       <td><strong>Photographic memory</strong> can be preserved or installed by training</td>
       <td>Eidetic imagery is real but uncommon (~2–10% of children), fades by adolescence, and is <em>reconstructive</em> — eidetic children omit and even invent details, and recall no more than their peers. True photographic memory is essentially unattested in adults (<a href="https://www.scientificamerican.com/article/is-there-such-a-thing-as/">Haber; overview</a>).</td>
-      <td>❌ Not a thing to install</td>
+      <td><span class="verdict v-no">❌ Not a thing to install</span></td>
     </tr>
     <tr>
       <td><strong>Linking memory</strong> — chain pictures into a silly story, then recall the sequence</td>
       <td>Elaborative imagery strategies are <em>late-developing</em>. Preschoolers show “mediation deficiency”: they do not benefit even when explicitly taught. The best training study on interactive imagery begins at <strong>ages 5–6</strong> (<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4416471/">Miller et al., 2015</a>). Method-of-loci studies skew to ages 9–17.</td>
-      <td>⏳ Right idea, <strong>wrong age</strong> — revisit at 5–6</td>
+      <td><span class="verdict v-later">⏳ Right idea, <strong>wrong age</strong> — revisit at 5–6</span></td>
     </tr>
     <tr>
       <td><strong>ESP / intuition games</strong> — guess the hidden colour, sense the card</td>
       <td>No scientific evidence, at all. Tellingly, even enthusiastic Shichida parent-bloggers concede that any benefit comes from bonding and a rich environment rather than from extrasensory perception.</td>
-      <td>❌ No</td>
+      <td><span class="verdict v-no">❌ No</span></td>
     </tr>
     <tr>
       <td><strong>Dot cards</strong> build instant number sense that boosts maths</td>
       <td>The correlation between approximate number sense and maths is real and replicated (<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3338171/">Libertus et al., 2011</a>). But the <em>training→maths transfer</em> claim collapsed: the original authors failed to replicate it across four experiments (<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7805575/">Szkudlarek, Park &amp; Brannon, 2021</a>).</td>
-      <td>⚠️ Fun — but expect no maths gain</td>
+      <td><span class="verdict v-caution">⚠️ Fun — but expect no maths gain</span></td>
     </tr>
     <tr>
       <td><strong>Memory-grid games</strong> expand working memory</td>
       <td>You reliably improve at <em>the trained task</em>. Far transfer to intelligence, reading or arithmetic does not survive comparison against active controls (<a href="https://journals.sagepub.com/doi/10.1177/1745691616635612">Melby-Lervåg, Redick &amp; Hulme, 2016</a>; <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10485729/">Gire et al., 2023</a>).</td>
-      <td>⚠️ A good game, not brain training</td>
+      <td><span class="verdict v-caution">⚠️ A good game, not brain training</span></td>
     </tr>
     <tr>
       <td><strong>Puzzles, tangrams, rotating shapes</strong></td>
       <td>Meta-analysis of <strong>217 studies</strong>: spatial training works, average effect <strong>g&nbsp;=&nbsp;0.47</strong>, gains are <em>durable</em> and <em>transfer to untrained tasks</em>, and age is no barrier (<a href="https://pubmed.ncbi.nlm.nih.gov/22663761/">Uttal et al., 2013</a>). In under-8s the effect is larger still (<a href="https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2020.01938/full">Yang et al., 2020</a>). Puzzle play at ages 2–4 predicts later mental-transformation skill (<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3289766/">Levine et al., 2012</a>).</td>
-      <td>✅ <strong>Strongly supported</strong></td>
+      <td><span class="verdict v-yes">✅ <strong>Strongly supported</strong></span></td>
     </tr>
     <tr>
       <td><strong>Pattern play</strong> — copy, extend, and abstract a repeating pattern</td>
       <td>Repeating-pattern skill at the end of pre-K uniquely predicts maths achievement years later, controlling for other maths, reading and cognitive measures (<a href="https://www.sciencedirect.com/science/article/abs/pii/S0022096520304197">Rittle-Johnson et al., 2020</a>).</td>
-      <td>✅ Supported</td>
+      <td><span class="verdict v-yes">✅ Supported</span></td>
     </tr>
   </tbody>
 </table>
@@ -147,7 +191,7 @@ people</strong> and 7,266 brain regions — they found that lateralization is a 
     <tr><td>Flash cards, fast</td><td>Keep the cards. <strong>Slow them right down.</strong> Ask “what is it?”, “what's it for?”, “which is your favourite?” The cards become a vehicle for talk — which is what was working all along.</td></tr>
     <tr><td>Linking memory / story chains</td><td>Keep telling the silly stories, <strong>as stories</strong>. Drop the recall test. Revisit as a memory technique when Kai is 5–6.</td></tr>
     <tr><td>Mandala / photographic memory</td><td>Reframe as <strong>symmetry play</strong>: fold it, match it, complete the missing half. Real spatial content, no mystical claim.</td></tr>
-    <tr><td>Puzzles, tangrams, rotation</td><td><strong>Promote to the centre of the track.</strong> This is <a href="../lessons/V0001-turn-it.html">Lesson 1: Turn It</a>.</td></tr>
+    <tr><td>Puzzles, tangrams, rotation</td><td><strong>Promote to the centre of the track.</strong> This is <a href="../lessons/0001-turn-it.html">Lesson 1: Turn It</a>.</td></tr>
     <tr><td>ESP / intuition games</td><td>Drop. If Kai loves the hide-and-guess format, keep the format as a <em>guessing game</em> — that is prediction, which the Science track already trains.</td></tr>
     <tr><td>Dot cards</td><td>Keep as playful counting. Enjoy it. Expect no maths transfer.</td></tr>
   </tbody>
@@ -186,11 +230,12 @@ than tidy.</p>
   training studies.</em> Psychological Bulletin, 139(2), 352–402.
   <a href="https://pubmed.ncbi.nlm.nih.gov/22663761/">pubmed.ncbi.nlm.nih.gov/22663761</a> —
   the paper establishing that spatial skill is not fixed, and that training it works.</p>
-  <p class="doc-nav">
-    <a href="../index.html">🏠 Home</a> ·
-    <a href="0001-parent-playbook.html">📖 Parent Playbook</a> ·
-    <a href="../lessons/V0001-turn-it.html">🔄 Visual 1: Turn It</a>
-  </p>
+  <nav class="doc-nav" aria-label="Related documents">
+    <a href="../../index.html">🏠 Home</a>
+    <a href="../index.html">🔄 Visual track</a>
+    <a href="../../reference/0001-parent-playbook.html">📖 Parent Playbook</a>
+    <a href="../lessons/0001-turn-it.html">🔄 Visual 1: Turn It</a>
+  </nav>
 </footer>
 
 </main>

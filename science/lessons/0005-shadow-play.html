@@ -7,8 +7,14 @@
 <meta name="description" content="Five days of light and shadow: Kai catches a shadow, changes it, measures it, and discovers it moves all by itself.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500;1,6..72,600&family=Space+Mono:wght@400;700&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/lesson.css">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700&family=Nunito:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Space+Mono:wght@400;700&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/lesson.css">
+<script src="../../assets/theme.js" defer></script>
+<style>
+.l-root{--accent:oklch(54% 0.14 280);--accent-deep:oklch(45% 0.15 280);}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .l-root{--accent:oklch(76% 0.12 280);--accent-deep:oklch(84% 0.11 281);}}
+:root[data-theme="dark"] .l-root{--accent:oklch(76% 0.12 280);--accent-deep:oklch(84% 0.11 281);}
+</style>
 </head>
 <body>
 <div id="app"></div>
@@ -20,8 +26,6 @@ window.LESSON = {
   index: 5, total: 5,
   defaultMode: "prep",
   title: "Project 5 — Shadow Play — KaiSTEM",
-
-  theme: { "--accent": "oklch(54% 0.14 280)", "--accent-deep": "oklch(45% 0.15 280)" },
 
   hero: {
     kicker: "KaiSTEM · Project Five",
@@ -231,12 +235,12 @@ window.LESSON = {
     teacherHTML: "<strong>That's the whole course — {name} did it!</strong> Five projects: guessing, growing, mixing, hunting, and now measuring the sun's own shadow. Tell me how this one landed and how the series felt overall — I'll plan what comes next for him.",
     links: [
       { href: "../index.html", label: "🏠 Home" },
-      { href: "../reference/0001-parent-playbook.html", label: "📖 Playbook" },
+      { href: "../../reference/0001-parent-playbook.html", label: "📖 Playbook" },
       { href: "0004-bug-safari.html", label: "← Project 4" }
     ]
   }
 };
 </script>
-<script src="../assets/lesson.js"></script>
+<script src="../../assets/lesson.js"></script>
 </body>
 </html>
