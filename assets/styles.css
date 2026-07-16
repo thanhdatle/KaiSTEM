@@ -1,31 +1,175 @@
-/* KaiSTEM — shared lesson + reference stylesheet
-   One stylesheet so the whole course looks like one warm, intentional thing.
-   Tufte-leaning: generous measure, real typographic hierarchy, prints clean. */
+/* KaiSTEM — shared hub / topic-index / reference stylesheet
+   "Soft-Clay Editorial": playful clay chrome for a course made for a 3.5-year-old,
+   calm editorial reading core for the parent who actually reads it.
+   Spec: assets/DESIGN-SYSTEM.md. Every pre-existing selector is preserved —
+   treatment changed, contract untouched. Light + dark + print. */
 
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700&family=Nunito:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Space+Mono:wght@400;700&family=Caveat:wght@500;600&display=swap');
+
+/* ---- Tokens: light (default) ---------------------------------------- */
 :root {
-  /* Palette — warm paper, ink, one playful accent + science-coded hues */
-  --paper:        oklch(98.5% 0.008 85);
-  --paper-sunk:   oklch(96% 0.012 85);
-  --ink:          oklch(26% 0.02 60);
-  --ink-soft:     oklch(45% 0.02 60);
-  --rule:         oklch(88% 0.015 75);
+  color-scheme: light;
 
-  --accent:       oklch(62% 0.17 35);    /* clay-coral — headings, links */
-  --accent-deep:  oklch(50% 0.16 35);
-  --wonder:       oklch(60% 0.13 280);   /* violet — "wonder" / questions */
-  --predict:      oklch(68% 0.14 75);    /* amber — "predict" */
-  --test:         oklch(58% 0.12 200);   /* teal — "test" / water */
-  --grow:         oklch(58% 0.13 150);   /* green — "nature/grow" */
+  /* Warm paper + warm ink */
+  --paper:       oklch(98.5% 0.008 85);
+  --paper-2:     oklch(96.4% 0.013 80);
+  --paper-sunk:  oklch(95% 0.014 78);
+  --ink:         oklch(26% 0.02 60);
+  --ink-soft:    oklch(46% 0.02 60);   /* 6.86:1 on paper */
+  --rule:        oklch(88% 0.015 75);
 
-  --font-body: "Iowan Old Style", "Palatino Linotype", Palatino, "Georgia", serif;
-  --font-disp: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
-  --font-hand: "Bradley Hand", "Comic Sans MS", "Segoe Print", cursive;
-  --font-mono: ui-monospace, "SF Mono", Menlo, monospace;
+  /* Hub honey-amber. Topic pages/lessons override these two. --accent is a
+     FILL/BORDER colour (3.3:1); --accent-deep is the TEXT-safe one (5.4:1). */
+  --accent:      oklch(64% 0.15 72);
+  --accent-deep: oklch(52% 0.15 70);
+
+  /* Tone hues — fills/borders. *-deep variants are text-safe (>=4.5:1). */
+  --wonder:       oklch(56% 0.13 285);
+  --predict:      oklch(66% 0.14 72);
+  --test:         oklch(55% 0.12 205);
+  --grow:         oklch(56% 0.13 150);
+  --wonder-deep:  oklch(44% 0.13 285);
+  --predict-deep: oklch(47% 0.12 72);
+  --test-deep:    oklch(44% 0.11 205);
+  --grow-deep:    oklch(43% 0.12 150);
+
+  --font-disp: "Baloo 2", "Trebuchet MS", system-ui, sans-serif;
+  --font-body: "Nunito", "Segoe UI", system-ui, sans-serif;
+  --font-hand: "Caveat", "Bradley Hand", "Segoe Print", cursive;
+  --font-mono: "Space Mono", ui-monospace, "SF Mono", Menlo, monospace;
 
   --measure: 38rem;
   --space:   clamp(1.5rem, 1rem + 3vw, 3rem);
-  --radius:  14px;
+  --radius:      14px;   /* reading blocks, callouts — stays calm */
+  --radius-clay: 26px;   /* clay cards */
+  --radius-pill: 999px;  /* chips, badges, toggles */
+
+  /* Restrained clay: layered soft shadows + light inner top highlight */
+  --shadow-clay:
+    0 1px 2px  oklch(50% 0.06 60 / .10),
+    0 10px 24px oklch(52% 0.10 45 / .12),
+    inset 0 -3px 6px oklch(48% 0.10 45 / .07),
+    inset 0 2px 3px  oklch(100% 0 0 / .75);
+  --shadow-clay-sm:
+    0 1px 2px  oklch(50% 0.06 60 / .10),
+    0 5px 12px oklch(52% 0.10 45 / .10),
+    inset 0 -2px 4px oklch(48% 0.10 45 / .06),
+    inset 0 1.5px 2px oklch(100% 0 0 / .7);
+  --shadow-clay-hover:
+    0 2px 4px  oklch(50% 0.06 60 / .12),
+    0 14px 30px oklch(52% 0.10 45 / .16),
+    inset 0 -3px 6px oklch(48% 0.10 45 / .07),
+    inset 0 2px 3px  oklch(100% 0 0 / .75);
+  --shadow-clay-pressed:
+    0 1px 2px  oklch(50% 0.06 60 / .10),
+    0 4px 10px oklch(52% 0.10 45 / .10),
+    inset 0 -5px 8px oklch(48% 0.10 45 / .12),
+    inset 0 2px 3px  oklch(100% 0 0 / .55);
 }
+
+/* ---- Tokens: dark (OS preference; manual data-theme wins) ------------ */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --paper:       oklch(23% 0.018 60);
+    --paper-2:     oklch(27% 0.02 60);
+    --paper-sunk:  oklch(20% 0.018 60);
+    --ink:         oklch(93% 0.012 85);
+    --ink-soft:    oklch(74% 0.02 75);
+    --rule:        oklch(40% 0.02 70);
+    --accent:      oklch(80% 0.13 78);
+    --accent-deep: oklch(86% 0.11 80);
+    --wonder:       oklch(76% 0.11 285);
+    --predict:      oklch(82% 0.12 75);
+    --test:         oklch(76% 0.10 205);
+    --grow:         oklch(78% 0.11 150);
+    --wonder-deep:  oklch(82% 0.10 285);
+    --predict-deep: oklch(86% 0.10 78);
+    --test-deep:    oklch(82% 0.09 205);
+    --grow-deep:    oklch(84% 0.10 150);
+    --shadow-clay:
+      0 1px 2px  oklch(0% 0 0 / .35),
+      0 12px 26px oklch(0% 0 0 / .40),
+      inset 0 -3px 6px oklch(0% 0 0 / .30),
+      inset 0 2px 3px  oklch(100% 0 0 / .06);
+    --shadow-clay-sm:
+      0 1px 2px  oklch(0% 0 0 / .35),
+      0 6px 14px oklch(0% 0 0 / .35),
+      inset 0 -2px 4px oklch(0% 0 0 / .25),
+      inset 0 1.5px 2px oklch(100% 0 0 / .06);
+    --shadow-clay-hover:
+      0 2px 4px  oklch(0% 0 0 / .40),
+      0 16px 32px oklch(0% 0 0 / .45),
+      inset 0 -3px 6px oklch(0% 0 0 / .30),
+      inset 0 2px 3px  oklch(100% 0 0 / .08);
+    --shadow-clay-pressed:
+      0 1px 2px  oklch(0% 0 0 / .35),
+      0 4px 10px oklch(0% 0 0 / .35),
+      inset 0 -5px 8px oklch(0% 0 0 / .40),
+      inset 0 2px 3px  oklch(100% 0 0 / .04);
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --paper:       oklch(23% 0.018 60);
+  --paper-2:     oklch(27% 0.02 60);
+  --paper-sunk:  oklch(20% 0.018 60);
+  --ink:         oklch(93% 0.012 85);
+  --ink-soft:    oklch(74% 0.02 75);
+  --rule:        oklch(40% 0.02 70);
+  --accent:      oklch(80% 0.13 78);
+  --accent-deep: oklch(86% 0.11 80);
+  --wonder:       oklch(76% 0.11 285);
+  --predict:      oklch(82% 0.12 75);
+  --test:         oklch(76% 0.10 205);
+  --grow:         oklch(78% 0.11 150);
+  --wonder-deep:  oklch(82% 0.10 285);
+  --predict-deep: oklch(86% 0.10 78);
+  --test-deep:    oklch(82% 0.09 205);
+  --grow-deep:    oklch(84% 0.10 150);
+  --shadow-clay:
+    0 1px 2px  oklch(0% 0 0 / .35),
+    0 12px 26px oklch(0% 0 0 / .40),
+    inset 0 -3px 6px oklch(0% 0 0 / .30),
+    inset 0 2px 3px  oklch(100% 0 0 / .06);
+  --shadow-clay-sm:
+    0 1px 2px  oklch(0% 0 0 / .35),
+    0 6px 14px oklch(0% 0 0 / .35),
+    inset 0 -2px 4px oklch(0% 0 0 / .25),
+    inset 0 1.5px 2px oklch(100% 0 0 / .06);
+  --shadow-clay-hover:
+    0 2px 4px  oklch(0% 0 0 / .40),
+    0 16px 32px oklch(0% 0 0 / .45),
+    inset 0 -3px 6px oklch(0% 0 0 / .30),
+    inset 0 2px 3px  oklch(100% 0 0 / .08);
+  --shadow-clay-pressed:
+    0 1px 2px  oklch(0% 0 0 / .35),
+    0 4px 10px oklch(0% 0 0 / .35),
+    inset 0 -5px 8px oklch(0% 0 0 / .40),
+    inset 0 2px 3px  oklch(100% 0 0 / .04);
+}
+
+/* ---- Per-track accents (opt-in helper for dark-safe theming) ----------
+   Pages that today write style="--accent:…" inline can instead set
+   data-accent on <html> and get BOTH themes for free. Additive; the old
+   inline mechanism still works (inline wins by design). */
+[data-accent="science"] { --accent: oklch(60% 0.15 45);  --accent-deep: oklch(48% 0.15 45); }
+[data-accent="words"]   { --accent: oklch(62% 0.18 18);  --accent-deep: oklch(50% 0.18 18); }
+[data-accent="visual"]  { --accent: oklch(58% 0.16 295); --accent-deep: oklch(45% 0.16 296); }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"])[data-accent="science"],
+  :root:not([data-theme="light"]) [data-accent="science"] { --accent: oklch(78% 0.13 55);  --accent-deep: oklch(85% 0.11 58); }
+  :root:not([data-theme="light"])[data-accent="words"],
+  :root:not([data-theme="light"]) [data-accent="words"]   { --accent: oklch(76% 0.15 20);  --accent-deep: oklch(84% 0.12 22); }
+  :root:not([data-theme="light"])[data-accent="visual"],
+  :root:not([data-theme="light"]) [data-accent="visual"]  { --accent: oklch(76% 0.13 292); --accent-deep: oklch(84% 0.11 293); }
+}
+:root[data-theme="dark"][data-accent="science"],
+:root[data-theme="dark"] [data-accent="science"] { --accent: oklch(78% 0.13 55);  --accent-deep: oklch(85% 0.11 58); }
+:root[data-theme="dark"][data-accent="words"],
+:root[data-theme="dark"] [data-accent="words"]   { --accent: oklch(76% 0.15 20);  --accent-deep: oklch(84% 0.12 22); }
+:root[data-theme="dark"][data-accent="visual"],
+:root[data-theme="dark"] [data-accent="visual"]  { --accent: oklch(76% 0.13 292); --accent-deep: oklch(84% 0.11 293); }
 
 * { box-sizing: border-box; }
 
@@ -33,6 +177,47 @@ html { -webkit-text-size-adjust: 100%; }
 
 /* Anchored headings shouldn't hide under the sticky course bar */
 :where(h1, h2, h3, [id]) { scroll-margin-top: 4.5rem; }
+
+/* Visible focus everywhere, both themes */
+a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visible {
+  outline: 3px solid var(--accent-deep);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+::selection { background: color-mix(in oklch, var(--accent) 28%, transparent); }
+button, summary { cursor: pointer; }
+
+/* ---- Ambient blobs (hub hero only — markup opts in, aria-hidden) ---- */
+@keyframes floatY { 0%,100% { transform: translateY(0) } 50% { transform: translateY(-22px) } }
+.blob { position: absolute; border-radius: 50%; pointer-events: none; z-index: 0; filter: blur(2px); }
+.blob-a { top: -50px; right: -40px; width: 190px; height: 190px;
+  background: radial-gradient(circle at 35% 35%, color-mix(in oklch, var(--test) 16%, transparent), transparent 70%);
+  animation: floatY 9s ease-in-out infinite; }
+.blob-b { top: 150px; left: -60px; width: 150px; height: 150px;
+  background: radial-gradient(circle at 40% 40%, color-mix(in oklch, var(--accent) 13%, transparent), transparent 70%);
+  animation: floatY 11s ease-in-out infinite .6s; }
+.blob-c { top: 40px; right: 30%; width: 110px; height: 110px;
+  background: radial-gradient(circle at 40% 40%, color-mix(in oklch, var(--wonder) 10%, transparent), transparent 70%);
+  animation: floatY 13s ease-in-out infinite 1.2s; }
+
+/* ---- Theme toggle (injected by assets/theme.js) ---------------------- */
+.theme-toggle {
+  position: fixed;
+  top: calc(10px + env(safe-area-inset-top, 0px));
+  right: calc(14px + env(safe-area-inset-right, 0px));
+  z-index: 90;
+  width: 44px; height: 44px;
+  display: grid; place-items: center;
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-pill);
+  background: var(--paper-2);
+  color: var(--accent-deep);
+  box-shadow: var(--shadow-clay-sm);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.theme-toggle svg { width: 20px; height: 20px; display: block; }
+.theme-toggle:hover { transform: translateY(-2px); box-shadow: var(--shadow-clay-hover); }
+.theme-toggle:active { transform: scale(.97); box-shadow: var(--shadow-clay-pressed); }
 
 /* ---- Sticky course bar (Home / you-are-here / prev-next) ---- */
 .coursebar {
@@ -44,20 +229,35 @@ html { -webkit-text-size-adjust: 100%; }
   gap: 0.4rem 1rem;
   flex-wrap: wrap;
   margin: 0 0 2rem;
-  padding: 0.6rem 0.95rem;
+  padding: 0.55rem 0.95rem;
   background: color-mix(in oklch, var(--paper) 86%, transparent);
   backdrop-filter: saturate(150%) blur(9px);
   -webkit-backdrop-filter: saturate(150%) blur(9px);
   border: 1px solid var(--rule);
   border-top: none;
-  border-radius: 0 0 12px 12px;
+  border-radius: 0 0 18px 18px;
   font-family: var(--font-mono);
   font-size: 0.78rem;
   letter-spacing: 0.02em;
 }
-.coursebar a { text-decoration: none; color: var(--accent-deep); white-space: nowrap; }
+.coursebar a {
+  text-decoration: none;
+  color: var(--accent-deep);
+  white-space: nowrap;
+  padding: 0.3rem 0.75rem;
+  border: 1px solid transparent;
+  border-radius: var(--radius-pill);
+  transition: background .2s ease, box-shadow .2s ease, transform .2s ease;
+}
 .coursebar a:hover,
-.coursebar a:focus-visible { color: var(--accent); text-decoration: underline; }
+.coursebar a:focus-visible {
+  background: var(--paper-2);
+  border-color: var(--rule);
+  box-shadow: var(--shadow-clay-sm);
+  transform: translateY(-1px);
+  text-decoration: none;
+}
+.coursebar a:active { transform: scale(.97); box-shadow: var(--shadow-clay-pressed); }
 .coursebar .home { font-weight: 700; }
 .coursebar .here {
   flex: 1 1 8rem;
@@ -67,8 +267,8 @@ html { -webkit-text-size-adjust: 100%; }
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-.coursebar .nextprev { display: flex; gap: 0.9rem; white-space: nowrap; }
-.coursebar a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 3px; }
+.coursebar .nextprev { display: flex; gap: 0.4rem; white-space: nowrap; }
+.coursebar a:focus-visible { outline: 3px solid var(--accent-deep); outline-offset: 2px; }
 
 
 body {
@@ -76,16 +276,17 @@ body {
   background: var(--paper);
   color: var(--ink);
   font-family: var(--font-body);
-  font-size: clamp(1.02rem, 0.96rem + 0.4vw, 1.18rem);
+  font-size: clamp(1.02rem, 0.96rem + 0.4vw, 1.14rem);
   line-height: 1.62;
   padding: var(--space);
   max-width: calc(var(--measure) + 6rem);
   margin-inline: auto;
   text-rendering: optimizeLegibility;
+  transition: background .3s ease, color .3s ease;
 }
 
 /* ---- Header / masthead ---- */
-.masthead { margin-bottom: 2.5rem; }
+.masthead { margin-bottom: 2.5rem; position: relative; }
 .kicker {
   font-family: var(--font-mono);
   font-size: 0.72rem;
@@ -96,9 +297,9 @@ body {
 }
 h1 {
   font-family: var(--font-disp);
-  font-size: clamp(1.9rem, 1.4rem + 2.6vw, 2.9rem);
-  line-height: 1.08;
-  font-weight: 600;
+  font-size: clamp(2rem, 1.4rem + 2.8vw, 3.1rem);
+  line-height: 1.06;
+  font-weight: 700;
   letter-spacing: -0.01em;
   margin: 0 0 0.5rem;
   color: var(--ink);
@@ -123,40 +324,43 @@ h1 {
 
 h2 {
   font-family: var(--font-disp);
-  font-size: 1.5rem;
-  font-weight: 600;
+  font-size: 1.55rem;
+  font-weight: 700;
   margin: 2.6rem 0 0.8rem;
   padding-bottom: 0.3rem;
   border-bottom: 2px solid var(--rule);
   color: var(--accent-deep);
 }
 h3 {
-  font-size: 1.16rem;
+  font-family: var(--font-disp);
+  font-size: 1.18rem;
   font-weight: 600;
   margin: 1.8rem 0 0.5rem;
 }
 
 p, li { max-width: var(--measure); }
 a { color: var(--accent-deep); text-underline-offset: 2px; text-decoration-thickness: 1px; }
-a:hover { color: var(--accent); }
+a:hover { color: var(--accent-deep); text-decoration-thickness: 2.5px; }
 
 strong { color: var(--ink); }
 em { color: var(--ink-soft); }
 
-/* ---- Callout boxes ---- */
+/* ---- Callout boxes — clay cards ---- */
 .box {
-  background: var(--paper-sunk);
+  background: var(--paper-2);
   border: 1px solid var(--rule);
-  border-radius: var(--radius);
-  padding: 1.1rem 1.3rem;
+  border-radius: var(--radius-clay);
+  padding: 1.2rem 1.4rem;
   margin: 1.4rem 0;
+  box-shadow: var(--shadow-clay);
 }
 .box > :first-child { margin-top: 0; }
 .box > :last-child { margin-bottom: 0; }
 .box-title {
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  letter-spacing: 0.14em;
+  font-family: var(--font-disp);
+  font-size: 0.86rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   margin: 0 0 0.6rem;
   color: var(--ink-soft);
@@ -170,8 +374,8 @@ em { color: var(--ink-soft); }
 /* "Say this" scripted lines — what to actually say to Kai */
 .say {
   font-family: var(--font-hand);
-  font-size: 1.18rem;
-  line-height: 1.45;
+  font-size: 1.35rem;
+  line-height: 1.35;
   color: var(--accent-deep);
   margin: 0.4rem 0;
 }
@@ -181,7 +385,7 @@ em { color: var(--ink-soft); }
 .loop {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.4rem;
+  gap: 0.5rem;
   align-items: stretch;
   margin: 1.2rem 0;
   padding: 0;
@@ -190,28 +394,32 @@ em { color: var(--ink-soft); }
 .loop li {
   flex: 1 1 5rem;
   text-align: center;
-  background: var(--paper-sunk);
+  background: var(--paper-2);
   border: 1px solid var(--rule);
-  border-radius: 10px;
-  padding: 0.6rem 0.4rem;
+  border-radius: var(--radius-pill);
+  padding: 0.7rem 0.5rem;
   font-size: 0.82rem;
   line-height: 1.25;
   position: relative;
+  box-shadow: var(--shadow-clay-sm);
 }
 .loop li .step-emoji { display: block; font-size: 1.4rem; margin-bottom: 0.2rem; }
-.loop li .step-name { font-weight: 600; }
+.loop li .step-name { font-weight: 700; font-family: var(--font-disp); }
 
 /* ---- Day cards (project arc) ---- */
-.days { display: grid; gap: 0.9rem; margin: 1.2rem 0; }
+.days { display: grid; gap: 1rem; margin: 1.2rem 0; }
 .day {
   display: grid;
   grid-template-columns: auto 1fr;
   gap: 0 1rem;
   border: 1px solid var(--rule);
-  border-radius: var(--radius);
-  padding: 1rem 1.2rem;
-  background: var(--paper-sunk);
+  border-radius: var(--radius-clay);
+  padding: 1.1rem 1.3rem;
+  background: var(--paper-2);
+  box-shadow: var(--shadow-clay);
+  transition: transform .2s ease, box-shadow .2s ease;
 }
+.day:hover { transform: translateY(-2px); box-shadow: var(--shadow-clay-hover); }
 .day .badge {
   grid-row: span 2;
   align-self: start;
@@ -219,10 +427,10 @@ em { color: var(--ink-soft); }
   font-size: 0.7rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  background: var(--accent);
+  background: var(--accent-deep);
   color: var(--paper);
-  border-radius: 8px;
-  padding: 0.5rem 0.7rem;
+  border-radius: var(--radius-pill);
+  padding: 0.5rem 0.8rem;
   text-align: center;
   white-space: nowrap;
 }
@@ -237,7 +445,7 @@ em { color: var(--ink-soft); }
 .checklist li::before {
   content: "☐";
   position: absolute; left: 0; top: 0.15rem;
-  font-size: 1.1rem; color: var(--accent);
+  font-size: 1.1rem; color: var(--accent-deep);
 }
 
 /* ---- Tables (glossary, question bank) ---- */
@@ -258,21 +466,55 @@ th { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.08em; 
   border-top: 2px solid var(--rule);
   display: flex;
   flex-wrap: wrap;
-  gap: 0.6rem 1.5rem;
+  gap: 0.6rem 0.7rem;
   font-size: 0.92rem;
 }
+.doc-nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0.45rem 1.05rem;
+  text-decoration: none;
+  color: var(--accent-deep);
+  font-weight: 700;
+  background: var(--paper-2);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-pill);
+  box-shadow: var(--shadow-clay-sm);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.doc-nav a:hover { transform: translateY(-2px); box-shadow: var(--shadow-clay-hover); }
+.doc-nav a:active { transform: scale(.97); box-shadow: var(--shadow-clay-pressed); }
+
 .ask-teacher {
   margin-top: 2rem;
-  background: var(--paper-sunk);
-  border: 1px dashed var(--accent);
-  border-radius: var(--radius);
-  padding: 1rem 1.2rem;
+  background: var(--paper-2);
+  border: 1.5px dashed var(--accent);
+  border-radius: var(--radius-clay);
+  padding: 1.1rem 1.3rem;
   font-size: 0.96rem;
+  box-shadow: var(--shadow-clay);
 }
 .ask-teacher strong { color: var(--accent-deep); }
 
 .footnote { font-size: 0.85rem; color: var(--ink-soft); }
 sup a { text-decoration: none; }
+
+/* ---- Generic buttons (rare on doc pages, but themed) ---- */
+button {
+  font-family: var(--font-body);
+  font-weight: 700;
+  color: var(--accent-deep);
+  background: var(--paper-2);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-pill);
+  min-height: 44px;
+  padding: 0.45rem 1.1rem;
+  box-shadow: var(--shadow-clay-sm);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+button:hover { transform: translateY(-2px); box-shadow: var(--shadow-clay-hover); }
+button:active { transform: scale(.97); box-shadow: var(--shadow-clay-pressed); }
 
 /* ---- Numbered prep / setup steps ---- */
 ol.steps { padding-left: 1.4rem; margin: 1rem 0; }
@@ -282,10 +524,11 @@ ol.steps li { margin: 0.45rem 0; max-width: var(--measure); }
 .daydetail {
   border: 1px solid var(--rule);
   border-left: 5px solid var(--accent);
-  border-radius: var(--radius);
-  padding: 1rem 1.3rem 1.2rem;
+  border-radius: var(--radius-clay);
+  padding: 1.1rem 1.4rem 1.3rem;
   margin: 1.3rem 0;
-  background: var(--paper-sunk);
+  background: var(--paper-2);
+  box-shadow: var(--shadow-clay);
 }
 .daydetail > h3 { margin-top: 0.2rem; }
 .daydetail .tag {
@@ -294,10 +537,10 @@ ol.steps li { margin: 0.45rem 0; max-width: var(--measure); }
   font-size: 0.68rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  background: var(--accent);
+  background: var(--accent-deep);
   color: var(--paper);
-  border-radius: 6px;
-  padding: 0.2rem 0.5rem;
+  border-radius: var(--radius-pill);
+  padding: 0.25rem 0.65rem;
   margin-bottom: 0.5rem;
 }
 .daydetail h4 {
@@ -320,43 +563,68 @@ ul.observe li.relax::before { content: "😌"; }
 /* ---- FAQ accordions ---- */
 details.faq {
   border: 1px solid var(--rule);
-  border-radius: 10px;
-  margin: 0.55rem 0;
-  background: var(--paper-sunk);
+  border-radius: 18px;
+  margin: 0.65rem 0;
+  background: var(--paper-2);
   overflow: hidden;
+  box-shadow: var(--shadow-clay-sm);
+  transition: box-shadow .2s ease;
 }
+details.faq[open] { box-shadow: var(--shadow-clay); }
 details.faq > summary {
   cursor: pointer;
-  padding: 0.8rem 2.4rem 0.8rem 1.1rem;
-  font-weight: 600;
+  padding: 0.85rem 2.4rem 0.85rem 1.15rem;
+  min-height: 44px;
+  font-weight: 700;
   list-style: none;
   position: relative;
+  transition: color .2s ease;
 }
 details.faq > summary::-webkit-details-marker { display: none; }
 details.faq > summary::after {
   content: "+";
   position: absolute;
-  right: 1.1rem; top: 0.7rem;
-  color: var(--accent);
+  right: 1.1rem; top: 0.72rem;
+  color: var(--accent-deep);
   font-size: 1.3rem;
   line-height: 1;
+  transition: transform .2s ease;
 }
 details.faq[open] > summary::after { content: "\2013"; }
 details.faq > summary:hover { color: var(--accent-deep); }
-details.faq .faq-body { padding: 0 1.1rem 1rem; }
+details.faq .faq-body { padding: 0 1.15rem 1rem; }
 details.faq .faq-body > :first-child { margin-top: 0; }
 details.faq .faq-body > :last-child { margin-bottom: 0; }
 
+/* ---- Reduced motion ---- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    transition-duration: .001ms !important;
+  }
+  .blob { animation: none !important; }
+  .coursebar a:hover, .doc-nav a:hover, .day:hover, button:hover, .theme-toggle:hover {
+    transform: none;
+  }
+}
+
 /* ---- Print ---- */
 @media print {
-  :root { --paper: #fff; --paper-sunk: #fafafa; }
-  body { padding: 0; font-size: 11pt; max-width: none; }
+  :root, :root[data-theme="dark"] {
+    --paper: #fff; --paper-2: #fafafa; --paper-sunk: #fafafa;
+    --ink: #000; --ink-soft: #333; --rule: #bbb;
+  }
+  body { padding: 0; font-size: 11pt; max-width: none; background: #fff; color: #000; }
   h2 { break-after: avoid; }
   .day, .box, .loop li, .daydetail { break-inside: avoid; }
   .doc-nav, .ask-teacher { break-inside: avoid; }
   details.faq { break-inside: avoid; }
   details.faq > summary::after { content: ""; }
   details.faq[open] > summary::after { content: ""; }
-  .coursebar { display: none; }
-  a { color: var(--ink); }
+  .coursebar, .doc-nav, .theme-toggle, .blob, [data-print="hide"] { display: none !important; }
+  .box, .day, .daydetail, details.faq, .loop li, .ask-teacher, button {
+    box-shadow: none !important;
+    border: 1px solid #bbb;
+  }
+  a { color: #000; }
 }

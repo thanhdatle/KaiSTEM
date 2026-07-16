@@ -7,8 +7,14 @@
 <meta name="description" content="Five days of clapping words into beats: Kai discovers that words break into parts — cat (1), ti-ger (2), el-e-phant (3) — the next rung of the ear for sound.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500;1,6..72,600&family=Space+Mono:wght@400;700&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/lesson.css">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700&family=Nunito:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Space+Mono:wght@400;700&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/lesson.css">
+<script src="../../assets/theme.js" defer></script>
+<style>
+.l-root{--accent:oklch(66% 0.16 48);--accent-deep:oklch(54% 0.16 48);}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .l-root{--accent:oklch(78% 0.13 48);--accent-deep:oklch(85% 0.11 48);}}
+:root[data-theme="dark"] .l-root{--accent:oklch(78% 0.13 48);--accent-deep:oklch(85% 0.11 48);}
+</style>
 </head>
 <body>
 <div id="app"></div>
@@ -23,8 +29,6 @@ window.LESSON = {
   locatorHome: "All lessons",
   defaultMode: "prep",
   title: "Words · Lesson 2 — Word Beats — KaiSTEM",
-
-  theme: { "--accent": "oklch(66% 0.16 48)", "--accent-deep": "oklch(54% 0.16 48)" },
 
   hero: {
     kicker: "KaiSTEM · Words · Lesson Two",
@@ -233,12 +237,12 @@ window.LESSON = {
     teacherHTML: "<strong>Words Lesson 2 — done!</strong> {name}'s ear just got finer: from whole-word rhymes to the beats inside a single word. Tell me how it landed — did he start clapping words out on his own? That tells me whether the next Words step is first sounds (“ball starts with /b/”) or a story-telling turn.",
     links: [
       { href: "../index.html", label: "🏠 Home" },
-      { href: "../reference/0001-parent-playbook.html", label: "📖 Playbook" },
-      { href: "L0001-rhyme-time.html", label: "← Words 1" }
+      { href: "../../reference/0001-parent-playbook.html", label: "📖 Playbook" },
+      { href: "0001-rhyme-time.html", label: "← Words 1" }
     ]
   }
 };
 </script>
-<script src="../assets/lesson.js"></script>
+<script src="../../assets/lesson.js"></script>
 </body>
 </html>

@@ -13,7 +13,7 @@ Parent reported (2026-06-24):
 ### Interpretation
 Kai's throughput is high and he engages well — the issue was lesson *thinness*, not his
 attention. He's ready for **more reps and more depth per day**, not a longer chore list.
-This UPGRADES the baseline in [0001](./0001-mission-and-baseline.md): plan for ~30 min of
+This UPGRADES the baseline in [0001](../../learning-records/0001-mission-and-baseline.md): plan for ~30 min of
 real engagement, delivered as layers.
 
 ## Decision: the 3-layer day (applied to P4–P5, retrofit P1–P3 on request)

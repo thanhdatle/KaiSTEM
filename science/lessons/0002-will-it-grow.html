@@ -7,8 +7,14 @@
 <meta name="description" content="Two weeks at the windowsill: Kai plants seeds, watches them wake up, and learns the next move in science — a fair test, where you change just one thing.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500;1,6..72,600&family=Space+Mono:wght@400;700&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/lesson.css">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700&family=Nunito:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Space+Mono:wght@400;700&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/lesson.css">
+<script src="../../assets/theme.js" defer></script>
+<style>
+.l-root{--accent:oklch(56% 0.13 150);--accent-deep:oklch(46% 0.14 150);}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .l-root{--accent:oklch(78% 0.12 150);--accent-deep:oklch(85% 0.11 150);}}
+:root[data-theme="dark"] .l-root{--accent:oklch(78% 0.12 150);--accent-deep:oklch(85% 0.11 150);}
+</style>
 </head>
 <body>
 <div id="app"></div>
@@ -20,11 +26,6 @@ window.LESSON = {
   index: 2, total: 5,
   defaultMode: "prep",
   title: "Project 2 — Will It Grow? — KaiSTEM",
-
-  theme: {
-    "--accent": "oklch(56% 0.13 150)",
-    "--accent-deep": "oklch(46% 0.14 150)"
-  },
 
   hero: {
     kicker: "KaiSTEM · Project Two",
@@ -234,12 +235,12 @@ window.LESSON = {
     teacherHTML: "<strong>I’m your teacher — tell me how it went.</strong> Seeds not sprouting? Want a water-vs-no-water version instead of light-vs-dark? Is {name} losing patience with the wait? Tell me and I’ll tune the pace or the companion days.",
     links: [
       { href: "../index.html", label: "🏠 Home" },
-      { href: "../reference/0001-parent-playbook.html", label: "📖 Playbook" },
+      { href: "../../reference/0001-parent-playbook.html", label: "📖 Playbook" },
       { href: "0003-kitchen-color-lab.html", label: "Project 3 →" }
     ]
   }
 };
 </script>
-<script src="../assets/lesson.js"></script>
+<script src="../../assets/lesson.js"></script>
 </body>
 </html>

@@ -11,7 +11,7 @@ First session. Workspace created from scratch. Parent wants to teach Kai (3.5) S
 ## What we established
 
 - **Mission:** spark lifelong curiosity + quality bonding time. Joy > correctness.
-  (See [MISSION.md](../MISSION.md).)
+  (See [MISSION.md](../HUB.md).)
 - **Learner model:** the *parent* is the reader/learner here; Kai is the scientist. Lessons
   are parent-facing activity guides.
 - **Kai's interests (3.5):** animals & nature, water/mess/mixing, numbers/books/screens.
@@ -48,4 +48,4 @@ First session. Workspace created from scratch. Parent wants to teach Kai (3.5) S
 
 ## First lesson shipped
 
-[Project 1 — Sink or Float?](../lessons/0001-sink-or-float.html) — 5-day arc, ★☆☆ → ★★★.
+[Project 1 — Sink or Float?](../science/lessons/0001-sink-or-float.html) — 5-day arc, ★☆☆ → ★★★.

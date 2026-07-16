@@ -1,0 +1,177 @@
+/* ==========================================================================
+   KaiSTEM card deck — shared component for the Visual Thinking track.
+   Mounts OUTSIDE #app so the lesson engine's re-render never clobbers it.
+   Two faces of the same deck:
+     · screen — a one-card-at-a-time player (big tap targets, no timer)
+     · print  — a cut-out sheet with crop rules and an answer key
+
+   "Soft-Clay Editorial" (spec: assets/DESIGN-SYSTEM.md). Every colour and
+   shadow comes from the shared tokens in lesson.css (--paper*, --ink*,
+   --accent*, --radius-clay, --shadow-clay*), so light + dark both work with
+   nothing hard-coded here except the print sheet, which is deliberately B/W.
+
+   GEOMETRY RULE: nothing in this file may distort the shape SVGs — mental
+   rotation is the task, and the chiral silhouettes must stay exact. The only
+   transforms allowed are whole-element uniform lift/scale (hover/press
+   feedback), which preserve shape.
+   ========================================================================== */
+
+/* ---- launcher ------------------------------------------------------------- */
+.deck-launch{
+  position:fixed;left:16px;bottom:calc(22px + env(safe-area-inset-bottom, 0px));z-index:40;
+  display:inline-flex;align-items:center;gap:8px;
+  min-height:48px;padding:12px 18px;border:0;border-radius:var(--radius-pill);
+  background:var(--accent-deep);color:var(--paper);
+  font-family:var(--mono);font-size:12.5px;letter-spacing:.06em;
+  box-shadow:0 8px 24px color-mix(in oklch, var(--accent-deep) 40%, transparent),
+    inset 0 -3px 6px oklch(0% 0 0 / .18), inset 0 2px 3px oklch(100% 0 0 / .28);
+  cursor:pointer;
+  transition:transform .18s cubic-bezier(.16,1,.3,1),box-shadow .18s;
+}
+.deck-launch:hover{transform:translateY(-2px);
+  box-shadow:0 12px 30px color-mix(in oklch, var(--accent-deep) 46%, transparent),
+    inset 0 -3px 6px oklch(0% 0 0 / .18), inset 0 2px 3px oklch(100% 0 0 / .28);}
+.deck-launch:active{transform:translateY(0) scale(.97);
+  box-shadow:0 4px 12px color-mix(in oklch, var(--accent-deep) 36%, transparent),
+    inset 0 -4px 7px oklch(0% 0 0 / .24), inset 0 2px 3px oklch(100% 0 0 / .2);}
+.deck-launch:focus-visible{outline:3px solid var(--accent-deep);outline-offset:3px;}
+
+/* ---- overlay -------------------------------------------------------------- */
+.deck{
+  position:fixed;inset:0;z-index:60;display:flex;flex-direction:column;
+  background:var(--paper);color:var(--ink);animation:fadeIn .2s ease-out;
+}
+.deck[hidden]{display:none;}
+.deck-bar{
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  padding:14px 18px;border-bottom:1px solid var(--rule);
+  font-family:var(--mono);font-size:11.5px;letter-spacing:.05em;color:var(--ink-soft);
+}
+.deck-bar strong{
+  font-family:var(--disp);font-weight:700;font-size:15px;letter-spacing:0;
+  color:var(--ink);
+}
+.deck-close{
+  min-width:44px;min-height:44px;border:1px solid var(--rule);border-radius:14px;
+  background:var(--paper-2);color:var(--ink);font-size:19px;cursor:pointer;
+  box-shadow:var(--shadow-clay-sm);
+  transition:transform .15s ease, box-shadow .15s ease;
+}
+.deck-close:active{transform:scale(.97);box-shadow:var(--shadow-clay-pressed);}
+.deck-close:focus-visible{outline:3px solid var(--accent-deep);outline-offset:2px;}
+
+.deck-stage{
+  flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:18px;padding:20px 18px;overflow-y:auto;
+}
+.deck-prompt{
+  margin:0;font-family:var(--serif);font-size:19px;line-height:1.45;
+  text-align:center;color:var(--ink);max-width:34ch;
+}
+.deck-prompt em{color:var(--accent-deep);font-style:normal;font-weight:700;}
+
+/* the target the child holds in mind — a raised clay tile.
+   svg box is 132×132: DO NOT change (shape geometry). */
+.deck-target{
+  padding:14px;border-radius:var(--radius-clay);background:var(--paper-2);
+  border:1px solid var(--rule);box-shadow:var(--shadow-clay-sm);
+}
+.deck-target svg{display:block;width:132px;height:132px;}
+
+.deck-choices{display:flex;gap:16px;flex-wrap:wrap;justify-content:center;}
+/* svg box is 118×118: DO NOT change (shape geometry). Uniform scale only. */
+.deck-choice{
+  position:relative;padding:12px;border-radius:var(--radius-clay);cursor:pointer;
+  background:var(--paper-2);border:2px solid var(--rule);
+  min-width:44px;min-height:44px;
+  box-shadow:var(--shadow-clay);
+  transition:transform .18s cubic-bezier(.16,1,.3,1),border-color .18s,
+    background .18s,box-shadow .18s;
+}
+.deck-choice svg{display:block;width:118px;height:118px;}
+.deck-choice:hover{transform:translateY(-2px);border-color:var(--accent);
+  box-shadow:var(--shadow-clay-hover);}
+.deck-choice:active{transform:scale(.97);box-shadow:var(--shadow-clay-pressed);}
+.deck-choice:focus-visible{outline:3px solid var(--accent-deep);outline-offset:3px;}
+.deck-choice[data-state="right"]{border-color:var(--grow);
+  background:color-mix(in oklch,var(--grow) 9%,var(--paper-2));}
+.deck-choice[data-state="wrong"]{border-color:var(--accent);
+  background:color-mix(in oklch,var(--accent) 8%,var(--paper-2));}
+.deck-choice .mark{
+  position:absolute;top:-12px;right:-10px;width:32px;height:32px;border-radius:50%;
+  display:grid;place-items:center;font-size:16px;color:var(--paper);
+  box-shadow:var(--shadow-clay-sm);
+  opacity:0;transform:scale(.5);transition:opacity .2s,transform .2s;
+}
+.deck-choice[data-state="right"] .mark{opacity:1;transform:none;background:var(--grow-deep);}
+.deck-choice[data-state="wrong"] .mark{opacity:1;transform:none;background:var(--accent-deep);}
+
+/* verdict line — never colour-only (WCAG: colour is not the sole channel).
+   -deep tones are the text-safe pair in both themes. */
+.deck-verdict{
+  min-height:26px;margin:0;font-family:var(--hand);font-size:22px;color:var(--ink-soft);
+  text-align:center;max-width:30ch;
+}
+.deck-verdict[data-state="right"]{color:var(--grow-deep);}
+.deck-verdict[data-state="wrong"]{color:var(--accent-deep);}
+
+.deck-nav{
+  display:flex;align-items:center;justify-content:center;gap:12px;
+  padding:14px 18px calc(22px + env(safe-area-inset-bottom, 0px));
+  border-top:1px solid var(--rule);
+}
+.deck-nav button{
+  min-height:48px;padding:12px 20px;border-radius:var(--radius-pill);cursor:pointer;
+  border:1px solid var(--rule);background:var(--paper-2);color:var(--ink);
+  font-family:var(--mono);font-size:12px;letter-spacing:.05em;
+  box-shadow:var(--shadow-clay-sm);
+  transition:transform .15s ease, box-shadow .15s ease;
+}
+.deck-nav button:hover:not(:disabled){transform:translateY(-1px);box-shadow:var(--shadow-clay-hover);}
+.deck-nav button:active:not(:disabled){transform:scale(.97);box-shadow:var(--shadow-clay-pressed);}
+.deck-nav button:disabled{opacity:.4;cursor:not-allowed;box-shadow:none;}
+.deck-nav button:focus-visible{outline:3px solid var(--accent-deep);outline-offset:2px;}
+.deck-dots{
+  font-family:var(--disp);font-weight:600;font-size:15px;color:var(--ink-soft);
+  min-width:64px;text-align:center;
+}
+
+@media (prefers-reduced-motion: reduce){
+  .deck-launch:hover,.deck-choice:hover,.deck-nav button:hover:not(:disabled){transform:none;}
+}
+
+/* ---- print sheet ---------------------------------------------------------- */
+.deck-print{display:none;}
+
+@media print{
+  .deck-launch,.deck{display:none!important;}
+  .deck-print{display:block!important;}
+  .deck-print *{box-shadow:none!important;}
+  /* Crisp B/W cut-out faces: pure black outline, no tinted fill. The polygon's
+     points/transform come from cards.js — geometry is never touched here. */
+  .deck-print svg polygon{fill:none;stroke:#000;}
+  .deck-print h1{font-family:var(--serif);font-size:20pt;margin:0 0 2mm;}
+  .deck-print .note{
+    font-family:var(--serif);font-size:10pt;color:#333;margin:0 0 6mm;max-width:150mm;
+  }
+  .print-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:6mm;}
+  .print-card{
+    break-inside:avoid;page-break-inside:avoid;
+    border:1.2pt dashed #999;border-radius:3mm;padding:5mm;text-align:center;
+  }
+  .print-card .cap{
+    font-family:var(--mono);font-size:7.5pt;letter-spacing:.06em;color:#444;
+    margin:0 0 2mm;text-transform:uppercase;
+  }
+  .print-card .row{display:flex;align-items:center;justify-content:center;gap:4mm;}
+  .print-card svg{width:22mm;height:22mm;}
+  .print-card .vs{font-family:var(--mono);font-size:8pt;color:#555;}
+  .print-card .pick{
+    margin-top:2mm;font-family:var(--mono);font-size:7pt;color:#555;
+    display:flex;justify-content:space-around;
+  }
+  .print-key{
+    margin-top:8mm;padding-top:3mm;border-top:1pt solid #ccc;
+    font-family:var(--mono);font-size:8pt;color:#444;
+  }
+}

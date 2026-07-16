@@ -7,7 +7,7 @@
 ## Context
 
 Parent said "run the words w2." Built the second Words lesson directly on the approved L0001
-template (the multi-track architecture from [0004](./0004-extending-beyond-stem.md) is settled, so
+template (the multi-track architecture from [0004](../../learning-records/0004-extending-beyond-stem.md) is settled, so
 this is content authoring, not re-architecture).
 
 ## Decision: W2 = syllables / word-beats

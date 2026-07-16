@@ -6,19 +6,98 @@
 <title>KaiSTEM — a home curiosity course for a 3.5-year-old</title>
 <meta name="description" content="A home learning course in three tracks — Science, Words and Visual — of short, hands-on, parent-led projects that spark a preschooler's lifelong curiosity.">
 <link rel="stylesheet" href="assets/styles.css">
+<script src="assets/theme.js" defer></script>
+<style>
+/* Hub-only composition. Track accents come from styles.css's [data-accent]
+   mechanism (light + dark pairs live there) — nothing inline, nothing
+   light-only. This block only arranges the hero and the track cards. */
+
+/* Blobs sit at negative offsets; never let them cause sideways scroll */
+html { overflow-x: clip; }
+
+/* Hero: blobs behind, everything else above */
+.masthead { position: relative; }
+.masthead > :not(.blob) { position: relative; z-index: 1; }
+/* Each hub blob carries its track's hue via data-accent */
+.masthead .blob-a,
+.masthead .blob-b,
+.masthead .blob-c {
+  background: radial-gradient(circle at 38% 38%,
+    color-mix(in oklch, var(--accent) 14%, transparent), transparent 70%);
+}
+
+/* Meta line as tactile chips */
+.masthead .meta-row { gap: 0.5rem 0.6rem; }
+.meta-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.32rem 0.85rem;
+  background: var(--paper-2);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-pill);
+  box-shadow: var(--shadow-clay-sm);
+}
+
+/* Track cards: the whole card is one big (≥44px) tap target — the h3 link
+   stretches over the card via a pseudo-element. Hover lift ships with .day. */
+.day.track { position: relative; }
+/* Single column: the wide badge otherwise claims a grid column and squeezes
+   the card body (120px at 375px viewport → loop chips stack one per row).
+   The shared stylesheet pins h3/.day-body to grid-column 2 — reset that too,
+   or a phantom second column reappears. */
+.day.track { grid-template-columns: 1fr; }
+.day.track h3, .day.track .day-body { grid-column: 1; }
+.day.track .badge { grid-row: auto; justify-self: start; margin-bottom: 0.35rem; }
+.day.track h3 a { text-decoration: none; }
+.day.track h3 a:hover { text-decoration: underline; }
+.day.track h3 a::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-clay);
+}
+.day.track:has(a:focus-visible) {
+  outline: 3px solid var(--accent-deep);
+  outline-offset: 3px;
+}
+.day.track:active { transform: scale(0.97); box-shadow: var(--shadow-clay-pressed); }
+
+/* The five-move loop, shrunk to chip size inside a card */
+.day.track .loop { margin: 0.9rem 0 0.3rem; gap: 0.4rem; }
+.day.track .loop li { flex: 1 1 4.2rem; padding: 0.45rem 0.35rem; font-size: 0.72rem; }
+.day.track .loop li .step-emoji { font-size: 1.1rem; margin-bottom: 0.1rem; }
+
+/* Card call-to-action */
+.track-cta {
+  font-family: var(--font-disp);
+  font-weight: 700;
+  color: var(--accent-deep);
+  margin: 0.55rem 0 0;
+}
+.track-cta .arrow { display: inline-block; transition: transform 0.2s ease; }
+.day.track:hover .track-cta .arrow { transform: translateX(4px); }
+
+@media (prefers-reduced-motion: reduce) {
+  .day.track:active,
+  .day.track:hover .track-cta .arrow { transform: none; }
+}
+</style>
 </head>
 <body>
 
 <header class="masthead">
+  <div class="blob blob-a" data-accent="science" aria-hidden="true"></div>
+  <div class="blob blob-b" data-accent="visual" aria-hidden="true"></div>
+  <div class="blob blob-c" data-accent="words" aria-hidden="true"></div>
   <p class="kicker">KaiSTEM · Home</p>
-  <h1>🔬📖 KaiSTEM</h1>
+  <h1>🔬📖🔄 KaiSTEM</h1>
   <p class="subtitle">A little home learning course for a curious 3.5-year-old — and a teaching guide
   for the grown-up running it. Short, hands-on, joyful projects in three tracks that build one habit:
   <em>wondering out loud</em>.</p>
   <div class="meta-row">
-    <span>Ages ~3–5</span><span>·</span>
-    <span>~20–30 min/day</span><span>·</span>
-    <span>Parent-led · screen-light</span>
+    <span class="meta-chip">Ages ~3–5</span>
+    <span class="meta-chip">~20–30 min/day</span>
+    <span class="meta-chip">Parent-led · screen-light</span>
   </div>
 </header>
 
@@ -32,148 +111,80 @@
   <strong>guess first, then find out</strong>, and joy over correctness.</p>
 </div>
 
-<h2>Start here</h2>
-<p>New to this? Read the playbook once, then run the first project in either track. Print each
-project's journal page and keep the filled-in pages in a folder — that's the keepsake.</p>
+<h2 id="start-here">Start here</h2>
+<p>New to this? Read the playbook once, then open any track below and run its first project. Print
+each project's journal page and keep the filled-in pages in a folder — that's the keepsake.</p>
 <p><strong>📖 <a href="reference/0001-parent-playbook.html">The Parent Playbook</a></strong> —
-the method, the "magic words" question banks, the glossary, and how the journal works (~3 min read).</p>
+the method, the "magic words" question banks, the glossary, and how the journal works (~3 min read).
+The shared north star and guardrails live in <a href="HUB.md">HUB.md</a>.</p>
 
-<!-- ───────────────────────── Science track ───────────────────────── -->
-<section aria-labelledby="track-science">
-  <p class="kicker">Track One · Science</p>
-  <h2 id="track-science">🔬 Science — guess, then find out</h2>
-  <p>Hands-on inquiry: water, plants, colour, bugs, shadows. The loop advances the <em>kind of
-  prediction</em> the child makes — from a position, to a change over time, to a transformation.</p>
+<h2 id="tracks">The three tracks</h2>
+<p>Each track is its own little workspace — a mission, its own five-move loop, its own sources, and a
+growing set of lessons. Pick whichever pulls hardest today.</p>
 
-  <ul class="loop" aria-label="The Science loop">
-    <li><span class="step-emoji">👀</span><span class="step-name">Notice</span></li>
-    <li><span class="step-emoji">💭</span><span class="step-name">Wonder</span></li>
-    <li><span class="step-emoji">🤔</span><span class="step-name">Predict</span></li>
-    <li><span class="step-emoji">🧪</span><span class="step-name">Test</span></li>
-    <li><span class="step-emoji">💬</span><span class="step-name">Talk</span></li>
-  </ul>
+<div class="days">
 
-  <div class="days">
-    <div class="day">
-      <div class="badge">01 · ★☆☆</div>
-      <h3><a href="lessons/0001-sink-or-float.html">Sink or Float?</a></h3>
-      <div class="day-body">
-        <p>Five days at the water tub. Learn the core move — <em>guess, then test</em> — plus
-        sorting and counting. Predicts a <strong>position</strong> (up/down).</p>
-      </div>
+  <article class="day track" data-accent="science">
+    <div class="badge">🔬 · 5 projects</div>
+    <h3><a href="science/index.html">Science — guess, then find out</a></h3>
+    <div class="day-body">
+      <p>Hands-on inquiry: water, plants, colour, bugs, shadows. Each project advances the
+      <em>kind of prediction</em> Kai makes — from a position, to a change over time, to a
+      transformation.</p>
+      <ul class="loop" aria-label="The Science five-move loop">
+        <li><span class="step-emoji">👀</span><span class="step-name">Notice</span></li>
+        <li><span class="step-emoji">💭</span><span class="step-name">Wonder</span></li>
+        <li><span class="step-emoji">🤔</span><span class="step-name">Predict</span></li>
+        <li><span class="step-emoji">🧪</span><span class="step-name">Test</span></li>
+        <li><span class="step-emoji">💬</span><span class="step-name">Talk</span></li>
+      </ul>
+      <p class="track-cta">Open the Science track <span class="arrow" aria-hidden="true">→</span></p>
     </div>
-    <div class="day">
-      <div class="badge">02 · ★★☆</div>
-      <h3><a href="lessons/0002-will-it-grow.html">Will It Grow?</a></h3>
-      <div class="day-body">
-        <p>Plant beans in clear cups and watch over two weeks. Introduces the <strong>fair test</strong>
-        (change one thing) and observing change <strong>over time</strong>.</p>
-      </div>
-    </div>
-    <div class="day">
-      <div class="badge">03 · ★★★</div>
-      <h3><a href="lessons/0003-kitchen-color-lab.html">Kitchen Color Lab</a></h3>
-      <div class="day-body">
-        <p>Color mixing and the big baking-soda fizz. The leap to predicting a
-        <strong>transformation</strong> — what something will <em>turn into</em>.</p>
-      </div>
-    </div>
-    <div class="day">
-      <div class="badge">04 · ★★★</div>
-      <h3><a href="lessons/0004-bug-safari.html">Backyard Bug Safari</a></h3>
-      <div class="day-body">
-        <p>Hunt, observe up close, and group living things. Adds <strong>classifying</strong> —
-        sorting bugs by legs, wings, and where they live.</p>
-      </div>
-    </div>
-    <div class="day">
-      <div class="badge">05 · ★★★★</div>
-      <h3><a href="lessons/0005-shadow-play.html">Shadow Play</a></h3>
-      <div class="day-body">
-        <p>Catch, change, and measure shadows — then discover they move with the sun. Adds
-        <strong>measuring &amp; comparing</strong> and spotting a pattern over time.</p>
-      </div>
-    </div>
-  </div>
-</section>
+  </article>
 
-<!-- ───────────────────────── Words track ───────────────────────── -->
-<section aria-labelledby="track-words" style="--accent: oklch(64% 0.18 15); --accent-deep: oklch(52% 0.18 16);">
-  <p class="kicker">Track Two · Words</p>
-  <h2 id="track-words">📖 Words — hear it, then say it</h2>
-  <p>Language &amp; literacy through play — long before letters. Same spirit, a loop tuned to how
-  spoken language grows. Each lesson sharpens the <em>ear for sound</em> one notch — from whole-word
-  rhymes, to the beats inside a word.</p>
-
-  <ul class="loop" aria-label="The Words loop">
-    <li><span class="step-emoji">👂</span><span class="step-name">Listen</span></li>
-    <li><span class="step-emoji">💡</span><span class="step-name">Wonder</span></li>
-    <li><span class="step-emoji">🎭</span><span class="step-name">Play</span></li>
-    <li><span class="step-emoji">✏️</span><span class="step-name">Make</span></li>
-    <li><span class="step-emoji">💬</span><span class="step-name">Share</span></li>
-  </ul>
-
-  <div class="days">
-    <div class="day">
-      <div class="badge">W1 · ★☆☆</div>
-      <h3><a href="lessons/L0001-rhyme-time.html">Rhyme Time</a></h3>
-      <div class="day-body">
-        <p>Five days of silly rhymes. The child <em>hears</em> that words can sound alike, sorts
-        the matches, and invents his own — building the <strong>ear for sound</strong> that
-        pre-reading rests on. Real rhymes and nonsense both win.</p>
-      </div>
+  <article class="day track" data-accent="words">
+    <div class="badge">📖 · 2 lessons</div>
+    <h3><a href="words/index.html">Words — hear it, then say it</a></h3>
+    <div class="day-body">
+      <p>Language &amp; literacy through play, long before letters. Each lesson sharpens the
+      <em>ear for sound</em> one notch — from whole-word rhymes to the beats inside a word.</p>
+      <ul class="loop" aria-label="The Words five-move loop">
+        <li><span class="step-emoji">👂</span><span class="step-name">Listen</span></li>
+        <li><span class="step-emoji">💡</span><span class="step-name">Wonder</span></li>
+        <li><span class="step-emoji">🎭</span><span class="step-name">Play</span></li>
+        <li><span class="step-emoji">✏️</span><span class="step-name">Make</span></li>
+        <li><span class="step-emoji">💬</span><span class="step-name">Share</span></li>
+      </ul>
+      <p class="track-cta">Open the Words track <span class="arrow" aria-hidden="true">→</span></p>
     </div>
-    <div class="day">
-      <div class="badge">W2 · ★★☆</div>
-      <h3><a href="lessons/L0002-word-beats.html">Word Beats</a></h3>
-      <div class="day-body">
-        <p>Five days of clapping words into <strong>beats</strong> — cat (1), ti-ger (2),
-        el-e-phant (3). A finer ear than rhyme: hearing the parts <em>inside</em> a word, through
-        clapping, marching, and drumming.</p>
-      </div>
+  </article>
+
+  <article class="day track" data-accent="visual">
+    <div class="badge">🔄 · 1 lesson</div>
+    <h3><a href="visual/index.html">Visual — see it, then turn it</a></h3>
+    <div class="day-body">
+      <p>Spatial thinking through shapes he can hold. Grew out of the Shichida sessions — we kept
+      what the evidence supports and dropped what it doesn't. Of everything here,
+      <strong>spatial training has the strongest research behind it</strong>.</p>
+      <ul class="loop" aria-label="The Visual five-move loop">
+        <li><span class="step-emoji">👀</span><span class="step-name">Look</span></li>
+        <li><span class="step-emoji">💡</span><span class="step-name">Wonder</span></li>
+        <li><span class="step-emoji">🔄</span><span class="step-name">Turn</span></li>
+        <li><span class="step-emoji">🧱</span><span class="step-name">Make</span></li>
+        <li><span class="step-emoji">💬</span><span class="step-name">Talk</span></li>
+      </ul>
+      <p class="track-cta">Open the Visual track <span class="arrow" aria-hidden="true">→</span></p>
     </div>
-  </div>
-</section>
+  </article>
 
-<!-- ───────────────────────── Visual track ───────────────────────── -->
-<section aria-labelledby="track-visual" style="--accent: oklch(58% 0.16 295); --accent-deep: oklch(45% 0.16 296);">
-  <p class="kicker">Track Three · Visual</p>
-  <h2 id="track-visual">🔄 Visual — see it, then turn it</h2>
-  <p>Spatial thinking, through shapes he can hold. This track grew out of the Shichida sessions —
-  we kept the activities the evidence supports and dropped the ones it doesn't. Of everything in
-  this course, <strong>spatial training has the strongest research behind it</strong>: it works at
-  this age, the gains last, and they transfer. The
-  <a href="reference/0002-visual-thinking-evidence.html">evidence card</a> is the honest audit.</p>
-
-  <ul class="loop" aria-label="The Visual loop">
-    <li><span class="step-emoji">👀</span><span class="step-name">Look</span></li>
-    <li><span class="step-emoji">💡</span><span class="step-name">Wonder</span></li>
-    <li><span class="step-emoji">🔄</span><span class="step-name">Turn</span></li>
-    <li><span class="step-emoji">🧱</span><span class="step-name">Make</span></li>
-    <li><span class="step-emoji">💬</span><span class="step-name">Talk</span></li>
-  </ul>
-
-  <div class="days">
-    <div class="day">
-      <div class="badge">V1 · ★☆☆</div>
-      <h3><a href="lessons/V0001-turn-it.html">Turn It</a></h3>
-      <div class="day-body">
-        <p>Four days of turning shapes. The child discovers that a shape <strong>stays itself when
-        you turn it</strong>, but becomes a <strong>different shape when you flip it</strong> — the
-        distinction beneath puzzles, tangrams, and one day the letters <em>b</em> and <em>d</em>.
-        Ships with a twelve-card deck that plays on screen <em>or</em> prints for cutting out.</p>
-      </div>
-    </div>
-  </div>
-</section>
+</div>
 
 <div class="box grow">
   <p class="box-title">Built on trusted sources</p>
   <p>The method is grounded in early-childhood research — NAEYC, HeadStart.gov, and Zero to Three
-  for the science track; NAEYC, Reading Rockets, and Zero to Three for the words track. Every
-  lesson cites its sources. See the
-  <a href="https://github.com/thanhdatle/KaiSTEM/blob/main/RESOURCES.md">full resource list</a>
-  and the <a href="https://github.com/thanhdatle/KaiSTEM/blob/main/MISSION.md">mission</a>.</p>
+  across tracks; Reading Rockets for Words; and the spatial-cognition literature (Uttal 2013) for
+  Visual. Every lesson cites its sources, and each track keeps its own <code>RESOURCES.md</code>.
+  See <a href="HUB.md">HUB.md</a> for how the whole space fits together.</p>
 </div>
 
 <div class="ask-teacher">
@@ -183,17 +194,13 @@ the method, the "magic words" question banks, the glossary, and how the journal 
 
 </main>
 
-<nav class="doc-nav" aria-label="All projects">
+<nav class="doc-nav" aria-label="Everything">
   <a href="reference/0001-parent-playbook.html">📖 Parent Playbook</a>
-  <a href="lessons/0001-sink-or-float.html">🔬 Science 1</a>
-  <a href="lessons/0002-will-it-grow.html">Science 2</a>
-  <a href="lessons/0003-kitchen-color-lab.html">Science 3</a>
-  <a href="lessons/0004-bug-safari.html">Science 4</a>
-  <a href="lessons/0005-shadow-play.html">Science 5</a>
-  <a href="lessons/L0001-rhyme-time.html">📖 Words 1</a>
-  <a href="lessons/L0002-word-beats.html">Words 2</a>
-  <a href="lessons/V0001-turn-it.html">🔄 Visual 1</a>
-  <a href="reference/0002-visual-thinking-evidence.html">🔍 Evidence Card</a>
+  <a href="science/index.html">🔬 Science</a>
+  <a href="words/index.html">📖 Words</a>
+  <a href="visual/index.html">🔄 Visual</a>
+  <a href="visual/reference/0002-visual-thinking-evidence.html">🔍 Evidence Card</a>
+  <a href="HUB.md">🗺 HUB.md</a>
   <a href="https://github.com/thanhdatle/KaiSTEM">Source on GitHub</a>
 </nav>
 
