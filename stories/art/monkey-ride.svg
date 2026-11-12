@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" role="img" aria-labelledby="t d">
+<title id="t">The Monkey and the Crocodile — the river ride</title>
+<desc id="d">Paper-cut scene: the monkey rides across the wide river on the back of a goofy, grinning green crocodile, one arm waving in the air, with the rose-apple tree far behind on the bank.</desc>
+<defs>
+<clipPath id="w"><rect width="600" height="600" rx="36"/></clipPath>
+<filter id="p" x="-20%" y="-30%" width="140%" height="160%"><feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#1c2f1f" flood-opacity=".3"/></filter>
+<linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#A9D8C4"/><stop offset="1" stop-color="#EEF3D6"/></linearGradient>
+<path id="rg" d="M0 0 q11 -24 22 0z" fill="#3F7D4A"/>
+<g id="ra"><path d="M0 -9 Q10 -9 10 3 Q9 13 0 13 Q-9 13 -10 3 Q-10 -9 0 -9Z" fill="#E0566B"/><path d="M-4 -3 q-2 6 1 10" stroke="#F4A3AE" stroke-width="2.4" fill="none" stroke-linecap="round"/></g>
+</defs>
+<g clip-path="url(#w)">
+<rect width="600" height="600" fill="url(#sky)"/>
+<circle cx="470" cy="80" r="40" fill="#FBF6E2"/>
+<path filter="url(#p)" d="M0 180 Q40 140 90 165 Q140 125 200 160 Q260 130 320 165 Q380 135 440 165 Q500 135 600 160 V600 H0Z" fill="#8CC49A"/>
+<path filter="url(#p)" d="M0 222 Q60 190 120 212 Q190 185 260 215 Q330 190 400 215 Q470 190 600 212 V600 H0Z" fill="#4E9A6B"/>
+<g filter="url(#p)"><path d="M84 232 Q86 200 98 178 l9 4 Q98 205 98 232Z" fill="#7A5236"/><circle cx="80" cy="165" r="26" fill="#2F7D4F"/><circle cx="112" cy="158" r="28" fill="#3F9460"/><circle cx="130" cy="180" r="18" fill="#2F7D4F"/>
+<g fill="#E0566B"><circle cx="76" cy="172" r="4"/><circle cx="100" cy="160" r="4"/><circle cx="122" cy="172" r="4"/><circle cx="112" cy="145" r="4"/><circle cx="136" cy="186" r="4"/></g></g>
+<path d="M0 232 H600 V252 H0Z" fill="#3F7D4A"/>
+<rect y="246" width="600" height="354" fill="#E6AD78"/>
+<path d="M0 300 Q50 290 100 300 T200 300 T300 300 T400 300 T500 300 T600 300 V600 H0Z" fill="#DFA06A"/>
+<g stroke="#F8DDBD" stroke-width="3.5" fill="none" stroke-linecap="round"><path d="M60 275 q16 -8 32 0"/><path d="M300 268 q16 -8 32 0"/><path d="M480 285 q16 -8 32 0"/></g>
+<g filter="url(#p)">
+<use href="#rg" x="118" y="356"/><use href="#rg" x="150" y="349"/><use href="#rg" x="182" y="343"/><use href="#rg" x="214" y="338"/><use href="#rg" x="318" y="333"/><use href="#rg" x="350" y="334"/>
+<circle cx="398" cy="330" r="17" fill="#4F8A50"/>
+<path d="M30 374 Q90 362 150 351 Q260 322 380 336 Q420 330 442 338 L536 350 Q558 356 554 373 Q550 390 520 392 L400 402 Q250 422 120 400 Q66 392 30 374Z" fill="#5E9B5A"/>
+<circle cx="426" cy="332" r="21" fill="#5E9B5A"/><circle cx="536" cy="350" r="9" fill="#5E9B5A"/>
+<circle cx="538" cy="347" r="2.6" fill="#2F5E3A"/>
+<circle cx="400" cy="328" r="8" fill="#fff"/><circle cx="403" cy="328" r="3.6" fill="#2B2320"/>
+<circle cx="428" cy="329" r="11.5" fill="#fff"/><circle cx="432" cy="329" r="5.2" fill="#2B2320"/>
+<path d="M436 370 q-6 6 -2 12 Q500 388 548 368 q5 -4 2 -10" stroke="#2F5E3A" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="458" cy="364" r="9" fill="#F2A9B0" opacity=".7"/>
+<g fill="#7DB86E"><circle cx="150" cy="375" r="5"/><circle cx="185" cy="368" r="4"/><circle cx="225" cy="372" r="5"/><circle cx="340" cy="362" r="4"/><circle cx="375" cy="368" r="5"/><circle cx="480" cy="352" r="3"/><circle cx="500" cy="356" r="2.4"/></g>
+</g>
+<g transform="translate(272 338)" filter="url(#p)">
+<path d="M-20 -6 Q-56 -10 -60 -44 Q-60 -66 -44 -64 Q-34 -60 -40 -50" stroke="#8A5A3C" stroke-width="7" fill="none" stroke-linecap="round"/>
+<path d="M-12 -4 Q-24 10 -20 24 M12 -4 Q26 8 24 24" stroke="#8A5A3C" stroke-width="11" fill="none" stroke-linecap="round"/>
+<path d="M-18 -36 Q-34 -24 -30 -6" stroke="#8A5A3C" stroke-width="9" fill="none" stroke-linecap="round"/>
+<ellipse cy="-22" rx="24" ry="28" fill="#8A5A3C"/><ellipse cy="-18" rx="13" ry="17" fill="#E9C9A0"/>
+<circle cx="-23" cy="-62" r="9" fill="#8A5A3C"/><circle cx="23" cy="-62" r="9" fill="#8A5A3C"/><circle cx="-23" cy="-62" r="5" fill="#E9C9A0"/><circle cx="23" cy="-62" r="5" fill="#E9C9A0"/>
+<circle cy="-62" r="23" fill="#8A5A3C"/>
+<g fill="#E9C9A0"><circle cx="-8" cy="-65" r="10.5"/><circle cx="8" cy="-65" r="10.5"/><ellipse cy="-54" rx="15" ry="11"/></g>
+<circle cx="-6" cy="-66" r="2.8" fill="#2B2320"/><circle cx="8" cy="-66" r="2.8" fill="#2B2320"/>
+<path d="M-6 -54 Q1 -45 8 -54Z" fill="#8C3B3B"/>
+<path d="M18 -36 Q40 -56 44 -86" stroke="#8A5A3C" stroke-width="9" fill="none" stroke-linecap="round"/>
+<use href="#ra" transform="translate(45 -98) scale(1.2)"/>
+</g>
+<path d="M0 398 Q25 388 50 398 T100 398 T150 398 T200 398 T250 398 T300 398 T350 398 T400 398 T450 398 T500 398 T550 398 T600 398 V600 H0Z" fill="#D8935A"/>
+<path filter="url(#p)" d="M0 470 Q50 458 100 470 T200 470 T300 470 T400 470 T500 470 T600 470 V600 H0Z" fill="#C57F4A"/>
+<path d="M0 540 Q50 528 100 540 T200 540 T300 540 T400 540 T500 540 T600 540 V600 H0Z" fill="#B5703F"/>
+<g stroke="#F8DDBD" stroke-width="4" fill="none" stroke-linecap="round"><path d="M548 400 q14 -10 30 -2"/><path d="M556 418 q14 -8 28 0"/><path d="M6 392 q10 -10 22 -4"/><path d="M120 440 q16 -8 32 0"/><path d="M330 436 q18 -8 36 0"/><path d="M440 510 q16 -8 32 0"/><path d="M200 512 q16 -8 32 0"/><path d="M70 570 q16 -8 32 0"/></g>
+<g filter="url(#p)"><path d="M0 600 Q10 500 90 470 Q80 550 60 600Z" fill="#2F7D4F"/><path d="M40 600 Q80 530 160 530 Q130 580 110 600Z" fill="#3F9460"/><path d="M600 600 Q590 520 530 500 Q535 560 550 600Z" fill="#2F7D4F"/></g>
+</g>
+</svg>

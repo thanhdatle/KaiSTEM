@@ -51,6 +51,7 @@ The goal is the **habit** ("guess/try first, then find out"), not the facts.
 | [`assets/`](./assets/) | Shared design system + interactive lesson engine |
 | [`learning-records/`](./learning-records/) | Hub-level records (course architecture & baseline) |
 | [`science/`](./science/) · [`words/`](./words/) · [`visual/`](./visual/) | One full workspace per track — each with its own `MISSION.md`, `RESOURCES.md`, `NOTES.md`, `lessons/`, `learning-records/` |
+| [`stories/`](./stories/) | Read-aloud fairy tales from around the world for the school run (Mitten · Monkey & Crocodile · Cây Khế), with paper-cut SVG art in `stories/art/` |
 
 Each track folder is self-contained: its **`MISSION.md`** says why that track exists (pointing back
 to `HUB.md` for the shared north star), its **`RESOURCES.md`** holds that track's cited sources, and

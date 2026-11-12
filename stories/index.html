@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KaiSTEM · Stories — tales for the school run</title>
+<meta name="description" content="Fairy tales from around the world, retold for a 4-year-old to hear on the 30-minute school run — with chants to join in, hands-free actions, and a tell-it-from-memory card for each.">
+<link rel="stylesheet" href="../assets/styles.css">
+<link rel="stylesheet" href="story.css">
+<script src="../assets/theme.js" defer></script>
+<style>
+/* Story cards: one big tap target, like the hub's track cards */
+.day.tale { position: relative; grid-template-columns: 1fr; }
+.day.tale h3, .day.tale .day-body { grid-column: 1; }
+.day.tale .badge { grid-row: auto; justify-self: start; margin-bottom: 0.35rem; }
+.day.tale img { width: 100%; height: auto; border-radius: var(--radius); margin: 0.2rem 0 0.6rem; }
+.day.tale h3 a { text-decoration: none; }
+.day.tale h3 a::after { content: ""; position: absolute; inset: 0; border-radius: var(--radius-clay); }
+.day.tale:has(a:focus-visible) { outline: 3px solid var(--accent-deep); outline-offset: 3px; }
+.day.tale:active { transform: scale(0.97); }
+@media (min-width: 46rem) {
+  .days.tales { grid-template-columns: repeat(3, 1fr); }
+}
+@media (prefers-reduced-motion: reduce) { .day.tale:active { transform: none; } }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <p class="kicker"><a href="../index.html">KaiSTEM</a> · Stories</p>
+  <h1>📚 Stories for the school run</h1>
+  <p class="subtitle">Fairy tales from around the world, retold for a four-year-old — three
+  stories, about seven minutes each, made to fill a thirty-minute drive with a little magic.</p>
+  <div class="meta-row">
+    <span>Age ~4</span><span>·</span>
+    <span>~7–8 min each</span><span>·</span>
+    <span>Ears only — no screen for Kai</span>
+  </div>
+</header>
+
+<main>
+
+<div class="box accent">
+  <p class="box-title">How to use these in the car</p>
+  <p><strong>If you're driving, don't read from the phone.</strong> Each story opens with a
+  six-beat card — read it the night before (or while parked), and tell the story from memory.
+  These tales were told aloud for centuries before anyone wrote them down; your own words are
+  the traditional way.</p>
+  <p><strong>Same ritual every time.</strong> Start with <em>"Story, story — are your ears
+  open?"</em> (Kai: <em>"Open!"</em>) and finish with <em>"Snip, snap, snout — this tale's told
+  out."</em> Little ones love knowing what comes next.</p>
+  <p><strong>Kai has jobs.</strong> Every story has a line to chant and a hands-free action he can
+  do from his car seat — counting, snap-claps, flapping wings. Pause and let him fill them in.</p>
+</div>
+
+<h2 id="tonight">The three stories · tell them in this order</h2>
+<p>Loud first, calm last — so he arrives at school settled, not bouncing.</p>
+
+<div class="days tales">
+  <article class="day tale">
+    <div class="badge">1 · Ukraine · loud</div>
+    <img src="art/mitten-cover.svg" width="800" height="500" alt="" loading="lazy">
+    <h3><a href="0001-the-mitten.html">🧤 The Mitten</a></h3>
+    <div class="day-body">
+      <p>A lost red mitten in the snow, and animals squeezing in one by one —
+      <em>"Knock, knock! Who lives in the mitten?"</em> — until a tiny cricket makes it pop.</p>
+    </div>
+  </article>
+  <article class="day tale">
+    <div class="badge">2 · India · suspense</div>
+    <img src="art/monkey-cover.svg" width="800" height="500" alt="" loading="lazy">
+    <h3><a href="0002-the-monkey-and-the-crocodile.html">🐒 The Monkey and the Crocodile</a></h3>
+    <div class="day-body">
+      <p>A river ride on a crocodile's back, a sneaky plan, and a monkey who thinks fast:
+      <em>"I left my heart in the tree!"</em></p>
+    </div>
+  </article>
+  <article class="day tale">
+    <div class="badge">3 · Vietnam · calm</div>
+    <img src="art/khe-cover.svg" width="800" height="500" alt="" loading="lazy">
+    <h3><a href="0003-the-starfruit-tree.html">⭐ The Starfruit Tree · <span lang="vi">Cây Khế</span></a></h3>
+    <div class="day-body">
+      <p>A giant golden bird, a moonlit sea, and the rhyme every Vietnamese child knows:
+      <em>"Eat one fruit, pay in gold…"</em></p>
+    </div>
+  </article>
+</div>
+
+<div class="box">
+  <p class="box-title">About these retellings</p>
+  <p>All three are real, centuries-old folk tales. We kept each story's heart — its chant, its
+  trick, its magic — and softened the scary parts for a four-year-old: nobody is eaten, lost or
+  hurt, and the greedy characters end up wiser, not punished. Each story page says what we
+  changed. Illustrations are paper-cut style, drawn for this site.</p>
+</div>
+
+</main>
+
+<nav class="doc-nav" aria-label="Stories">
+  <a href="../index.html">← KaiSTEM hub</a>
+  <a href="0001-the-mitten.html">1 · The Mitten</a>
+  <a href="0002-the-monkey-and-the-crocodile.html">2 · The Monkey and the Crocodile</a>
+  <a href="0003-the-starfruit-tree.html">3 · The Starfruit Tree</a>
+</nav>
+
+</body>
+</html>

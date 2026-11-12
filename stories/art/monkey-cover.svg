@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-labelledby="t d">
+<title id="t">The Monkey and the Crocodile — the rose-apple tree</title>
+<desc id="d">Paper-cut scene: a little brown monkey sits on a branch of a rose-apple tree over a wide river, holding out a pink fruit to a friendly crocodile whose eyes and snout peek up from the water.</desc>
+<defs>
+<clipPath id="w"><rect width="800" height="500" rx="36"/></clipPath>
+<filter id="p" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#1c2f1f" flood-opacity=".3"/></filter>
+<linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#A9D8C4"/><stop offset="1" stop-color="#EEF3D6"/></linearGradient>
+<g id="ra"><path d="M0 -9 Q10 -9 10 3 Q9 13 0 13 Q-9 13 -10 3 Q-10 -9 0 -9Z" fill="#E0566B"/><path d="M-4 -3 q-2 6 1 10" stroke="#F4A3AE" stroke-width="2.4" fill="none" stroke-linecap="round"/><path d="M0 -9 v-6" stroke="#5B3A22" stroke-width="2" stroke-linecap="round"/></g>
+</defs>
+<g clip-path="url(#w)">
+<rect width="800" height="500" fill="url(#sky)"/>
+<circle cx="650" cy="85" r="44" fill="#FBF6E2"/>
+<path filter="url(#p)" d="M0 250 Q40 200 90 230 Q130 180 190 220 Q240 190 290 235 Q350 195 410 230 Q470 190 530 228 Q590 195 650 232 Q710 200 800 225 V500 H0Z" fill="#8CC49A"/>
+<path filter="url(#p)" d="M0 300 Q60 255 120 285 Q180 250 250 290 Q320 258 390 292 Q450 262 520 290 Q590 258 660 292 Q730 262 800 285 V500 H0Z" fill="#4E9A6B"/>
+<path d="M0 325 H800 V350 H0Z" fill="#3F7D4A"/>
+<rect y="338" width="800" height="162" fill="#D8935A"/>
+<path d="M0 338 H800 V368 Q700 358 600 368 T400 368 T200 368 T0 368Z" fill="#E6AD78"/>
+<path d="M0 452 Q100 440 200 452 T400 452 T600 452 T800 452 V500 H0Z" fill="#C57F4A"/>
+<g stroke="#F5D2AC" stroke-width="3.5" fill="none" stroke-linecap="round"><path d="M340 390 q16 -8 32 0"/><path d="M700 370 q16 -8 32 0"/><path d="M560 470 q16 -8 32 0"/><path d="M380 470 q14 -7 28 0"/><path d="M740 440 q12 -6 24 0"/></g>
+<g>
+<g fill="#4F8A50"><circle cx="702" cy="410" r="14"/><circle cx="732" cy="412" r="13"/><circle cx="760" cy="414" r="11"/><circle cx="640" cy="380" r="16"/></g>
+<path d="M455 404 Q455 388 480 386 L590 380 Q640 372 672 392 Q692 404 692 420 H455Z" fill="#5E9B5A"/>
+<circle cx="602" cy="373" r="19" fill="#5E9B5A"/>
+<circle cx="468" cy="389" r="7.5" fill="#5E9B5A"/><circle cx="486" cy="386" r="7.5" fill="#5E9B5A"/>
+<circle cx="466" cy="387" r="2.2" fill="#2F5E3A"/><circle cx="485" cy="384" r="2.2" fill="#2F5E3A"/>
+<circle cx="640" cy="377" r="8" fill="#fff"/><circle cx="637" cy="374" r="3.6" fill="#2B2320"/>
+<circle cx="600" cy="370" r="10.5" fill="#fff"/><circle cx="596" cy="366" r="4.8" fill="#2B2320"/>
+<path d="M462 400 Q530 411 598 397 q6 -3 6 -9" stroke="#2F5E3A" stroke-width="3.2" fill="none" stroke-linecap="round"/>
+<circle cx="575" cy="394" r="7" fill="#F2A9B0" opacity=".7"/>
+<g fill="#7DB86E"><circle cx="520" cy="392" r="3"/><circle cx="540" cy="388" r="2.4"/><circle cx="555" cy="393" r="2"/></g>
+<path d="M400 413 Q420 405 440 413 T480 413 T520 413 T560 413 T600 413 T640 413 T680 413 T720 413 T760 413 T800 413 V436 H400Z" fill="#D8935A"/>
+<g stroke="#F5D2AC" stroke-width="3.5" fill="none" stroke-linecap="round"><path d="M430 428 q16 -8 32 0"/><path d="M640 432 q18 -8 36 0"/></g>
+</g>
+<g filter="url(#p)">
+<path d="M0 318 Q120 300 220 336 Q285 364 300 424 Q310 470 280 500 H0Z" fill="#8B6A46"/>
+<path d="M0 300 Q120 284 220 322 Q280 350 292 404 Q200 380 100 388 Q40 392 0 404Z" fill="#5E8E48"/>
+</g>
+<g filter="url(#p)">
+<path d="M112 400 Q126 320 166 248 Q184 214 214 190 L242 206 Q206 240 192 282 Q168 340 176 402Z" fill="#7A5236"/>
+<path d="M186 268 Q300 228 436 250 Q448 262 434 270 Q300 254 194 296Z" fill="#7A5236"/>
+</g>
+<g filter="url(#p)"><circle cx="60" cy="200" r="62" fill="#2F7D4F"/><circle cx="120" cy="140" r="78" fill="#3F9460"/><circle cx="330" cy="130" r="86" fill="#2F7D4F"/><circle cx="225" cy="110" r="96" fill="#3F9460"/><circle cx="440" cy="165" r="56" fill="#3F9460"/></g>
+<g fill="#58AB6E"><circle cx="170" cy="80" r="46"/><circle cx="300" cy="90" r="40"/><circle cx="90" cy="150" r="34"/><circle cx="420" cy="150" r="28"/></g>
+<use href="#ra" transform="translate(110 200) scale(1.3)"/><use href="#ra" transform="translate(190 170) scale(1.3)"/><use href="#ra" transform="translate(260 200) scale(1.3)"/><use href="#ra" transform="translate(330 175) scale(1.3)"/><use href="#ra" transform="translate(150 110) scale(1.3)"/><use href="#ra" transform="translate(280 105) scale(1.3)"/><use href="#ra" transform="translate(460 200) scale(1.3)"/><use href="#ra" transform="translate(50 240) scale(1.3)"/><use href="#ra" transform="translate(390 120) scale(1.3)"/>
+<g transform="translate(372 252)" filter="url(#p)">
+<path d="M-20 -6 Q-52 0 -54 30 Q-54 54 -36 52 Q-24 48 -32 36" stroke="#8A5A3C" stroke-width="7" fill="none" stroke-linecap="round"/>
+<path d="M-10 -2 Q-15 20 -9 38 M10 -2 Q15 22 11 40" stroke="#8A5A3C" stroke-width="11" fill="none" stroke-linecap="round"/>
+<path d="M-18 -36 Q-40 -52 -42 -78" stroke="#8A5A3C" stroke-width="9" fill="none" stroke-linecap="round"/>
+<ellipse cy="-22" rx="24" ry="28" fill="#8A5A3C"/><ellipse cy="-18" rx="13" ry="17" fill="#E9C9A0"/>
+<circle cx="-23" cy="-62" r="9" fill="#8A5A3C"/><circle cx="23" cy="-62" r="9" fill="#8A5A3C"/><circle cx="-23" cy="-62" r="5" fill="#E9C9A0"/><circle cx="23" cy="-62" r="5" fill="#E9C9A0"/>
+<circle cy="-62" r="23" fill="#8A5A3C"/>
+<g fill="#E9C9A0"><circle cx="-8" cy="-65" r="10.5"/><circle cx="8" cy="-65" r="10.5"/><ellipse cy="-54" rx="15" ry="11"/></g>
+<circle cx="-7" cy="-66" r="2.8" fill="#2B2320"/><circle cx="7" cy="-66" r="2.8" fill="#2B2320"/>
+<path d="M-7 -53 Q0 -46 7 -53" stroke="#5B3A22" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+<path d="M18 -34 Q48 -26 58 0" stroke="#8A5A3C" stroke-width="9" fill="none" stroke-linecap="round"/>
+<use href="#ra" transform="translate(60 14) scale(1.3)"/>
+</g>
+<g filter="url(#p)"><path d="M800 500 Q760 430 800 380Z" fill="#2F7D4F"/><path d="M700 500 Q740 440 800 450 V500Z" fill="#3F9460"/></g>
+</g>
+</svg>
