@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-labelledby="t d">
+<title id="t">Anansi has a big idea</title>
+<desc id="d">Paper-cut forest scene: tiny Anansi sits on a big green leaf and stares up at a far-off golden glow in the sky, with a little golden sparkle above his head for his big idea.</desc>
+<defs><clipPath id="w"><rect width="800" height="600" rx="36"/></clipPath><filter id="p" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#1b1b33" flood-opacity=".3"/></filter><linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1F5A4A"/><stop offset="1" stop-color="#4E9A6B"/></linearGradient><polygon id="s" points="0,-10 2.4,-3.2 9.5,-3.1 3.8,1.2 5.9,8.1 0,4 -5.9,8.1 -3.8,1.2 -9.5,-3.1 -2.4,-3.2" fill="#F6C445"/></defs>
+<g clip-path="url(#w)"><rect width="800" height="600" fill="url(#sky)"/>
+<circle cx="650" cy="90" r="120" fill="#F6C445" opacity=".12"/><circle cx="650" cy="90" r="74" fill="#F6C445" opacity=".2"/>
+<circle cx="650" cy="90" r="9" fill="#FBE48A"/>
+<g fill="#17463A" filter="url(#p)"><circle cx="80" cy="40" r="130"/><circle cx="260" cy="10" r="120"/><circle cx="440" cy="0" r="90"/><circle cx="790" cy="150" r="90"/></g>
+<g fill="#2F7D4F"><circle cx="160" cy="90" r="70"/><circle cx="350" cy="50" r="60"/><circle cx="760" cy="60" r="50"/></g>
+<g fill="#3B2A22" filter="url(#p)"><rect x="60" y="0" width="54" height="600"/><rect x="700" y="120" width="64" height="480"/></g>
+<path filter="url(#p)" d="M0 540 Q200 520 400 540 T800 540 V600 H0Z" fill="#17463A"/>
+<g filter="url(#p)"><path d="M90 480 Q300 350 600 425 Q390 540 90 480Z" fill="#58AB6E"/></g><path d="M40 500 Q300 440 590 428" stroke="#3F9460" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<g transform="translate(330 372) rotate(0) scale(1.5)" filter="url(#p)"><path d="M-14 -2 Q-40 -22 -46 -2 M-19 6 Q-48 -4 -54 18 M-19 14 Q-46 16 -50 36 M-13 24 Q-32 34 -34 50 M14 -2 Q40 -22 46 -2 M19 6 Q48 -4 54 18 M19 14 Q46 16 50 36 M13 24 Q32 34 34 50" stroke="#3A241B" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle cy="8" r="22" fill="#4A2E22"/><ellipse cy="13" rx="12" ry="10" fill="#6B4433"/><circle cy="-22" r="17" fill="#4A2E22"/><path d="M-16 -11 Q0 -3 16 -11 L15 -3 Q0 5 -15 -3Z M11 -4 L26 8 L19 13 L7 2Z" fill="#E4572E"/><path d="M-7 -7 l-1 7 M7 -7 l1 7 M18 3 l-5 4 M1 -6 v7" stroke="#F6E7D0" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle cx="-7.5" cy="-25" r="7" fill="#fff"/><circle cx="-5.0" cy="-27.5" r="3.4" fill="#2B2320"/><circle cx="-3.8" cy="-28.9" r="1.1" fill="#fff"/><circle cx="7.5" cy="-25" r="7" fill="#fff"/><circle cx="10.0" cy="-27.5" r="3.4" fill="#2B2320"/><circle cx="11.2" cy="-28.9" r="1.1" fill="#fff"/><path d="M-5 -15 Q0 -10 5 -15" stroke="#F6E7D0" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g>
+<use href="#s" transform="translate(430 280) scale(1.6)"/>
+<use href="#s" transform="translate(470 240) scale(0.8)"/>
+<use href="#s" transform="translate(400 235) scale(0.6)"/>
+<g fill="#17463A" filter="url(#p)"><path d="M0 600 Q20 480 110 450 Q90 540 70 600Z"/><path d="M800 600 Q780 500 700 470 Q715 545 740 600Z"/><path d="M560 600 Q600 520 690 520 Q650 570 640 600Z"/></g>
+</g>
+</svg>

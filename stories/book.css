@@ -1,0 +1,440 @@
+/* Stories — picture-book flip view. Used by story pages that hold a
+   <div class="book" data-book> of <section class="leaf"> pages.
+   Without JS the leaves simply stack as a normal illustrated story.
+   With JS (book.js adds .is-flip) they become a one-page-at-a-time book
+   whose pages turn over the left spine. Tokens only — light/dark/print free. */
+
+.book {
+  --book-w: min(100%, 30rem);
+  width: var(--book-w);
+  margin: 1.4rem auto 0;
+}
+
+/* ---- Leaf content (shared by stacked + flip modes) ------------------ */
+.leaf {
+  background: var(--paper);
+  border-radius: var(--radius-clay);
+  box-shadow: var(--shadow-clay);
+  overflow: hidden;
+  margin: 0 0 1.4rem;
+}
+.leaf img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  background: var(--paper-sunk);
+}
+.leaf-text {
+  padding: 0.9rem 1.15rem 1.6rem;
+  font-size: clamp(1.02rem, 0.95rem + 0.5vw, 1.18rem);
+  line-height: 1.6;
+}
+.leaf-text p { margin: 0 0 0.55rem; }
+.leaf-text p:last-child { margin-bottom: 0; }
+.leaf-text .sing {
+  font-family: var(--font-disp);
+  font-weight: 700;
+  color: var(--accent-deep);
+}
+
+.leaf.cover .leaf-text, .leaf.end .leaf-text { text-align: center; }
+.leaf.cover h2 {
+  font-family: var(--font-disp);
+  font-size: clamp(1.6rem, 1.3rem + 1.6vw, 2.1rem);
+  line-height: 1.1;
+  margin: 0.2rem 0 0.3rem;
+}
+.leaf .from {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+.leaf.end .the-end {
+  font-family: var(--font-hand);
+  font-size: 2.6rem;
+  line-height: 1;
+  color: var(--accent-deep);
+  margin: 0.2rem 0 0.5rem;
+}
+.leaf .folio { display: none; }
+
+/* ---- Flip mode -------------------------------------------------------- */
+.book.is-flip {
+  position: relative;
+  aspect-ratio: 3 / 4.45;            /* placeholder until book.js fits the tallest page */
+  perspective: 1800px;
+  touch-action: pan-y;               /* vertical scroll stays native; we take horizontal swipes */
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.book.is-flip .leaf {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  overflow: visible;
+  background: none;
+  box-shadow: none;
+  border-radius: 0;
+  transform-origin: left center;
+  transform-style: preserve-3d;
+  transition: transform 0.85s cubic-bezier(0.42, 0.05, 0.25, 1);
+  cursor: pointer;
+}
+.book.is-flip .leaf.is-flipped { transform: rotateY(-180deg); }
+
+.book.is-flip .leaf-front,
+.book.is-flip .leaf-back {
+  position: absolute;
+  inset: 0;
+  border-radius: 6px var(--radius-clay) var(--radius-clay) 6px;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  overflow: hidden;
+  /* Safari can ignore backface-visibility inside stacked 3-D pages, so we
+     also swap front/back visibility exactly halfway through the turn. */
+  transition: visibility 0s linear 0.42s;
+}
+.book.is-flip .leaf-back,
+.book.is-flip .leaf.is-flipped .leaf-front { visibility: hidden; }
+.book.is-flip .leaf.is-flipped .leaf-back { visibility: visible; }
+.book.is-flip .leaf-front {
+  background: var(--paper);
+  box-shadow: var(--shadow-clay);
+  display: flex;
+  flex-direction: column;
+}
+/* spine shading on the left edge of every page */
+.book.is-flip .leaf-front::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 1.4rem;
+  background: linear-gradient(to right, oklch(30% 0.04 60 / .2), transparent);
+  pointer-events: none;
+  z-index: 2;
+}
+/* shadow sweeping over a page as it lifts */
+.book.is-flip .leaf-front::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to left, oklch(20% 0.03 60 / .38), transparent 75%);
+  opacity: 0;
+  transition: opacity 0.85s ease;
+  pointer-events: none;
+  z-index: 3;
+}
+.book.is-flip .leaf.is-flipped .leaf-front::after { opacity: 1; }
+
+.book.is-flip .leaf-back {
+  transform: rotateY(180deg);
+  background:
+    radial-gradient(circle, oklch(78% 0.13 85 / .35) 0 1.5px, transparent 2.5px) 0 0 / 38px 38px,
+    linear-gradient(to left, oklch(30% 0.04 60 / .18), transparent 35%),
+    var(--paper-2);
+  box-shadow: var(--shadow-clay);
+}
+
+.book.is-flip .leaf img {
+  flex: 0 0 auto;
+  border-radius: 6px var(--radius-clay) 0 0;
+}
+.book.is-flip .leaf-text {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+.book.is-flip .leaf .folio {
+  display: block;
+  position: absolute;
+  right: 1rem;
+  bottom: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--ink-soft);
+  z-index: 2;
+}
+.book.is-flip .leaf.cover .leaf-text,
+.book.is-flip .leaf.end .leaf-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* a stack of paper peeking out under the book */
+.book.is-flip::before {
+  content: "";
+  position: absolute;
+  inset: 6px -5px -6px 4px;
+  border-radius: 6px var(--radius-clay) var(--radius-clay) 6px;
+  background: var(--paper-2);
+  box-shadow: var(--shadow-clay-sm);
+}
+
+/* ---- Controls -------------------------------------------------------- */
+.book-stage .book-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+  width: min(100%, 30rem);
+  margin: 1.1rem auto 0.4rem;
+}
+.book-btn {
+  appearance: none;
+  border: 0;
+  min-width: 3.5rem;
+  min-height: 3.5rem;
+  padding: 0 1.2rem;
+  border-radius: var(--radius-pill);
+  background: var(--paper-2);
+  color: var(--ink);
+  font: 700 1.05rem var(--font-disp);
+  box-shadow: var(--shadow-clay-sm);
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.2s ease;
+}
+.book-btn.next { background: var(--accent); color: oklch(22% 0.03 60); }
+.book-btn:hover { box-shadow: var(--shadow-clay-hover); }
+.book-btn:active { transform: scale(0.95); box-shadow: var(--shadow-clay-pressed); }
+.book-btn:focus-visible,
+.book-full:focus-visible,
+.book-close:focus-visible { outline: 3px solid var(--accent-deep); outline-offset: 3px; }
+.book-btn:disabled { opacity: 0.35; cursor: default; transform: none; box-shadow: none; }
+.book-mid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+}
+.book-count {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+  text-align: center;
+  margin: 0;
+}
+.book-full {
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  min-height: 2.75rem;
+  padding: 0 0.85rem;
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-pill);
+  background: var(--paper);
+  color: var(--ink-soft);
+  font: 600 0.82rem var(--font-body);
+  cursor: pointer;
+}
+.book-full svg, .book-close svg {
+  width: 1.1rem;
+  height: 1.1rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.book-full:hover { color: var(--ink); border-color: var(--accent); }
+.book-close { display: none; }
+.book-hint {
+  text-align: center;
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+  margin: 0 auto 1.8rem;
+}
+
+/* ---- Full screen: storytime overlay ---------------------------------- */
+html.book-locked, html.book-locked body { overflow: hidden; }
+
+.book-spread { display: none; }
+
+.book-stage.is-full {
+  /* darker than the night skies in the art (#1B1E4E) so those pages still stand out */
+  --night-1: oklch(19% 0.045 275);
+  --night-2: oklch(10% 0.025 270);
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) auto;
+  padding:
+    max(0.9rem, env(safe-area-inset-top))
+    max(0.9rem, env(safe-area-inset-right))
+    max(0.5rem, env(safe-area-inset-bottom))
+    max(0.9rem, env(safe-area-inset-left));
+  background:
+    radial-gradient(circle, oklch(90% 0.08 90 / .5) 0 1px, transparent 1.6px) 0 0 / 53px 61px,
+    radial-gradient(circle, oklch(90% 0.08 90 / .35) 0 1px, transparent 1.6px) 23px 31px / 79px 67px,
+    radial-gradient(ellipse at 50% 35%, var(--night-1), var(--night-2));
+  overscroll-behavior: contain;
+  touch-action: pan-y;               /* no pinch-zoom while Kai swipes; page is scroll-locked */
+}
+.book-stage.is-full .book-area {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 0;
+}
+.book-stage.is-full .book { margin: 0; aspect-ratio: auto; }
+.book-stage.is-full .leaf-text { font-size: var(--leaf-fs, 1.3rem); padding: 1rem 1.4rem 1.8rem; }
+.book-stage.is-full .book.is-flip::before { display: none; }
+.book-stage.is-full .book-controls { width: min(100%, 34rem); margin: 0.7rem auto 0; }
+.book-stage.is-full .book-count { color: oklch(85% 0.03 85); }
+.book-stage.is-full .book-full { display: none; }
+.book-stage.is-full .book-btn.prev { background: oklch(100% 0 0 / .14); color: oklch(96% 0.01 85); box-shadow: none; }
+.book-stage.is-full .book-close {
+  display: grid;
+  place-items: center;
+  position: absolute;
+  top: max(0.6rem, env(safe-area-inset-top));
+  right: max(0.6rem, env(safe-area-inset-right));
+  z-index: 5;
+  width: 2.9rem;
+  height: 2.9rem;
+  border: 0;
+  border-radius: 50%;
+  background: oklch(16% 0.03 270 / .62);   /* readable over sky, art or paper */
+  color: oklch(97% 0.01 85);
+  cursor: pointer;
+}
+.book-stage.is-full .book-close:hover { background: oklch(16% 0.03 270 / .8); }
+
+.book-stage.is-full .leaf.cover h2,
+.book-stage.is-full .sheet.cover h2 { font-size: 1.6em; }
+.book-stage.is-full .the-end { font-size: 2.2em; }
+.book-stage.is-full:focus { outline: none; }
+/* short screens (phones held sideways): slimmer controls, more book */
+@media (max-height: 30rem) {
+  .book-stage.is-full .book-controls { margin-top: 0.35rem; }
+  .book-stage.is-full .book-btn { min-height: 2.6rem; padding: 0 1rem; font-size: 0.95rem; }
+}
+
+/* ---- Full screen, small phone sideways: picture + words on one page ---- */
+.book-stage.is-full.is-side .leaf-front { flex-direction: row; }
+.book-stage.is-full.is-side .leaf img {
+  width: 58%;
+  height: 100%;
+  aspect-ratio: auto;
+  object-fit: contain;
+  border-radius: 6px 0 0 6px;
+}
+.book-stage.is-full.is-side .leaf-text { padding: 0.8rem 2.9rem 1.5rem 1rem; }  /* clear of the ✕ */
+.book-stage.is-full.is-spread .sheet .leaf-text { padding-right: 2.9rem; }
+
+/* ---- Touch hygiene: no image menus, text selection or double-tap zoom -- */
+.book.is-flip, .book-spread { -webkit-touch-callout: none; }
+.book.is-flip img, .book-spread img { -webkit-user-drag: none; pointer-events: none; }
+.book-btn, .book-full, .book-close { touch-action: manipulation; }
+
+/* ---- Full screen sideways: an open book -------------------------------- */
+.book-stage.is-full.is-spread .book { display: none; }
+.book-stage.is-full.is-spread .book-spread {
+  display: block;
+  position: relative;
+  perspective: 2600px;
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: pointer;
+}
+.book-spread .spread-base,
+.book-spread .sheet {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+}
+.book-spread .spread-base {
+  left: 0;
+  border-radius: var(--radius-clay) 4px 4px var(--radius-clay);
+  overflow: hidden;
+  background: var(--paper-sunk);
+  box-shadow: var(--shadow-clay);
+}
+.book-spread .sheet {
+  left: 50%;
+  transform-origin: left center;
+  transform-style: preserve-3d;
+  transition: transform 0.85s cubic-bezier(0.42, 0.05, 0.25, 1);
+}
+.book-spread .sheet.is-flipped { transform: rotateY(-180deg); }
+.book-spread .sheet-front,
+.book-spread .sheet-back {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border-radius: 4px var(--radius-clay) var(--radius-clay) 4px;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transition: visibility 0s linear 0.42s;   /* the same Safari-proof swap as .leaf */
+}
+.book-spread .sheet-back,
+.book-spread .sheet.is-flipped .sheet-front { visibility: hidden; }
+.book-spread .sheet.is-flipped .sheet-back { visibility: visible; }
+.book-spread .sheet-front {
+  background: var(--paper);
+  box-shadow: var(--shadow-clay);
+  display: flex;
+  flex-direction: column;
+}
+.book-spread .sheet-front::before,
+.book-spread .sheet-back::after {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 2rem;
+  background: linear-gradient(to right, oklch(25% 0.04 60 / .28), transparent);
+  pointer-events: none;
+  z-index: 2;
+}
+.book-spread .sheet-back { transform: rotateY(180deg); background: var(--paper-sunk); }
+.book-spread img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;               /* never crop: key things sit near the edges */
+}
+.book-spread .leaf-text {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;                  /* only tiny sideways phones ever need it */
+  overscroll-behavior: contain;
+  display: flex;
+  flex-direction: column;
+  justify-content: safe center;
+}
+.book-spread .sheet.cover .leaf-text,
+.book-spread .sheet.end .leaf-text { text-align: center; }
+.book-spread .folio {
+  position: absolute;
+  right: 1rem;
+  bottom: 0.55rem;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--ink-soft);
+}
+
+/* ---- Reduced motion: a soft cross-fade instead of the 3-D turn ------- */
+@media (prefers-reduced-motion: reduce) {
+  .book.is-flip .leaf { transition: opacity 0.25s ease; }
+  .book.is-flip .leaf.is-flipped { transform: none; opacity: 0; }
+  /* open book: pages land instantly instead of sweeping */
+  .book-spread .sheet, .book-spread .sheet-front, .book-spread .sheet-back { transition: none; }
+  .book.is-flip .leaf-front::after { display: none; }
+}
+
+/* ---- Print: always the plain stacked story --------------------------- */
+@media print {
+  .book.is-flip { aspect-ratio: auto; height: auto !important; width: 100% !important; perspective: none; }
+  .book.is-flip::before, .book-controls, .book-hint, .book-close, .book-spread { display: none !important; }
+  .book.is-flip .leaf { position: static; transform: none !important; opacity: 1 !important; margin-bottom: 1rem; break-inside: avoid; }
+  .book.is-flip .leaf-front { position: static; box-shadow: none; }
+  .book.is-flip .leaf-back, .book.is-flip .leaf .folio { display: none; }
+}

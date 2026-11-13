@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-labelledby="t d">
+<title id="t">And one flew all the way to you</title>
+<desc id="d">Paper-cut morning scene: a small blue car drives along a sunny road while one golden firefly streams in through its window, and Anansi waves from his thread in a roadside tree.</desc>
+<defs><clipPath id="w"><rect width="800" height="600" rx="36"/></clipPath><filter id="p" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#1b1b33" flood-opacity=".3"/></filter><linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9FD3D6"/><stop offset="1" stop-color="#FBEBD0"/></linearGradient><polygon id="s" points="0,-10 2.4,-3.2 9.5,-3.1 3.8,1.2 5.9,8.1 0,4 -5.9,8.1 -3.8,1.2 -9.5,-3.1 -2.4,-3.2" fill="#F6C445"/></defs>
+<g clip-path="url(#w)"><rect width="800" height="600" fill="url(#sky)"/>
+<circle cx="650" cy="110" r="52" fill="#FFF6E6"/>
+<g transform="translate(520 80) scale(0.9)" fill="#FFF6E6" filter="url(#p)"><circle cx="-50" cy="8" r="30"/><circle cx="-18" cy="-14" r="36"/><circle cx="24" cy="-10" r="32"/><circle cx="56" cy="10" r="28"/><rect x="-78" y="6" width="160" height="34" rx="17"/></g>
+<path filter="url(#p)" d="M0 370 Q200 326 400 370 T800 370 V600 H0Z" fill="#8FC2A0"/>
+<path filter="url(#p)" d="M0 430 Q200 400 400 430 T800 430 V600 H0Z" fill="#5FA06C"/>
+<path filter="url(#p)" d="M0 462 Q400 424 800 474 V566 Q400 506 0 552Z" fill="#6E6A78"/>
+<path d="M0 506 Q400 466 800 520" stroke="#F6E7D0" stroke-width="5" stroke-dasharray="30 26" fill="none"/>
+<g filter="url(#p)"><path d="M40 470 Q50 300 70 180 h36 Q90 300 96 470Z" fill="#7A5236"/><path d="M80 230 Q150 200 230 210 v18 Q150 222 90 258Z" fill="#7A5236"/></g>
+<g fill="#2F7D4F" filter="url(#p)"><circle cx="60" cy="120" r="100"/><circle cx="180" cy="90" r="80"/><circle cx="-10" cy="220" r="70"/></g>
+<g fill="#58AB6E"><circle cx="110" cy="80" r="50"/><circle cx="210" cy="120" r="40"/></g>
+<path d="M200 222 V290" stroke="#DADDE8" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<g transform="translate(200 338) rotate(0) scale(1)" filter="url(#p)"><path d="M-14 -2 Q-42 -40 -3 -70 M-19 6 Q-48 -4 -54 18 M-19 14 Q-46 16 -50 36 M-13 24 Q-32 34 -34 50 M14 -2 Q42 -40 3 -70 M19 6 Q48 -14 60 -30 M19 14 Q46 16 50 36 M13 24 Q32 34 34 50" stroke="#3A241B" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle cy="8" r="22" fill="#4A2E22"/><ellipse cy="13" rx="12" ry="10" fill="#6B4433"/><circle cy="-22" r="17" fill="#4A2E22"/><path d="M-16 -11 Q0 -3 16 -11 L15 -3 Q0 5 -15 -3Z M11 -4 L26 8 L19 13 L7 2Z" fill="#E4572E"/><path d="M-7 -7 l-1 7 M7 -7 l1 7 M18 3 l-5 4 M1 -6 v7" stroke="#F6E7D0" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle cx="-7.5" cy="-25" r="7" fill="#fff"/><circle cx="-5.0" cy="-23.5" r="3.4" fill="#2B2320"/><circle cx="-3.8" cy="-24.9" r="1.1" fill="#fff"/><circle cx="7.5" cy="-25" r="7" fill="#fff"/><circle cx="10.0" cy="-23.5" r="3.4" fill="#2B2320"/><circle cx="11.2" cy="-24.9" r="1.1" fill="#fff"/><path d="M-5 -15 Q0 -8 5 -15Z" fill="#F2859A"/></g>
+<ellipse cx="430" cy="502" rx="130" ry="10" fill="#000" opacity=".18"/><g transform="translate(430 450) scale(1.3)" filter="url(#p)"><path d="M-90 10 Q-90 -14 -64 -18 L-44 -48 Q-38 -58 -24 -58 H34 Q48 -58 56 -46 L72 -18 Q94 -14 94 10 V22 H-90Z" fill="#4A90C2"/><path d="M-36 -22 L-22 -48 H2 V-22Z" fill="#2E5F86"/><path d="M10 -22 V-48 H32 L50 -22Z" fill="#DDF1F5"/><rect x="84" y="-8" width="10" height="10" rx="4" fill="#FFF6E6"/><rect x="-90" y="-6" width="8" height="10" rx="3" fill="#E0563F"/><g fill="#2B2320"><circle cx="-52" cy="24" r="17"/><circle cx="54" cy="24" r="17"/></g><g fill="#DADDE8"><circle cx="-52" cy="24" r="7"/><circle cx="54" cy="24" r="7"/></g></g>
+<circle cx="404" cy="400" r="46" fill="#F6C445" opacity=".12"/><circle cx="404" cy="400" r="29" fill="#F6C445" opacity=".2"/>
+<path d="M330 30 Q410 130 376 240 T400 398" stroke="#F6C445" stroke-width="3" stroke-dasharray="2 12" stroke-linecap="round" fill="none" opacity=".8"/>
+<circle cx="330" cy="30" r="7.0" fill="#F6C445" opacity=".28"/><circle cx="330" cy="30" r="2.5" fill="#FBE48A"/>
+<circle cx="362" cy="78" r="8.0" fill="#F6C445" opacity=".28"/><circle cx="362" cy="78" r="2.9" fill="#FBE48A"/>
+<circle cx="380" cy="130" r="9.0" fill="#F6C445" opacity=".28"/><circle cx="380" cy="130" r="3.2" fill="#FBE48A"/>
+<circle cx="384" cy="185" r="10.0" fill="#F6C445" opacity=".28"/><circle cx="384" cy="185" r="3.6" fill="#FBE48A"/>
+<circle cx="376" cy="240" r="11.0" fill="#F6C445" opacity=".28"/><circle cx="376" cy="240" r="4.0" fill="#FBE48A"/>
+<circle cx="374" cy="292" r="12.0" fill="#F6C445" opacity=".28"/><circle cx="374" cy="292" r="4.3" fill="#FBE48A"/>
+<circle cx="384" cy="342" r="14.0" fill="#F6C445" opacity=".28"/><circle cx="384" cy="342" r="5.0" fill="#FBE48A"/>
+<circle cx="398" cy="388" r="16.0" fill="#F6C445" opacity=".28"/><circle cx="398" cy="388" r="5.8" fill="#FBE48A"/>
+<path d="M0 600 V560 Q400 520 800 580 V600Z" fill="#3F7D5A"/>
+</g>
+</svg>
