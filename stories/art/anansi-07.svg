@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-labelledby="t d">
+<title id="t">Anansi and the Hornets</title>
+<desc id="d">Paper-cut forest scene: Anansi tips water from a big leaf like rain, and a little cloud of friendly round hornets zooms into an open gourd to keep dry.</desc>
+<defs><clipPath id="w"><rect width="800" height="600" rx="36"/></clipPath><filter id="p" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#1b1b33" flood-opacity=".3"/></filter><linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#A9D8C4"/><stop offset="1" stop-color="#EEF3D6"/></linearGradient><polygon id="s" points="0,-10 2.4,-3.2 9.5,-3.1 3.8,1.2 5.9,8.1 0,4 -5.9,8.1 -3.8,1.2 -9.5,-3.1 -2.4,-3.2" fill="#F6C445"/><g id="h"><g fill="#fff" opacity=".9"><ellipse cx="-4" cy="-10" rx="6" ry="10" transform="rotate(-25 -4 -10)"/><ellipse cx="5" cy="-10" rx="6" ry="10" transform="rotate(15 5 -10)"/></g><ellipse rx="12" ry="9" fill="#F08A3C"/><path d="M-4 -8 V8 M3 -8.5 V8.5" stroke="#4A2E22" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" r="7" fill="#F5A65B"/><circle cx="14" cy="-2" r="1.8" fill="#2B2320"/><path d="M11 3 q3 2 5 -1" stroke="#4A2E22" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g></defs>
+<g clip-path="url(#w)"><rect width="800" height="600" fill="url(#sky)"/>
+<path filter="url(#p)" d="M0 330 Q200 280 400 330 T800 330 V600 H0Z" fill="#8CC49A"/>
+<path filter="url(#p)" d="M0 400 Q200 360 400 400 T800 400 V600 H0Z" fill="#4E9A6B"/>
+<path filter="url(#p)" d="M0 500 Q200 480 400 500 T800 500 V600 H0Z" fill="#3F7D4A"/>
+<g filter="url(#p)"><path d="M0 236 Q160 246 340 226 L340 246 Q160 270 0 264Z" fill="#7A5236"/></g>
+<g fill="#2F7D4F" filter="url(#p)"><circle cx="40" cy="150" r="90"/><circle cx="150" cy="90" r="70"/></g>
+<g filter="url(#p)" transform="translate(300 172) rotate(24)"><path d="M0 0 Q50 -36 120 -6 Q60 30 0 0Z" fill="#58AB6E"/></g><path d="M300 172 L408 218" stroke="#3F9460" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<g transform="translate(225 178) rotate(0) scale(1.15)" filter="url(#p)"><path d="M-14 -2 Q-40 -22 -46 -2 M-19 6 Q-48 -4 -54 18 M-19 14 Q-46 16 -50 36 M-13 24 Q-32 34 -34 50 M14 -2 Q44 -20 62 -6 M19 6 Q50 4 64 0 M19 14 Q46 16 50 36 M13 24 Q32 34 34 50" stroke="#3A241B" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle cy="8" r="22" fill="#4A2E22"/><ellipse cy="13" rx="12" ry="10" fill="#6B4433"/><circle cy="-22" r="17" fill="#4A2E22"/><path d="M-16 -11 Q0 -3 16 -11 L15 -3 Q0 5 -15 -3Z M11 -4 L26 8 L19 13 L7 2Z" fill="#E4572E"/><path d="M-7 -7 l-1 7 M7 -7 l1 7 M18 3 l-5 4 M1 -6 v7" stroke="#F6E7D0" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle cx="-7.5" cy="-25" r="7" fill="#fff"/><circle cx="-5.0" cy="-23.5" r="3.4" fill="#2B2320"/><circle cx="-3.8" cy="-24.9" r="1.1" fill="#fff"/><circle cx="7.5" cy="-25" r="7" fill="#fff"/><circle cx="10.0" cy="-23.5" r="3.4" fill="#2B2320"/><circle cx="11.2" cy="-24.9" r="1.1" fill="#fff"/><path d="M-5 -15 Q0 -10 5 -15" stroke="#F6E7D0" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g>
+<path d="M420 220 q7 12 0 17 q-7 -5 0 -17z" fill="#6FB7E8"/><path d="M440 265 q7 12 0 17 q-7 -5 0 -17z" fill="#6FB7E8"/><path d="M405 290 q7 12 0 17 q-7 -5 0 -17z" fill="#6FB7E8"/><path d="M455 320 q7 12 0 17 q-7 -5 0 -17z" fill="#6FB7E8"/><path d="M425 350 q7 12 0 17 q-7 -5 0 -17z" fill="#6FB7E8"/><path d="M470 250 q7 12 0 17 q-7 -5 0 -17z" fill="#6FB7E8"/>
+<g transform="translate(630 450) rotate(-38) scale(1.6)" filter="url(#p)"><ellipse cy="12" rx="40" ry="36" fill="#C98B4A"/><ellipse cy="-28" rx="22" ry="20" fill="#C98B4A"/><path d="M-36 0 Q0 12 36 0" stroke="#A56C34" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M-22 20 q-6 -14 4 -26" stroke="#DDA868" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><ellipse cy="-45" rx="15" ry="7" fill="#5B3A22"/></g>
+<use href="#h" transform="translate(596 418) rotate(40) scale(1.2)"/>
+<g opacity=".9"><path d="M306 331 q12 -4 20 6 M361 286 q12 -4 20 6 M416 361 q12 -4 20 6 M471 321 q12 -4 20 6 M351 391 q12 -4 20 6 M511 381 q12 -4 20 6" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g>
+<use href="#h" transform="translate(340 345) rotate(20) scale(1.5)"/>
+<use href="#h" transform="translate(395 300) rotate(30) scale(1.5)"/>
+<use href="#h" transform="translate(450 375) rotate(25) scale(1.5)"/>
+<use href="#h" transform="translate(505 335) rotate(35) scale(1.5)"/>
+<use href="#h" transform="translate(385 405) rotate(15) scale(1.5)"/>
+<use href="#h" transform="translate(545 395) rotate(40) scale(1.5)"/>
+</g>
+</svg>
