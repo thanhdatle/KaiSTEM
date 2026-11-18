@@ -18,6 +18,7 @@
   var SPREAD_RATIO = 1.15;    // full screen wider than this → sideways layout
   var SPREAD_MIN_W = 700;     // narrower sideways screens get picture + words on one page
   var TAP_GUARD_MS = 380;     // ignore page taps this soon after a turn (no double skips)
+  var NEAR_PAGES = 2;         // pages kept rendered on each side of the open one
   var FULL_KEY = "kaistem-book-full";
   var FONT_STEPS = [1.5, 1.4, 1.3, 1.22, 1.15, 1.08, 1.0, 0.94, 0.88]; // rem, full screen
 
@@ -46,6 +47,18 @@
   /* Open-book spread (full screen, sideways). Sheet k sits on the right:
      its front is page k's words, its back is page k+1's picture — so turning
      it over the spine lands the next picture on the left, like a real book. */
+  // cloneNode() copies src before loading="lazy", so a clone starts downloading
+  // at once. Build the copy with loading set first, then src.
+  function lazyCopy(img) {
+    var copy = document.createElement("img");
+    copy.setAttribute("loading", "lazy");
+    Array.prototype.forEach.call(img.attributes, function (a) {
+      if (a.name !== "src" && a.name !== "loading") { copy.setAttribute(a.name, a.value); }
+    });
+    copy.setAttribute("src", img.getAttribute("src"));
+    return copy;
+  }
+
   function buildSpread(leaves) {
     var total = leaves.length;
     var spread = el("div", "book-spread");
@@ -65,9 +78,9 @@
       var back = el("div", "sheet-back");
       var nextImg = k + 1 < total ? leaves[k + 1].querySelector("img") : null;
       if (nextImg) {
-        var img = nextImg.cloneNode(false);
-        img.removeAttribute("loading");
-        back.appendChild(img);
+        // lazy: only sheets near the open page are displayed (see stackSet),
+        // so a long book never fetches or decodes every picture at once
+        back.appendChild(lazyCopy(nextImg));
       }
       sheet.appendChild(front);
       sheet.appendChild(back);
@@ -213,7 +226,13 @@
     }
 
     function fit() {
-      if (isFull) { fitFull(); } else { fitInline(); }
+      // far pages are display:none; show them (unpainted) just long enough to measure
+      stage.classList.add("is-measuring");
+      try {
+        if (isFull) { fitFull(); } else { fitInline(); }
+      } finally {
+        stage.classList.remove("is-measuring");
+      }
     }
 
     /* ---- page state ------------------------------------------------------ */
@@ -224,6 +243,11 @@
         item.classList.toggle("is-flipped", flipped);
         // unflipped: first on top. flipped: last-turned on top.
         item.style.zIndex = item === turning ? total + 1 : (flipped ? i + 1 : total - i);
+        // Pages far from the open one are taken out of rendering (display:none),
+        // so phones don't hold every picture and 3-D layer in memory — long books
+        // (40+ pages) otherwise crash mobile Safari.
+        var near = item === turning || Math.abs(i - current) <= NEAR_PAGES;
+        item.classList.toggle("is-far", !near);
       });
     }
 
