@@ -430,8 +430,14 @@ html.book-locked, html.book-locked body { overflow: hidden; }
   .book.is-flip .leaf-front::after { display: none; }
 }
 
+/* Long books: pages far from the open one leave rendering (book.js marks them)
+   so phones never hold every picture in memory at once. */
+.book-stage:not(.is-measuring) .book.is-flip .leaf.is-far,
+.book-stage:not(.is-measuring) .book-spread .sheet.is-far { display: none; }
+
 /* ---- Print: always the plain stacked story --------------------------- */
 @media print {
+  .book-stage .book.is-flip .leaf.is-far { display: block !important; }
   .book.is-flip { aspect-ratio: auto; height: auto !important; width: 100% !important; perspective: none; }
   .book.is-flip::before, .book-controls, .book-hint, .book-close, .book-spread { display: none !important; }
   .book.is-flip .leaf { position: static; transform: none !important; opacity: 1 !important; margin-bottom: 1rem; break-inside: avoid; }
